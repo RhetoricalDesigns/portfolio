@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duane Steffens — Rhetorical Designs / Agency Partner Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0c1018;
+    --soft:#5b6675;
+    --line:#e6e9ef;
+    --green:#16c47f;
+    --green-d:#0f9d66;
+    --green-soft:#e9f9f1;
+    --accent:#0c1018;
+    --sans:'Manrope',sans-serif;
+    --mono:'Space Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--green);color:#fff}
+  a{color:inherit;text-decoration:none}
+
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  .mono{font-family:var(--mono)}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 28px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.85);backdrop-filter:blur(10px)}
+  .nav .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:-.01em}
+  .nav .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--green-soft)}
+  .nav .logo b{color:var(--green-d)}
+  .nav nav{display:flex;gap:26px;font-size:12px;letter-spacing:.04em;color:var(--soft);font-family:var(--mono)}
+  .nav nav a{transition:color .2s}
+  .nav nav a:hover{color:var(--green-d)}
+  .nav .pill{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-d);border:1px solid var(--green);background:var(--green-soft);padding:8px 14px;border-radius:999px}
+
+  /* HERO */
+  header.hero{padding:clamp(60px,10vw,120px) 28px clamp(40px,7vw,80px);position:relative}
+  .hero .tagrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);border:1px solid var(--line);padding:7px 13px;border-radius:999px}
+  .chip.g{color:var(--green-d);border-color:var(--green);background:var(--green-soft)}
+  h1.hero-title{font-weight:800;font-size:clamp(40px,8vw,92px);line-height:1.0;letter-spacing:-.03em;max-width:14ch}
+  h1.hero-title .hl{color:var(--green-d)}
+  .hero-sub{margin-top:24px;max-width:640px;font-size:clamp(16px,2vw,20px);color:var(--soft);line-height:1.6}
+  .hero-sub b{color:var(--ink);font-weight:600}
+  .hero-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:13px;letter-spacing:.03em;padding:13px 22px;border-radius:10px;display:inline-block;transition:transform .15s,box-shadow .2s,background .2s}
+  .btn.primary{background:var(--green);color:#04231a;font-weight:700;box-shadow:0 8px 22px rgba(22,196,127,.3)}
+  .btn.primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(22,196,127,.45)}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--green);color:var(--green-d)}
+  .hero .proof{margin-top:36px;display:flex;gap:30px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--soft);letter-spacing:.04em}
+  .hero .proof b{color:var(--ink);font-weight:700}
+
+  /* SECTION SHELL */
+  .sec{padding:clamp(54px,8vw,96px) 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
+  .sec-head .k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-d)}
+  .sec-head h2{font-weight:800;font-size:clamp(28px,4.5vw,48px);letter-spacing:-.02em;line-height:1.02}
+  .sec-intro{color:var(--soft);max-width:60ch;margin-top:14px;font-size:16px}
+
+  /* PROPOSITION - split */
+  .prop{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:40px}
+  .prop .l{padding:clamp(28px,4vw,48px);border-right:1px solid var(--line)}
+  .prop .l .big{font-weight:800;font-size:clamp(24px,3.4vw,38px);line-height:1.08;letter-spacing:-.02em}
+  .prop .l .big .hl{color:var(--green-d)}
+  .prop .l p{margin-top:18px;color:var(--soft);font-size:15px;line-height:1.6}
+  .prop .r{padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:18px}
+  .prop .r .row{display:flex;gap:14px;align-items:flex-start}
+  .prop .r .ic{flex:none;width:34px;height:34px;border-radius:9px;background:var(--green-soft);color:var(--green-d);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--mono);border:1px solid var(--green)}
+  .prop .r .row .t{font-weight:600;font-size:15px}
+  .prop .r .row .d{font-size:13.5px;color:var(--soft);line-height:1.5;margin-top:3px}
+
+  /* TRAITS - the 6 pillars */
+  .traits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+  .trait{border:1px solid var(--line);border-radius:14px;padding:28px 26px;background:#fff;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+  .trait::before{content:'';position:absolute;left:0;top:0;width:100%;height:4px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .trait:hover{transform:translateY(-5px);border-color:var(--green);box-shadow:0 16px 38px rgba(12,16,24,.1)}
+  .trait:hover::before{transform:scaleX(1)}
+  .trait .no{font-family:var(--mono);font-size:12px;color:var(--green-d);letter-spacing:.1em}
+  .trait h3{font-weight:800;font-size:21px;letter-spacing:-.01em;margin:12px 0 10px}
+  .trait p{font-size:14px;color:var(--soft);line-height:1.55}
+  .trait .ev{margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--ink);background:var(--green-soft);border:1px solid var(--green);border-radius:8px;padding:8px 11px;line-height:1.4}
+
+  /* SERVICE MENU for agencies */
+  .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:42px}
+  .msvc{border:1px solid var(--line);border-radius:12px;padding:22px 24px;display:flex;gap:16px;align-items:center;transition:border-color .2s,background .2s}
+  .msvc:hover{border-color:var(--green);background:var(--green-soft)}
+  .msvc .ix{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--green-d);border:1px solid var(--green);border-radius:8px;padding:8px 10px;background:#fff}
+  .msvc h4{font-weight:700;font-size:16px}
+  .msvc p{font-size:13px;color:var(--soft);line-height:1.45;margin-top:3px}
+
+  /* AI spotlight */
+  .ai{border:1px solid var(--green);border-radius:16px;background:linear-gradient(135deg,var(--green-soft),#fff);padding:clamp(30px,5vw,60px);margin-top:42px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .ai h3{font-weight:800;font-size:clamp(24px,3.5vw,38px);letter-spacing:-.02em;line-height:1.05}
+  .ai h3 .hl{color:var(--green-d)}
+  .ai p{margin-top:16px;color:var(--soft);font-size:15px;line-height:1.6}
+  .ai .caps{display:flex;flex-direction:column;gap:12px}
+  .ai .caps .c{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--ink)}
+  .ai .caps .c .tick{flex:none;width:22px;height:22px;border-radius:6px;background:var(--green);color:#04231a;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+
+  /* CASES */
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+  .case{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:transform .3s,box-shadow .3s}
+  .case:hover{transform:translateY(-5px);box-shadow:0 16px 38px rgba(12,16,24,.1)}
+  .case .top{height:130px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#eef1f6,#dfe6ef)}
+  .case .top .g{position:absolute;inset:0;opacity:.9}
+  .case .top .sector{position:absolute;left:14px;top:14px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#04231a;background:var(--green);padding:4px 9px;border-radius:6px}
+  .case .meta{padding:20px 22px 24px}
+  .case .meta h4{font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .case .meta .u{font-family:var(--mono);font-size:12px;color:var(--soft);margin-top:3px}
+  .case .meta .v{display:inline-block;margin-top:13px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--green-d);border:1px solid var(--green);padding:6px 12px;border-radius:8px;transition:background .2s,color .2s}
+  .case:hover .meta .v{background:var(--green);color:#04231a}
+  .cg1{background:linear-gradient(135deg,#16c47f,#0f9d66)}
+  .cg2{background:linear-gradient(135deg,#0c1018,#2a3340)}
+  .cg3{background:linear-gradient(135deg,#0f9d66,#9fe9c8)}
+  .cg4{background:linear-gradient(135deg,#3a4654,#16c47f)}
+  .cg5{background:linear-gradient(135deg,#16c47f,#cdeee0)}
+  .cg6{background:linear-gradient(135deg,#0c1018,#16c47f)}
+
+  /* CONTACT */
+  .contact{border:1px solid var(--line);border-radius:18px;background:var(--ink);color:#fff;padding:clamp(40px,6vw,72px);text-align:center;position:relative;overflow:hidden}
+  .contact::before{content:'';position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(22,196,127,.28),transparent 60%);top:-120px;right:-80px}
+  .contact .ey{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--green)}
+  .contact h2{font-weight:800;font-size:clamp(30px,6vw,62px);line-height:1.02;margin-top:16px;letter-spacing:-.02em}
+  .contact h2 .hl{color:var(--green)}
+  .contact p{color:#b9c1cd;max-width:54ch;margin:16px auto 0;font-size:15px}
+  .contact .mail{display:inline-block;margin-top:28px;font-family:var(--mono);font-size:clamp(15px,2.4vw,21px);color:#fff;border:1px solid var(--green);background:rgba(22,196,127,.12);padding:14px 24px;border-radius:12px;transition:background .2s,box-shadow .2s}
+  .contact .mail:hover{background:var(--green);color:#04231a;box-shadow:0 0 26px rgba(22,196,127,.4)}
+  .contact .soc{display:flex;gap:14px;justify-content:center;margin-top:26px;font-family:var(--mono);font-size:12px;color:#8b94a3}
+  .contact .soc a:hover{color:var(--green)}
+
+  footer{text-align:center;padding:30px 28px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line)}
+  footer a:hover{color:var(--green-d)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:880px){
+    .prop,.traits,.menu-grid,.ai,.cases{grid-template-columns:1fr}
+    .prop .l{border-right:none;border-bottom:1px solid var(--line)}
+    .nav nav{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="logo"><span class="dot"></span>Rhetorical<b>.Designs</b></div>
+  <nav>
+    <a href="#pitch">Pitch</a>
+    <a href="#traits">Traits</a>
+    <a href="#menu">Services</a>
+    <a href="#ai">AI</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="pill" href="#contact">For Agencies →</a>
+</div>
+
+<header class="hero">
+  <div class="tagrow">
+    <span class="chip g">● Available for partnership</span>
+    <span class="chip">White-label web partner</span>
+    <span class="chip">Remote · Worldwide</span>
+  </div>
+  <h1 class="hero-title">Your on-demand <span class="hl">web&nbsp;team</span>, on call.</h1>
+  <p class="hero-sub">I'm Duane Steffens — a freelance web designer &amp; developer who slots into <b>agency workflows</b> as your versatile, fast-moving build partner. <b>Innovation, integration, AI fluency</b> — delivered without the overhead of a full-time hire.</p>
+  <div class="hero-actions">
+    <a href="#pitch" class="btn primary">See the pitch →</a>
+    <a href="#contact" class="btn ghost">Book a call</a>
+  </div>
+  <div class="proof">
+    <span><b>12+</b> sites shipped</span>
+    <span><b>SEO</b> &amp; Google-ready</span>
+    <span><b>∞</b> platforms &amp; builders</span>
+    <span><b>AI</b>-integrated builds</span>
+  </div>
+</header>
+
+<section id="pitch" class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">01 / The Pitch</span><h2>Built to plug into your studio.</h2></div>
+    <p class="sec-intro">Agencies don't need another vendor. They need a reliable pair of hands that thinks like an in-house team — versatile across the stack, quick to learn your process, and passionate about the craft.</p>
+    <div class="prop">
+      <div class="l">
+        <div class="big">One partner. <span class="hl">Every layer</span> of the web build.</div>
+        <p>From custom design and responsive development to SEO, content, image and video production, e-commerce, and A.I. integration — I cover the full surface so your senior team stays on strategy. Proficient across most web builder platforms, so your project runs seamlessly whatever your preferred stack.</p>
+      </div>
+      <div class="r">
+        <div class="row"><div class="ic">✓</div><div><div class="t">White-label ready</div><div class="d">Deliver under your brand. Your client, your relationship, my execution.</div></div></div>
+        <div class="row"><div class="ic">⚡</div><div><div class="t">Fast turnaround</div><div class="d">A passionate builder who ships — advanced builds, bug fixes, modernizing, hosting.</div></div></div>
+        <div class="row"><div class="ic">⇄</div><div><div class="t">Integrates cleanly</div><div class="d">Fits your tools, repos, and handoff conventions without friction.</div></div></div>
+        <div class="row"><div class="ic">✦</div><div><div class="t">Craft, not commodity</div><div class="d">Engineered assets, not digital brochures. Quality is the point.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="traits" class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">02 / Why Me</span><h2>Six traits agencies hire for.</h2></div>
+    <p class="sec-intro">The qualities that make a freelancer worth keeping on speed-dial — mapped to how I actually work.</p>
+    <div class="traits">
+      <div class="trait"><div class="no">TRAIT 01</div><h3>Versatile</h3><p>Design, dev, SEO, content, image, video, e-commerce — one person covers the whole build. Most web builders, any platform.</p><div class="ev">EVIDENCE: 12+ sites across health, retail, education, conservation, wine &amp; artisan.</div></div>
+      <div class="trait"><div class="no">TRAIT 02</div><h3>Innovative</h3><p>I use cutting-edge digital design tools and mechanics to bring a unique vision to life on the internet.</p><div class="ev">EVIDENCE: bold &amp; elegant presentations, tailored to each client's goal.</div></div>
+      <div class="trait"><div class="no">TRAIT 03</div><h3>Integration</h3><p>E-commerce with all the bells and whistles, plus A.I. integration and on-brand systems that fit your stack.</p><div class="ev">EVIDENCE: payments "as easy as cottage pie"; SEO built into front &amp; back structure.</div></div>
+      <div class="trait"><div class="no">TRAIT 04</div><h3>Fast Learner</h3><p>New tools, new platforms, new brand guidelines — I adapt fast and pick up your process without hand-holding.</p><div class="ev">EVIDENCE: proficient across most builders; fueled by coffee &amp; the latest tech.</div></div>
+      <div class="trait"><div class="no">TRAIT 05</div><h3>Passionate</h3><p>Not a commodity operator. I care about the handshake between systems and the detail others skip.</p><div class="ev">EVIDENCE: "Craft, Not Commodity" — engineered assets, obsessive quality control.</div></div>
+      <div class="trait"><div class="no">TRAIT 06</div><h3>AI Experience</h3><p>I integrate A.I. into builds and workflows — smarter sites, faster production, hyper-personalised output.</p><div class="ev">EVIDENCE: A.I. Integration &amp; on-brand copywriting offered as core services.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">03 / Services</span><h2>What I can take off your plate.</h2></div>
+    <div class="menu-grid">
+      <div class="msvc"><div class="ix">WD</div><div><h4>Website Design &amp; Dev</h4><p>Websites that seamlessly combine aesthetics and functionality.</p></div></div>
+      <div class="msvc"><div class="ix">RZ</div><div><h4>Responsive Design</h4><p>In a mobile-driven landscape, responsive design is paramount.</p></div></div>
+      <div class="msvc"><div class="ix">SE</div><div><h4>SEO &amp; Content</h4><p>Visibility &amp; organic traffic via researched keywords and on-page optimization.</p></div></div>
+      <div class="msvc"><div class="ix">CW</div><div><h4>Copywriting</h4><p>Compelling, on-brand content at the heart of effective communication.</p></div></div>
+      <div class="msvc"><div class="ix">IM</div><div><h4>Image Editing</h4><p>Optimized media that secures engagement, more valuable over time.</p></div></div>
+      <div class="msvc"><div class="ix">VI</div><div><h4>Video Integration</h4><p>Impactful video woven into the build — the stats prove it daily.</p></div></div>
+      <div class="msvc"><div class="ix">EC</div><div><h4>E-commerce</h4><p>Sell online with every bell and whistle — payments as easy as cottage pie.</p></div></div>
+      <div class="msvc"><div class="ix">AI</div><div><h4>A.I. &amp; Integration</h4><p>A.I. features, modernizing, fixes, hosting, on-brand automation.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="ai" class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">04 / AI Fluency</span><h2>AI-native, not AI-theatre.</h2></div>
+    <div class="ai">
+      <div>
+        <h3>Built for the <span class="hl">2026</span> web — AI-smart, mobile-ready, hyper-personalised.</h3>
+        <p>I don't bolt on a chatbot and call it innovation. A.I. is woven into how the site is built and how it performs — faster production, smarter content, and experiences that adapt to the visitor. To thrive in 2026, your digital project needs exactly that.</p>
+      </div>
+      <div class="caps">
+        <div class="c"><span class="tick">✓</span><span>A.I. integration into new &amp; existing builds</span></div>
+        <div class="c"><span class="tick">✓</span><span>On-brand, AI-assisted copywriting at scale</span></div>
+        <div class="c"><span class="tick">✓</span><span>Automation that removes manual duplication</span></div>
+        <div class="c"><span class="tick">✓</span><span>Performance &amp; SEO tuned to modern search</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">05 / Proof</span><h2>Work across every sector.</h2></div>
+    <p class="sec-intro">A sample of delivered projects — each one required something unique, and shipped.</p>
+    <div class="cases">
+      <a class="case" href="https://healthinsight.co.za" target="_blank" rel="noopener"><div class="top cg1"><span class="sector">Health</span></div><div class="meta"><h4>Health Insight</h4><div class="u">healthinsight.co.za</div><div class="v">view →</div></div></a>
+      <a class="case" href="https://hemingwaysbooks.co.za" target="_blank" rel="noopener"><div class="top cg2"><span class="sector">Retail</span></div><div class="meta"><h4>Hemingways Bookshop</h4><div class="u">hemingwaysbooks.co.za</div><div class="v">view →</div></div></a>
+      <a class="case" href="https://shop.bouchardfinlayson.co.za" target="_blank" rel="noopener"><div class="top cg3"><span class="sector">eCommerce</span></div><div class="meta"><h4>Bouchard Finlayson</h4><div class="u">shop.bouchardfinlayson.co.za</div><div class="v">view →</div></div></a>
+      <a class="case" href="https://capestudies.com" target="_blank" rel="noopener"><div class="top cg4"><span class="sector">Education</span></div><div class="meta"><h4>Cape Studies</h4><div class="u">capestudies.com</div><div class="v">view →</div></div></a>
+      <a class="case" href="https://conservationatwork.co.za" target="_blank" rel="noopener"><div class="top cg5"><span class="sector">Conservation</span></div><div class="meta"><h4>Conservation at Work</h4><div class="u">conservationatwork.co.za</div><div class="v">view →</div></div></a>
+      <a class="case" href="https://lili.africa" target="_blank" rel="noopener"><div class="top cg6"><span class="sector">Artisan</span></div><div class="meta"><h4>Lili &amp; Co Ceramics</h4><div class="u">lili.africa</div><div class="v">view →</div></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="wrap">
+    <div class="contact">
+      <div class="ey">// let's partner</div>
+      <h2>Let's build your <span class="hl">next</span> client project.</h2>
+      <p>White-label, remote, and ready. Send the brief — I'll send back a build you're proud to put your name on.</p>
+      <a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+      <div class="soc">
+        <a href="../index.html">all editions</a>
+        <a href="#" rel="noopener">facebook</a>
+        <a href="#" rel="noopener">instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© Rhetorical Designs — Duane Steffens · Hermanus · Remote · Craft, Not Commodity</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('section,.nav,header.hero').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+</script>
+</body>
+</html>

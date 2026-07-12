@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duane Steffens — Rhetorical Designs / Hermanus Coastal Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--sand:#ece3d4;--sand2:#e3d8c4;--ocean:#1f6f78;--teal:#2a9d8f;--sky:#cfe3e0;--deep:#123b42;--coral:#e07a5f;--ink:#1c2b2e;--soft:#5d6f6b;--serif:'Fraunces',serif;--sans:'Karla',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--sand);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--coral);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+  /* soft organic blobs */
+  body::before,body::after{content:'';position:fixed;border-radius:50%;filter:blur(40px);opacity:.5;z-index:0;pointer-events:none}
+  body::before{width:480px;height:480px;background:var(--sky);top:-160px;right:-120px}
+  body::after{width:420px;height:420px;background:var(--teal);bottom:-160px;left:-120px;opacity:.35}
+  nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 26px;background:rgba(236,227,212,.82);backdrop-filter:blur(8px);border-bottom:1px solid rgba(28,43,46,.12)}
+  nav .b{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.01em}
+  nav .b b{color:var(--ocean)}
+  nav .l{display:flex;gap:24px;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+  nav .l a{transition:color .2s}
+  nav .l a:hover{color:var(--coral)}
+  header.hero{padding:clamp(64px,11vw,130px) 26px clamp(48px,8vw,90px);position:relative;z-index:2}
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ocean);margin-bottom:22px;display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:'';width:34px;height:2px;background:var(--coral)}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(48px,10vw,118px);line-height:.98;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--ocean)}
+  .lede{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,28px);color:var(--soft);max-width:640px;margin:28px auto 0;line-height:1.45}
+  .loc{margin-top:22px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+  section{padding:clamp(54px,8vw,100px) 0;position:relative;z-index:2}
+  .seclabel{display:flex;align-items:center;gap:16px;margin-bottom:40px}
+  .seclabel .n{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--coral)}
+  .seclabel .t{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--soft)}
+  .seclabel .ln{flex:1;height:1px;background:rgba(28,43,46,.18)}
+  .profile{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:26px;overflow:hidden;border:1px solid rgba(28,43,46,.12);background:var(--sand2)}
+  .profile .l{padding:clamp(30px,5vw,56px);border-right:1px solid rgba(28,43,46,.12)}
+  .profile .l h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1.04}
+  .profile .l h2 .hl{color:var(--ocean)}
+  .profile .l p{margin-top:18px;color:var(--soft);font-size:15.5px;max-width:50ch}
+  .profile .r{padding:clamp(30px,5vw,56px);font-size:14px;line-height:2;color:var(--ink)}
+  .profile .r b{color:var(--ocean);font-weight:700}
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .sk{border:1px solid rgba(28,43,46,.12);border-radius:18px;padding:28px 24px;background:var(--sand2);transition:transform .25s,background .25s}
+  .sk:hover{transform:translateY(-5px);background:var(--sky)}
+  .sk .ix{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--coral)}
+  .sk h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:10px 0 8px}
+  .sk p{font-size:14px;color:var(--soft);line-height:1.55}
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .why .c{padding:26px 22px;border-radius:18px;background:var(--sand2);border:1px solid rgba(28,43,46,.12)}
+  .why .c .n{font-family:var(--serif);font-weight:600;font-size:34px;color:var(--teal);line-height:1}
+  .why .c h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:10px 0 8px}
+  .why .c p{font-size:14px;color:var(--soft);line-height:1.55}
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{border-radius:18px;overflow:hidden;background:var(--sand2);border:1px solid rgba(28,43,46,.12);transition:transform .3s,box-shadow .3s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(18,59,66,.22)}
+  .card .ph{height:150px;position:relative}
+  .card .ph .tag{position:absolute;left:14px;top:14px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.85);color:var(--deep);padding:5px 10px;border-radius:20px}
+  .card .body{padding:20px 22px 24px}
+  .card h4{font-family:var(--serif);font-weight:600;font-size:22px}
+  .card .u{font-size:12px;color:var(--ocean);margin-top:3px}
+  .card .v{display:inline-block;margin-top:13px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid var(--coral);padding-bottom:3px;transition:color .2s}
+  .card:hover .v{color:var(--coral)}
+  /* photo-panel patterns (coastal) */
+  .card:nth-child(6n+1) .ph{background:linear-gradient(160deg,var(--sky),var(--teal))}
+  .card:nth-child(6n+2) .ph{background:linear-gradient(160deg,var(--sand),var(--coral))}
+  .card:nth-child(6n+3) .ph{background:linear-gradient(160deg,var(--deep),var(--ocean))}
+  .card:nth-child(6n+4) .ph{background:linear-gradient(160deg,var(--teal),var(--sand2))}
+  .card:nth-child(6n+5) .ph{background:linear-gradient(160deg,var(--coral),var(--deep))}
+  .card:nth-child(6n+6) .ph{background:linear-gradient(160deg,var(--ocean),var(--sky))}
+  .contact{border-radius:26px;background:var(--deep);color:var(--sand);padding:clamp(44px,7vw,84px);text-align:center;position:relative;overflow:hidden}
+  .contact .ey{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--teal)}
+  .contact h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,6vw,72px);line-height:1;margin-top:16px}
+  .contact h2 em{font-style:italic;color:var(--coral)}
+  .contact .mail{display:inline-block;margin-top:26px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3vw,30px);border-bottom:2px solid var(--teal);padding-bottom:5px;transition:color .2s}
+  .contact .mail:hover{color:var(--teal)}
+  .contact .soc{display:flex;gap:16px;justify-content:center;margin-top:26px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(236,227,212,.7)}
+  .contact .soc a:hover{color:var(--coral)}
+  footer{text-align:center;padding:30px 26px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+  footer a:hover{color:var(--ocean)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:860px){.profile,.skills,.why,.work{grid-template-columns:1fr}.profile .l{border-right:none;border-bottom:1px solid rgba(28,43,46,.12)}nav .l{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="b">Rhetorical<b>.</b>Designs</div><div class="l"><a href="#profile">Profile</a><a href="#skills">Craft</a><a href="#why">Approach</a><a href="#work">Work</a><a href="#contact">Contact</a></div></nav>
+<header class="hero">
+  <div class="wrap" style="padding:0">
+    <div class="eyebrow">Hermanus, South Africa · Remote · Fueled by coffee</div>
+    <h1>Duane <em>Steffens</em></h1>
+    <p class="lede">A web designer &amp; developer on the coast — translating ideas into interfaces that are bold or elegant, calm or capable. Built with craft, not noise.</p>
+    <div class="loc">Working with clients everywhere, remotely</div>
+  </div>
+</header>
+<section id="profile"><div class="wrap">
+  <div class="seclabel"><span class="n">i</span><span class="t">Profile</span><span class="ln"></span></div>
+  <div class="profile">
+    <div class="l"><h2>Web design with <span class="hl">salt-air</span> clarity.</h2><p>I'm Duane Steffens — a freelance website designer and developer based in Hermanus, working remotely with clients worldwide. Whether you want a bold, attention-grabbing site or an elegant, sophisticated one, I translate your ideas into a user-friendly interface that engages and converts visitors.</p></div>
+    <div class="r"><b>NAME</b> — Duane Steffens<br><b>BASE</b> — Hermanus, Western Cape, ZA<br><b>REACH</b> — Remote / Worldwide<br><b>FOCUS</b> — Web · SEO · eCom · Content<br><b>FUEL</b> — Coffee &amp; new tech<br><b>ETHOS</b> — Craft, Not Commodity</div>
+  </div>
+</div></section>
+<section id="skills"><div class="wrap">
+  <div class="seclabel"><span class="n">ii</span><span class="t">The Craft</span><span class="ln"></span></div>
+  <div class="skills">
+    <div class="sk"><div class="ix">a.</div><h3>Web Design &amp; Dev</h3><p>Websites that seamlessly combine aesthetics and functionality.</p></div>
+    <div class="sk"><div class="ix">b.</div><h3>Responsive Design</h3><p>In a mobile-driven world, responsive design is paramount.</p></div>
+    <div class="sk"><div class="ix">c.</div><h3>SEO &amp; Content</h3><p>Visibility and organic traffic via researched keywords &amp; optimization.</p></div>
+    <div class="sk"><div class="ix">d.</div><h3>Copywriting</h3><p>Compelling content at the heart of effective communication.</p></div>
+    <div class="sk"><div class="ix">e.</div><h3>Image Editing</h3><p>Optimized media that secures engagement, more valuable over time.</p></div>
+    <div class="sk"><div class="ix">f.</div><h3>Video Integration</h3><p>Impactful video woven into the build — the stats prove it daily.</p></div>
+  </div>
+</div></section>
+<section id="why"><div class="wrap">
+  <div class="seclabel"><span class="n">iii</span><span class="t">The Approach</span><span class="ln"></span></div>
+  <div class="why">
+    <div class="c"><div class="n">01</div><h3>Innovative</h3><p>Cutting-edge tools and mechanics bring your unique vision to life online.</p></div>
+    <div class="c"><div class="n">02</div><h3>User-Friendly</h3><p>Bold or elegant — ideas become an interface that engages and converts.</p></div>
+    <div class="c"><div class="n">03</div><h3>SEO Expertise</h3><p>Optimized for search, ranked in Google, comprehensive keyword research.</p></div>
+    <div class="c"><div class="n">04</div><h3>E-commerce</h3><p>Sell online with every bell and whistle — payments as easy as cottage pie.</p></div>
+    <div class="c"><div class="n">05</div><h3>Versatile</h3><p>Proficient across most web builders; your project runs seamlessly on any platform.</p></div>
+    <div class="c"><div class="n">06</div><h3>End-to-End</h3><p>Builds, fixes, modernizing, hosting, A.I. integration and on-brand copy.</p></div>
+  </div>
+</div></section>
+<section id="work"><div class="wrap">
+  <div class="seclabel"><span class="n">iv</span><span class="t">Selected Work</span><span class="ln"></span></div>
+  <div class="work">
+    <a class="card" href="https://healthinsight.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Health</span></div><div class="body"><h4>Health Insight</h4><div class="u">healthinsight.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://curiositycove.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Education</span></div><div class="body"><h4>Curiosity Cove</h4><div class="u">curiositycove.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://bizlife.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Business</span></div><div class="body"><h4>BizLife</h4><div class="u">bizlife.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://naturewise.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Garden</span></div><div class="body"><h4>NatureWise Gardens</h4><div class="u">naturewise.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://hemingwaysbooks.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Retail</span></div><div class="body"><h4>Hemingways Bookshop</h4><div class="u">hemingwaysbooks.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://fosh.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Non-Profit</span></div><div class="body"><h4>FOSH</h4><div class="u">fosh.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://findmyonlinetribe.com" target="_blank" rel="noopener"><div class="ph"><span class="tag">Coaching</span></div><div class="body"><h4>Find My Online Tribe</h4><div class="u">findmyonlinetribe.com</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://capestudies.com" target="_blank" rel="noopener"><div class="ph"><span class="tag">Education</span></div><div class="body"><h4>Cape Studies</h4><div class="u">capestudies.com</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://shop.bouchardfinlayson.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">eCommerce</span></div><div class="body"><h4>Bouchard Finlayson</h4><div class="u">shop.bouchardfinlayson.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://conservationatwork.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Conservation</span></div><div class="body"><h4>Conservation at Work</h4><div class="u">conservationatwork.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://dthservicesgroup.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Services</span></div><div class="body"><h4>DTH Services Group</h4><div class="u">dthservicesgroup.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://lili.africa" target="_blank" rel="noopener"><div class="ph"><span class="tag">Artisan</span></div><div class="body"><h4>Lili &amp; Co Ceramics</h4><div class="u">lili.africa</div><div class="v">View →</div></div></a>
+  </div>
+</div></section>
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div class="ey">Let's work together</div>
+    <h2>Envision your <em>next</em> project.</h2>
+    <a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+    <div class="soc"><a href="../index.html">All Editions</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+  </div>
+</div></section>
+<footer>© Rhetorical Designs — Duane Steffens · Hermanus · Remote · Craft, Not Commodity</footer>
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('section,header.hero').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+</script>
+</body>
+</html>

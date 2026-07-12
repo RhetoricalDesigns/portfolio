@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duane Steffens — Rhetorical Designs / Risograph Retro Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f4ead5;--orange:#ef6f2e;--teal:#1ba39c;--pink:#e8537f;--ink:#1a1410;--blue:#3b5dc9}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  /* riso grain */
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
+  ::selection{background:var(--pink);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+  .mono{font-family:'Space Mono',monospace}
+  nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 26px;background:var(--paper);border-bottom:3px solid var(--ink);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase}
+  nav .b{font-family:'Archivo Black',sans-serif;font-size:18px;letter-spacing:-.02em}
+  nav .b b{color:var(--orange)}
+  nav .l{display:flex;gap:6px}
+  nav .l a{padding:8px 12px;border:2px solid var(--ink);border-radius:30px;transition:background .15s,color .15s}
+  nav .l a:hover{background:var(--orange);color:#fff;transform:rotate(-2deg)}
+  header.hero{padding:clamp(56px,10vw,120px) 26px clamp(44px,7vw,84px);position:relative;z-index:2}
+  .kick{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;background:var(--teal);color:#fff;padding:7px 13px;transform:rotate(-1.5deg);margin-bottom:24px}
+  h1{font-family:'Archivo Black',sans-serif;font-size:clamp(52px,12vw,150px);line-height:.86;text-transform:uppercase;letter-spacing:-.03em}
+  h1 .o{color:var(--orange)} h1 .t{color:var(--teal)} h1 .p{color:var(--pink)}
+  .lede{max-width:620px;margin-top:26px;font-size:clamp(16px,2vw,20px);line-height:1.6;background:rgba(255,255,255,.4);padding:14px 18px;border-left:4px solid var(--pink)}
+  .loc{margin-top:18px;font-family:'Space Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+  section{padding:clamp(50px,8vw,96px) 0;position:relative;z-index:2;border-top:3px solid var(--ink)}
+  .seclabel{display:flex;align-items:center;gap:14px;margin-bottom:38px}
+  .seclabel .n{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--orange)}
+  .seclabel .t{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.16em}
+  .seclabel .ln{flex:1;height:3px;background:repeating-linear-gradient(90deg,var(--ink) 0 10px,transparent 10px 18px)}
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .sk{border:3px solid var(--ink);border-radius:14px;padding:26px 22px;background:#fff;transform:rotate(-.6deg);transition:transform .25s,background .25s}
+  .sk:nth-child(2n){transform:rotate(.8deg)}
+  .sk:hover{transform:rotate(0) scale(1.03);background:var(--paper)}
+  .sk .ix{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:var(--teal)}
+  .sk h3{font-weight:800;font-size:21px;margin:8px 0 8px}
+  .sk p{font-size:14px;line-height:1.5}
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .why .c{border:3px solid var(--ink);border-radius:14px;padding:24px 20px;background:var(--paper)}
+  .why .c:nth-child(3n+1){background:var(--orange);color:#fff}
+  .why .c:nth-child(3n+2){background:var(--teal);color:#fff}
+  .why .c:nth-child(3n){background:var(--pink);color:#fff}
+  .why .c .n{font-family:'Archivo Black',sans-serif;font-size:38px;line-height:1}
+  .why .c h3{font-weight:800;font-size:19px;margin:8px 0 6px}
+  .why .c p{font-size:13.5px;line-height:1.5}
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{border:3px solid var(--ink);border-radius:14px;overflow:hidden;background:#fff;transition:transform .3s}
+  .card:hover{transform:rotate(-1.5deg) translateY(-4px)}
+  .card .ph{height:150px;position:relative;border-bottom:3px solid var(--ink)}
+  .card .ph .tag{position:absolute;left:12px;top:12px;font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;background:#fff;color:var(--ink);padding:4px 9px;border:2px solid var(--ink);transform:rotate(-3deg)}
+  .card .body{padding:18px 20px 22px}
+  .card h4{font-weight:800;font-size:20px}
+  .card .u{font-family:'Space Mono',monospace;font-size:12px;color:var(--blue);margin-top:3px}
+  .card .v{display:inline-block;margin-top:12px;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;border:2px solid var(--ink);padding:6px 11px;transition:background .15s,color .15s}
+  .card:hover .v{background:var(--ink);color:#fff}
+  .card:nth-child(6n+1) .ph{background:var(--orange)}
+  .card:nth-child(6n+2) .ph{background:var(--teal)}
+  .card:nth-child(6n+3) .ph{background:var(--pink)}
+  .card:nth-child(6n+4) .ph{background:var(--blue)}
+  .card:nth-child(6n+5) .ph{background:var(--ink)}
+  .card:nth-child(6n+6) .ph{background:var(--orange)}
+  .contact{border:3px solid var(--ink);border-radius:18px;background:var(--teal);color:#fff;padding:clamp(44px,7vw,80px);text-align:center;transform:rotate(-.5deg)}
+  .contact .ey{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.18em}
+  .contact h2{font-family:'Archivo Black',sans-serif;font-size:clamp(34px,6vw,72px);line-height:.95;margin-top:14px;text-transform:uppercase}
+  .contact h2 .p{color:var(--pink)}
+  .contact .mail{display:inline-block;margin-top:24px;font-family:'Space Mono',monospace;font-size:clamp(16px,2.6vw,22px);background:#fff;color:var(--ink);padding:12px 20px;border-radius:30px;border:3px solid var(--ink);transition:transform .15s}
+  .contact .mail:hover{transform:rotate(2deg) scale(1.04)}
+  .contact .soc{display:flex;gap:12px;justify-content:center;margin-top:24px;font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase}
+  .contact .soc a{border:2px solid #fff;border-radius:20px;padding:6px 12px}
+  .contact .soc a:hover{background:#fff;color:var(--teal)}
+  footer{text-align:center;padding:28px 26px;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;border-top:3px solid var(--ink);position:relative;z-index:2}
+  footer a:hover{color:var(--orange)}
+  .reveal{opacity:0;transform:translateY(20px) rotate(-1deg);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:860px){.skills,.why,.work{grid-template-columns:1fr}nav .l{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="b">RD<b>.</b>DS</div><div class="l"><a href="#skills">Craft</a><a href="#why">Why</a><a href="#work">Work</a><a href="#contact">Hi</a></div></nav>
+<header class="hero"><div class="wrap" style="padding:0">
+  <span class="kick">Printed in Hermanus · Remote</span>
+  <h1>DUANE<br><span class="o">STEFF</span><span class="t">ENS</span></h1>
+  <p class="lede">Freelance website design &amp; development with a hand-made feel. I translate ideas into digital design — bold or elegant, always user-friendly, SEO-strong, e-commerce-ready. Fueled by coffee and a love of the latest tech.</p>
+  <div class="loc">~ working remotely, worldwide ~</div>
+</div></header>
+<section id="skills"><div class="wrap">
+  <div class="seclabel"><span class="n">★</span><span class="t">The Craft</span><span class="ln"></span></div>
+  <div class="skills">
+    <div class="sk"><div class="ix">01</div><h3>Web Design &amp; Dev</h3><p>Websites that seamlessly combine aesthetics and functionality.</p></div>
+    <div class="sk"><div class="ix">02</div><h3>Responsive Design</h3><p>In a mobile-driven world, responsive design is paramount.</p></div>
+    <div class="sk"><div class="ix">03</div><h3>SEO &amp; Content</h3><p>Visibility and organic traffic via researched keywords &amp; optimization.</p></div>
+    <div class="sk"><div class="ix">04</div><h3>Copywriting</h3><p>Compelling content at the heart of effective communication.</p></div>
+    <div class="sk"><div class="ix">05</div><h3>Image Editing</h3><p>Optimized media that secures engagement, more valuable over time.</p></div>
+    <div class="sk"><div class="ix">06</div><h3>Video Integration</h3><p>Impactful video woven into the build — the stats prove it daily.</p></div>
+  </div>
+</div></section>
+<section id="why"><div class="wrap">
+  <div class="seclabel"><span class="n">★</span><span class="t">Why Me</span><span class="ln"></span></div>
+  <div class="why">
+    <div class="c"><div class="n">01</div><h3>Innovative</h3><p>Cutting-edge tools and mechanics bring your unique vision to life.</p></div>
+    <div class="c"><div class="n">02</div><h3>User-Friendly</h3><p>Bold or elegant — ideas become an interface that engages and converts.</p></div>
+    <div class="c"><div class="n">03</div><h3>SEO Expertise</h3><p>Optimized for search, ranked in Google, with keyword research.</p></div>
+    <div class="c"><div class="n">04</div><h3>E-commerce</h3><p>Sell online with every bell and whistle — payments as easy as cottage pie.</p></div>
+    <div class="c"><div class="n">05</div><h3>Versatile</h3><p>Proficient across most web builders; your project runs on any platform.</p></div>
+    <div class="c"><div class="n">06</div><h3>End-to-End</h3><p>Builds, fixes, modernizing, hosting, A.I. integration and on-brand copy.</p></div>
+  </div>
+</div></section>
+<section id="work"><div class="wrap">
+  <div class="seclabel"><span class="n">★</span><span class="t">Selected Work</span><span class="ln"></span></div>
+  <div class="work">
+    <a class="card" href="https://healthinsight.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Health</span></div><div class="body"><h4>Health Insight</h4><div class="u">healthinsight.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://curiositycove.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Education</span></div><div class="body"><h4>Curiosity Cove</h4><div class="u">curiositycove.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://bizlife.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Business</span></div><div class="body"><h4>BizLife</h4><div class="u">bizlife.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://naturewise.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Garden</span></div><div class="body"><h4>NatureWise Gardens</h4><div class="u">naturewise.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://hemingwaysbooks.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Retail</span></div><div class="body"><h4>Hemingways Bookshop</h4><div class="u">hemingwaysbooks.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://fosh.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Non-Profit</span></div><div class="body"><h4>FOSH</h4><div class="u">fosh.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://findmyonlinetribe.com" target="_blank" rel="noopener"><div class="ph"><span class="tag">Coaching</span></div><div class="body"><h4>Find My Online Tribe</h4><div class="u">findmyonlinetribe.com</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://capestudies.com" target="_blank" rel="noopener"><div class="ph"><span class="tag">Education</span></div><div class="body"><h4>Cape Studies</h4><div class="u">capestudies.com</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://shop.bouchardfinlayson.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">eCommerce</span></div><div class="body"><h4>Bouchard Finlayson</h4><div class="u">shop.bouchardfinlayson.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://conservationatwork.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Conservation</span></div><div class="body"><h4>Conservation at Work</h4><div class="u">conservationatwork.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://dthservicesgroup.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Services</span></div><div class="body"><h4>DTH Services Group</h4><div class="u">dthservicesgroup.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://lili.africa" target="_blank" rel="noopener"><div class="ph"><span class="tag">Artisan</span></div><div class="body"><h4>Lili &amp; Co Ceramics</h4><div class="u">lili.africa</div><div class="v">View →</div></div></a>
+  </div>
+</div></section>
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div class="ey">let's work together</div>
+    <h2>Make something <span class="p">real.</span></h2>
+    <a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+    <div class="soc"><a href="../index.html">All Editions</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+  </div>
+</div></section>
+<footer>© Rhetorical Designs — Duane Steffens · Hermanus · Remote · Craft, Not Commodity</footer>
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('section,header.hero').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+</script>
+</body>
+</html>

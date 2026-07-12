@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duane Steffens — Rhetorical Designs / Edition 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;
+    --paper:#f4f1ea;
+    --accent:#ff3b00;
+    --line:#0a0a0a;
+    --muted:#5c574e;
+    --b:3px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:'Space Grotesk',sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  ::selection{background:var(--accent);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+
+  /* GRID OVERLAY */
+  .grid-overlay{
+    position:fixed;inset:0;pointer-events:none;z-index:1;
+    background-image:linear-gradient(90deg,rgba(10,10,10,.05) 1px,transparent 1px);
+    background-size:calc(100%/6) 100%;
+  }
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:stretch;
+    border-bottom:var(--b) solid var(--line);background:var(--paper);
+    font-family:'Space Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.05em;
+  }
+  nav .brand{padding:14px 20px;border-right:var(--b) solid var(--line);font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:-.02em}
+  nav .links{display:flex}
+  nav .links a{padding:14px 18px;border-left:var(--b) solid var(--line);transition:background .15s,color .15s}
+  nav .links a:hover{background:var(--ink);color:var(--paper)}
+  nav .menu{display:none}
+
+  /* HERO */
+  header.hero{
+    position:relative;z-index:2;
+    border-bottom:var(--b) solid var(--line);
+    padding:clamp(28px,6vw,80px) clamp(20px,4vw,64px);
+  }
+  .kicker{
+    font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    display:inline-block;border:var(--b) solid var(--line);padding:6px 12px;margin-bottom:24px;
+  }
+  .kicker b{color:var(--accent)}
+  h1.display{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(48px,12vw,168px);line-height:.86;letter-spacing:-.03em;text-transform:uppercase;
+  }
+  h1.display .out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  h1.display .hl{background:var(--accent);color:var(--paper);padding:0 .08em;display:inline-block}
+  .hero-sub{
+    margin-top:28px;max-width:680px;font-size:clamp(16px,2vw,21px);line-height:1.5;color:var(--muted);
+    border-left:var(--b) solid var(--accent);padding-left:18px;
+  }
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.05em;font-size:14px;
+    border:var(--b) solid var(--line);padding:14px 22px;display:inline-block;transition:transform .12s,background .12s,color .12s;
+  }
+  .btn:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+  .btn.solid{background:var(--ink);color:var(--paper)}
+  .btn.solid:hover{background:var(--accent);box-shadow:6px 6px 0 var(--ink)}
+
+  /* SECTION HEADERS */
+  .sec-head{
+    display:flex;align-items:baseline;gap:16px;
+    border-bottom:var(--b) solid var(--line);
+    padding:18px clamp(20px,4vw,64px);
+    font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.08em;font-size:13px;
+  }
+  .sec-head .num{color:var(--accent);font-weight:700}
+  .sec-head .ttl{font-family:'Archivo Black',sans-serif;font-size:clamp(20px,3vw,30px);letter-spacing:-.01em;text-transform:uppercase}
+  .sec-head .fill{flex:1;border-bottom:2px dotted var(--muted);margin-bottom:6px;opacity:.5}
+
+  section{padding:clamp(36px,5vw,72px) clamp(20px,4vw,64px);position:relative;z-index:2;border-bottom:var(--b) solid var(--line)}
+
+  /* WHO */
+  .who{display:grid;grid-template-columns:1.4fr 1fr;gap:0;border-left:var(--b) solid var(--line)}
+  .who .col{padding:clamp(28px,4vw,56px);border-right:var(--b) solid var(--line)}
+  .who h2{font-family:'Archivo Black',sans-serif;font-size:clamp(30px,5vw,64px);line-height:.9;text-transform:uppercase;letter-spacing:-.02em}
+  .who p{margin-top:18px;font-size:17px;line-height:1.6;color:var(--muted);max-width:54ch}
+  .who .meta{font-family:'Space Mono',monospace;font-size:13px;text-transform:uppercase;line-height:2}
+  .who .meta span{color:var(--accent)}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--b) solid var(--line);margin-top:0}
+  .stat{padding:20px;border-right:var(--b) solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat .n{font-family:'Archivo Black',sans-serif;font-size:clamp(28px,4vw,46px);line-height:1}
+  .stat .l{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:8px}
+
+  /* SKILLS / SERVICES as raw list */
+  .skills{display:grid;grid-template-columns:repeat(2,1fr)}
+  .skill{padding:26px clamp(20px,3vw,40px);border-right:var(--b) solid var(--line);border-bottom:var(--b) solid var(--line);transition:background .15s,color .15s}
+  .skills .skill:nth-child(2n){border-right:none}
+  .skill:hover{background:var(--ink);color:var(--paper)}
+  .skill:hover p,.skill:hover .ix{color:var(--paper)}
+  .skill .ix{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--accent)}
+  .skill h3{font-family:'Archivo Black',sans-serif;font-size:clamp(18px,2.4vw,26px);text-transform:uppercase;letter-spacing:-.01em;margin:10px 0 8px}
+  .skill p{font-size:15px;line-height:1.5;color:var(--muted);font-family:'Space Mono',monospace}
+
+  /* WHY PICK ME - big numbered */
+  .why{display:grid;grid-template-columns:repeat(2,1fr)}
+  .why .item{padding:clamp(28px,4vw,52px);border-right:var(--b) solid var(--line);border-bottom:var(--b) solid var(--line)}
+  .why .item:nth-child(2n){border-right:none}
+  .why .big{font-family:'Archivo Black',sans-serif;font-size:clamp(54px,9vw,110px);line-height:.8;color:transparent;-webkit-text-stroke:2px var(--ink);opacity:.25}
+  .why h3{font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase;margin-top:-10px}
+  .why p{margin-top:12px;font-size:15px;line-height:1.55;color:var(--muted);max-width:46ch}
+
+  /* PORTFOLIO - loud cards */
+  .work{display:grid;grid-template-columns:repeat(3,1fr)}
+  .card{border-right:var(--b) solid var(--line);border-bottom:var(--b) solid var(--line);position:relative;overflow:hidden;background:var(--paper)}
+  .work .card:nth-child(3n){border-right:none}
+  .card .thumb{height:200px;display:flex;align-items:flex-end;padding:16px;position:relative;border-bottom:var(--b) solid var(--line);transition:transform .3s}
+  .card:hover .thumb{transform:scale(1.04)}
+  .card .tag{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:var(--paper);padding:5px 9px}
+  .card .body{padding:18px clamp(16px,2vw,24px) 22px}
+  .card h4{font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-.01em}
+  .card .url{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);margin-top:4px}
+  .card .more{display:inline-block;margin-top:14px;font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;border:2px solid var(--line);padding:7px 12px;transition:background .12s,color .12s}
+  .card:hover .more{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+  /* distinct thumb tints */
+  .t1{background:repeating-linear-gradient(45deg,#ff3b00 0 14px,#ff6a3d 14px 28px)}
+  .t2{background:radial-gradient(circle at 30% 30%,#0a0a0a 0 30%,#f4f1ea 31%)}
+  .t3{background:linear-gradient(135deg,#0a0a0a,#444)}
+  .t4{background:repeating-radial-gradient(circle at 50% 50%,#0a0a0a 0 8px,#f4f1ea 8px 16px)}
+  .t5{background:linear-gradient(0deg,#ff3b00,#0a0a0a)}
+  .t6{background:conic-gradient(from 45deg,#0a0a0a,#ff3b00,#0a0a0a,#ff3b00,#0a0a0a)}
+  .t7{background:repeating-linear-gradient(0deg,#0a0a0a 0 18px,#f4f1ea 18px 22px)}
+  .t8{background:radial-gradient(circle,#ff3b00 0 60%,#0a0a0a 61%)}
+  .t9{background:linear-gradient(135deg,#ff3b00,#ffd23d)}
+  .t10{background:repeating-conic-gradient(from 0deg at 50% 50%,#0a0a0a 0 10deg,#f4f1ea 10deg 20deg)}
+  .t11{background:linear-gradient(135deg,#0a0a0a,#ff3b00)}
+  .t12{background:repeating-linear-gradient(90deg,#ff3b00 0 10px,#f4f1ea 10px 20px)}
+
+  /* CONTACT */
+  .contact{display:grid;grid-template-columns:1.3fr 1fr}
+  .contact .cta{padding:clamp(36px,5vw,72px);border-right:var(--b) solid var(--line)}
+  .contact h2{font-family:'Archivo Black',sans-serif;font-size:clamp(34px,6vw,84px);line-height:.86;text-transform:uppercase;letter-spacing:-.02em}
+  .contact h2 .hl{background:var(--accent);color:var(--paper);padding:0 .06em}
+  .contact .mail{display:inline-block;margin-top:26px;font-family:'Space Mono',monospace;font-size:clamp(15px,2vw,20px);border-bottom:var(--b) solid var(--accent);padding-bottom:4px}
+  .contact .side{padding:clamp(36px,5vw,72px);font-family:'Space Mono',monospace;font-size:14px;line-height:2;text-transform:uppercase}
+  .contact .side a.soc{display:inline-block;border:2px solid var(--line);padding:6px 12px;margin:6px 6px 0 0;transition:background .12s,color .12s}
+  .contact .side a.soc:hover{background:var(--ink);color:var(--paper)}
+
+  footer{position:relative;z-index:2;padding:20px clamp(20px,4vw,64px);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.05em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--ink);color:var(--paper)}
+  footer a:hover{color:var(--accent)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .who,.skills,.why,.work,.contact{grid-template-columns:1fr}
+    .who .col,.skills .skill,.why .item,.work .card,.contact .cta{border-right:none}
+    .work .card{border-bottom:var(--b) solid var(--line)}
+    nav .links{display:none}
+    nav .menu{display:flex;align-items:center;padding:14px 18px;border-left:var(--b) solid var(--line);font-family:'Space Mono',monospace}
+  }
+</style>
+</head>
+<body>
+<div class="grid-overlay"></div>
+
+<nav>
+  <div class="brand">RD / D.S.</div>
+  <div class="links">
+    <a href="#who">Profile</a>
+    <a href="#skills">Skills</a>
+    <a href="#why">Why Me</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="../index.html" class="menu">≡ Editions</a>
+</nav>
+
+<header class="hero">
+  <span class="kicker">Rhetorical Designs · <b>Hermanus, South Africa</b> · Remote</span>
+  <h1 class="display">HI, I'M<br><span class="out">DUANE.</span><br><span class="hl">BUILDER</span></h1>
+  <p class="hero-sub">Complete freelance website design &amp; development. I translate ideas into digital design — bold or elegant, always user-friendly, SEO-strong, e-commerce-ready. Fueled by coffee and a deep passion for the latest technology.</p>
+  <div class="hero-cta">
+    <a href="#work" class="btn solid">See the Work →</a>
+    <a href="#contact" class="btn">Start a Project</a>
+  </div>
+</header>
+
+<div class="sec-head"><span class="num">01</span><span class="ttl">The Profile</span><span class="fill"></span><span>Freelance · Since Day One</span></div>
+<section id="who">
+  <div class="who">
+    <div class="col">
+      <h2>I SPECIALIZE<br>IN INNOVATIVE<br>WEB DESIGN.</h2>
+      <p>I'm Duane Steffens — a freelance website designer and developer based in Hermanus, South Africa, working with clients everywhere, remotely. Whether you want a bold, attention-grabbing site or an elegant, sophisticated one, I translate your ideas into a user-friendly interface that engages and converts visitors.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="n">12+</div><div class="l">Sites Shipped</div></div>
+        <div class="stat"><div class="n">SEO</div><div class="l">Google-Ready</div></div>
+        <div class="stat"><div class="n">∞</div><div class="l">Platforms</div></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="meta">
+        <span>NAME</span> — Duane Steffens<br>
+        <span>BASE</span> — Hermanus, WC, ZA<br>
+        <span>REACH</span> — Remote / Worldwide<br>
+        <span>FOCUS</span> — Web · SEO · eCom · Content<br>
+        <span>FUEL</span> — Coffee &amp; New Tech<br>
+        <span>STANCE</span> — Craft, Not Commodity
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-head"><span class="num">02</span><span class="ttl">Skill Set</span><span class="fill"></span><span>What I Ship</span></div>
+<section id="skills">
+  <div class="skills">
+    <div class="skill"><div class="ix">A1</div><h3>Website Design &amp; Dev</h3><p>Crafting websites that seamlessly combine aesthetics and functionality.</p></div>
+    <div class="skill"><div class="ix">A2</div><h3>Responsive Design</h3><p>In the mobile-driven digital landscape, responsive web design is paramount.</p></div>
+    <div class="skill"><div class="ix">A3</div><h3>SEO &amp; Content</h3><p>Enhancing visibility and attracting organic traffic — researched keywords &amp; on-page optimization.</p></div>
+    <div class="skill"><div class="ix">A4</div><h3>Copywriting &amp; Content</h3><p>Compelling content is at the heart of effective communication.</p></div>
+    <div class="skill"><div class="ix">A5</div><h3>Image Editing</h3><p>Secure user engagement with optimized, increasingly valuable media.</p></div>
+    <div class="skill"><div class="ix">A6</div><h3>Video Creation</h3><p>Harness the power of visuals with impactful videos, as the stats prove every day.</p></div>
+  </div>
+</section>
+
+<div class="sec-head"><span class="num">03</span><span class="ttl">Why Pick Me</span><span class="fill"></span><span>The Devoted Freelancer</span></div>
+<section id="why">
+  <div class="why">
+    <div class="item"><div class="big">01</div><h3>Innovative Solutions</h3><p>My approach is driven by innovation — cutting-edge digital tools and mechanics bring your unique vision to life.</p></div>
+    <div class="item"><div class="big">02</div><h3>User-Friendly Design</h3><p>Bold or elegant, I translate your ideas into a user-friendly interface that engages and converts.</p></div>
+    <div class="item"><div class="big">03</div><h3>SEO Expertise</h3><p>Optimized for search, ranked in Google, with comprehensive keyword research and techniques.</p></div>
+    <div class="item"><div class="big">04</div><h3>E-commerce Excellence</h3><p>Sell online with all the bells and whistles — payments as easy as cottage pie.</p></div>
+    <div class="item"><div class="big">05</div><h3>Versatile Proficiency</h3><p>Proficient with most web builders — your project runs seamlessly on any platform.</p></div>
+    <div class="item"><div class="big">06</div><h3>Custom &amp; Modern</h3><p>Advanced builds, bug fixes, updates, domain &amp; hosting, A.I. integration, on-brand copy.</p></div>
+  </div>
+</section>
+
+<div class="sec-head"><span class="num">04</span><span class="ttl">Selected Work</span><span class="fill"></span><span>12 Projects · Each Unique</span></div>
+<section id="work">
+  <div class="work">
+    <div class="card"><div class="thumb t1"><span class="tag">Health</span></div><div class="body"><h4>Health Insight</h4><div class="url">healthinsight.co.za</div><a class="more" href="https://healthinsight.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t2"><span class="tag">Education</span></div><div class="body"><h4>Curiosity Cove</h4><div class="url">curiositycove.co.za</div><a class="more" href="https://curiositycove.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t3"><span class="tag">Business</span></div><div class="body"><h4>BizLife</h4><div class="url">bizlife.co.za</div><a class="more" href="https://bizlife.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t4"><span class="tag">Garden</span></div><div class="body"><h4>NatureWise Gardens</h4><div class="url">naturewise.co.za</div><a class="more" href="https://naturewise.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t5"><span class="tag">Retail</span></div><div class="body"><h4>Hemingways Bookshop</h4><div class="url">hemingwaysbooks.co.za</div><a class="more" href="https://hemingwaysbooks.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t6"><span class="tag">Non-Profit</span></div><div class="body"><h4>FOSH</h4><div class="url">fosh.co.za</div><a class="more" href="https://fosh.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t7"><span class="tag">Coaching</span></div><div class="body"><h4>Find My Online Tribe</h4><div class="url">findmyonlinetribe.com</div><a class="more" href="https://findmyonlinetribe.com" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t8"><span class="tag">Education</span></div><div class="body"><h4>Cape Studies</h4><div class="url">capestudies.com</div><a class="more" href="https://capestudies.com" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t9"><span class="tag">eCommerce</span></div><div class="body"><h4>Bouchard Finlayson</h4><div class="url">shop.bouchardfinlayson.co.za</div><a class="more" href="https://shop.bouchardfinlayson.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t10"><span class="tag">Conservation</span></div><div class="body"><h4>Conservation at Work</h4><div class="url">conservationatwork.co.za</div><a class="more" href="https://conservationatwork.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t11"><span class="tag">Services</span></div><div class="body"><h4>DTH Services Group</h4><div class="url">dthservicesgroup.co.za</div><a class="more" href="https://dthservicesgroup.co.za" target="_blank" rel="noopener">Find out more →</a></div></div>
+    <div class="card"><div class="thumb t12"><span class="tag">Artisan</span></div><div class="body"><h4>Lili &amp; Co Ceramics</h4><div class="url">lili.africa</div><a class="more" href="https://lili.africa" target="_blank" rel="noopener">Find out more →</a></div></div>
+  </div>
+</section>
+
+<div class="sec-head"><span class="num">05</span><span class="ttl">Let's Work</span><span class="fill"></span><span>Contact</span></div>
+<section id="contact">
+  <div class="contact">
+    <div class="cta">
+      <h2>LET'S<br>BUILD<br><span class="hl">SOMETHING.</span></h2>
+      <a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+    </div>
+    <div class="side">
+      SERVICES OFFERED:<br>
+      Advanced Website Creation<br>
+      Bug Fixes on Existing Sites<br>
+      Update &amp; Modernizing Sites<br>
+      Domain Name &amp; Hosting<br>
+      SEO &amp; Content Creation<br>
+      Social Media Post Creation<br>
+      A.I. Integration · On-brand Copy<br>
+      Google &amp; Facebook Ads<br>
+      <br>
+      <a class="soc" href="#" rel="noopener">Facebook</a><a class="soc" href="#" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© Rhetorical Designs — Duane Steffens</span>
+  <span><a href="../index.html">← All Editions</a> · Hermanus · Remote</span>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('section,header.hero').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+</script>
+</body>
+</html>

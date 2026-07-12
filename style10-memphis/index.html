@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duane Steffens — Rhetorical Designs / Memphis Color-Block Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#fbf3e4;--ink:#16161d;--red:#ff4d3d;--blue:#2b6fff;--yellow:#ffd23f;--pink:#ff5fa2;--teal:#19c3b1;--purple:#8a4dff}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--ink);color:var(--yellow)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+  /* memphis shapes background */
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:
+      radial-gradient(circle,var(--red) 3px,transparent 4px),
+      radial-gradient(circle,var(--blue) 3px,transparent 4px);
+    background-size:60px 60px;background-position:0 0,30px 30px}
+  nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 26px;background:var(--ink);color:var(--cream);font-family:'Space Mono',monospace;font-size:13px;text-transform:uppercase}
+  nav .b{font-family:'Poppins',sans-serif;font-weight:900;font-size:18px;letter-spacing:-.02em}
+  nav .b b{color:var(--yellow)}
+  nav .l{display:flex;gap:8px}
+  nav .l a{padding:7px 12px;border:2px solid var(--cream);border-radius:0;transition:background .15s,color .15s,transform .15s}
+  nav .l a:hover{background:var(--yellow);color:var(--ink);transform:translate(-2px,-2px)}
+  header.hero{padding:clamp(58px,11vw,128px) 26px clamp(46px,8vw,90px);position:relative;z-index:2}
+  .kick{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;background:var(--blue);color:#fff;padding:7px 13px;transform:rotate(-2deg);margin-bottom:24px}
+  h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(54px,13vw,160px);line-height:.84;text-transform:uppercase;letter-spacing:-.03em}
+  h1 span{display:inline-block;padding:0 .06em}
+  h1 .r{background:var(--red);color:#fff;transform:rotate(-2deg)}
+  h1 .y{background:var(--yellow);transform:rotate(1.5deg)}
+  h1 .b{background:var(--blue);color:#fff;transform:rotate(-1deg)}
+  h1 .p{background:var(--pink);color:#fff;transform:rotate(2deg)}
+  .lede{max-width:640px;margin-top:30px;font-size:clamp(16px,2vw,20px);line-height:1.6;background:#fff;border:3px solid var(--ink);padding:16px 20px;box-shadow:6px 6px 0 var(--ink)}
+  .loc{margin-top:18px;font-family:'Space Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+  section{padding:clamp(54px,8vw,100px) 0;position:relative;z-index:2}
+  .seclabel{display:flex;align-items:center;gap:14px;margin-bottom:40px}
+  .seclabel .n{font-family:'Poppins',sans-serif;font-weight:900;font-size:22px;background:var(--teal);color:#fff;padding:4px 12px;transform:rotate(-2deg)}
+  .seclabel .t{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.16em}
+  .seclabel .ln{flex:1;height:4px;background:repeating-linear-gradient(90deg,var(--ink) 0 12px,transparent 12px 22px)}
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .sk{border:3px solid var(--ink);border-radius:0;padding:26px 22px;background:#fff;box-shadow:5px 5px 0 var(--ink);transition:transform .2s,box-shadow .2s}
+  .sk:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+  .sk .ix{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:var(--purple)}
+  .sk h3{font-weight:800;font-size:21px;margin:8px 0 8px}
+  .sk p{font-size:14px;line-height:1.5}
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .why .c{border:3px solid var(--ink);padding:24px 20px;box-shadow:5px 5px 0 var(--ink)}
+  .why .c:nth-child(6n+1){background:var(--yellow)}
+  .why .c:nth-child(6n+2){background:var(--pink)}
+  .why .c:nth-child(6n+3){background:var(--teal);color:#fff}
+  .why .c:nth-child(6n+4){background:var(--red);color:#fff}
+  .why .c:nth-child(6n+5){background:var(--blue);color:#fff}
+  .why .c:nth-child(6n+6){background:var(--purple);color:#fff}
+  .why .c .n{font-family:'Poppins',sans-serif;font-weight:900;font-size:40px;line-height:1}
+  .why .c h3{font-weight:800;font-size:19px;margin:8px 0 6px}
+  .why .c p{font-size:13.5px;line-height:1.5}
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{border:3px solid var(--ink);overflow:hidden;background:#fff;box-shadow:5px 5px 0 var(--ink);transition:transform .25s,box-shadow .25s}
+  .card:hover{transform:translate(-3px,-3px) rotate(-1deg);box-shadow:9px 9px 0 var(--ink)}
+  .card .ph{height:150px;position:relative;border-bottom:3px solid var(--ink)}
+  .card .ph .tag{position:absolute;left:12px;top:12px;font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;background:#fff;color:var(--ink);padding:4px 9px;border:2px solid var(--ink);transform:rotate(-3deg)}
+  .card .body{padding:18px 20px 22px}
+  .card h4{font-weight:800;font-size:20px}
+  .card .u{font-family:'Space Mono',monospace;font-size:12px;color:var(--purple);margin-top:3px}
+  .card .v{display:inline-block;margin-top:12px;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;border:2px solid var(--ink);padding:6px 11px;transition:background .15s,color .15s}
+  .card:hover .v{background:var(--ink);color:#fff}
+  .card:nth-child(12n+1) .ph{background:var(--red)}
+  .card:nth-child(12n+2) .ph{background:var(--blue)}
+  .card:nth-child(12n+3) .ph{background:var(--yellow)}
+  .card:nth-child(12n+4) .ph{background:var(--teal)}
+  .card:nth-child(12n+5) .ph{background:var(--purple);color:#fff}
+  .card:nth-child(12n+6) .ph{background:var(--pink)}
+  .card:nth-child(12n+7) .ph{background:var(--yellow)}
+  .card:nth-child(12n+8) .ph{background:var(--red);color:#fff}
+  .card:nth-child(12n+9) .ph{background:var(--blue);color:#fff}
+  .card:nth-child(12n+10) .ph{background:var(--teal);color:#fff}
+  .card:nth-child(12n+11) .ph{background:var(--pink);color:#fff}
+  .card:nth-child(12n+12) .ph{background:var(--purple);color:#fff}
+  .contact{border:3px solid var(--ink);background:var(--yellow);padding:clamp(44px,7vw,82px);text-align:center;box-shadow:8px 8px 0 var(--ink);transform:rotate(-.5deg)}
+  .contact .ey{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.18em}
+  .contact h2{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(34px,6vw,74px);line-height:.92;margin-top:14px;text-transform:uppercase;letter-spacing:-.02em}
+  .contact h2 .p{background:var(--pink);color:#fff;padding:0 .06em}
+  .contact .mail{display:inline-block;margin-top:24px;font-family:'Space Mono',monospace;font-size:clamp(16px,2.6vw,22px);background:#fff;border:3px solid var(--ink);padding:12px 20px;transition:transform .15s,background .15s,color .15s}
+  .contact .mail:hover{transform:rotate(2deg) scale(1.04);background:var(--ink);color:var(--yellow)}
+  .contact .soc{display:flex;gap:12px;justify-content:center;margin-top:24px;font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase}
+  .contact .soc a{border:2px solid var(--ink);padding:6px 12px;background:#fff}
+  .contact .soc a:hover{background:var(--ink);color:var(--yellow)}
+  footer{text-align:center;padding:28px 26px;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;border-top:4px solid var(--ink);position:relative;z-index:2}
+  footer a:hover{color:var(--red)}
+  .reveal{opacity:0;transform:translateY(20px) rotate(-1deg);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:820px){.skills,.why,.work{grid-template-columns:1fr}nav .l{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="b">RD<b>.</b>DS</div><div class="l"><a href="#skills">Craft</a><a href="#why">Why</a><a href="#work">Work</a><a href="#contact">Hi</a></div></nav>
+<header class="hero"><div class="wrap" style="padding:0">
+  <span class="kick">Hermanus · Remote · Fueled by coffee</span>
+  <h1><span class="r">DUANE</span><br><span class="y">STEFF</span><span class="b">ENS</span></h1>
+  <p class="lede">Freelance website design &amp; development, loud on purpose. I translate ideas into digital design — bold or elegant, always user-friendly, SEO-strong, e-commerce-ready.</p>
+  <div class="loc">~ working remotely, worldwide ~</div>
+</div></header>
+<section id="skills"><div class="wrap">
+  <div class="seclabel"><span class="n">★</span><span class="t">The Craft</span><span class="ln"></span></div>
+  <div class="skills">
+    <div class="sk"><div class="ix">01</div><h3>Web Design &amp; Dev</h3><p>Websites that seamlessly combine aesthetics and functionality.</p></div>
+    <div class="sk"><div class="ix">02</div><h3>Responsive Design</h3><p>In a mobile-driven world, responsive design is paramount.</p></div>
+    <div class="sk"><div class="ix">03</div><h3>SEO &amp; Content</h3><p>Visibility and organic traffic via researched keywords &amp; optimization.</p></div>
+    <div class="sk"><div class="ix">04</div><h3>Copywriting</h3><p>Compelling content at the heart of effective communication.</p></div>
+    <div class="sk"><div class="ix">05</div><h3>Image Editing</h3><p>Optimized media that secures engagement, more valuable over time.</p></div>
+    <div class="sk"><div class="ix">06</div><h3>Video Integration</h3><p>Impactful video woven into the build — the stats prove it daily.</p></div>
+  </div>
+</div></section>
+<section id="why"><div class="wrap">
+  <div class="seclabel"><span class="n">★</span><span class="t">Why Me</span><span class="ln"></span></div>
+  <div class="why">
+    <div class="c"><div class="n">01</div><h3>Innovative</h3><p>Cutting-edge tools and mechanics bring your unique vision to life.</p></div>
+    <div class="c"><div class="n">02</div><h3>User-Friendly</h3><p>Bold or elegant — ideas become an interface that engages and converts.</p></div>
+    <div class="c"><div class="n">03</div><h3>SEO Expertise</h3><p>Optimized for search, ranked in Google, with keyword research.</p></div>
+    <div class="c"><div class="n">04</div><h3>E-commerce</h3><p>Sell online with every bell and whistle — payments as easy as cottage pie.</p></div>
+    <div class="c"><div class="n">05</div><h3>Versatile</h3><p>Proficient across most web builders; your project runs on any platform.</p></div>
+    <div class="c"><div class="n">06</div><h3>End-to-End</h3><p>Builds, fixes, modernizing, hosting, A.I. integration and on-brand copy.</p></div>
+  </div>
+</div></section>
+<section id="work"><div class="wrap">
+  <div class="seclabel"><span class="n">★</span><span class="t">Selected Work</span><span class="ln"></span></div>
+  <div class="work">
+    <a class="card" href="https://healthinsight.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Health</span></div><div class="body"><h4>Health Insight</h4><div class="u">healthinsight.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://curiositycove.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Education</span></div><div class="body"><h4>Curiosity Cove</h4><div class="u">curiositycove.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://bizlife.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Business</span></div><div class="body"><h4>BizLife</h4><div class="u">bizlife.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://naturewise.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Garden</span></div><div class="body"><h4>NatureWise Gardens</h4><div class="u">naturewise.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://hemingwaysbooks.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Retail</span></div><div class="body"><h4>Hemingways Bookshop</h4><div class="u">hemingwaysbooks.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://fosh.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Non-Profit</span></div><div class="body"><h4>FOSH</h4><div class="u">fosh.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://findmyonlinetribe.com" target="_blank" rel="noopener"><div class="ph"><span class="tag">Coaching</span></div><div class="body"><h4>Find My Online Tribe</h4><div class="u">findmyonlinetribe.com</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://capestudies.com" target="_blank" rel="noopener"><div class="ph"><span class="tag">Education</span></div><div class="body"><h4>Cape Studies</h4><div class="u">capestudies.com</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://shop.bouchardfinlayson.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">eCommerce</span></div><div class="body"><h4>Bouchard Finlayson</h4><div class="u">shop.bouchardfinlayson.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://conservationatwork.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Conservation</span></div><div class="body"><h4>Conservation at Work</h4><div class="u">conservationatwork.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://dthservicesgroup.co.za" target="_blank" rel="noopener"><div class="ph"><span class="tag">Services</span></div><div class="body"><h4>DTH Services Group</h4><div class="u">dthservicesgroup.co.za</div><div class="v">View →</div></div></a>
+    <a class="card" href="https://lili.africa" target="_blank" rel="noopener"><div class="ph"><span class="tag">Artisan</span></div><div class="body"><h4>Lili &amp; Co Ceramics</h4><div class="u">lili.africa</div><div class="v">View →</div></div></a>
+  </div>
+</div></section>
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div class="ey">let's work together</div>
+    <h2>Make it <span class="p">pop.</span></h2>
+    <a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+    <div class="soc"><a href="../index.html">All Editions</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+  </div>
+</div></section>
+<footer>© Rhetorical Designs — Duane Steffens · Hermanus · Remote · Craft, Not Commodity</footer>
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('section,header.hero').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+</script>
+</body>
+</html>
