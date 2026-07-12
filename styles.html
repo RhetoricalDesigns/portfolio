@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhetorical Designs — Brand Voices (10 Styles)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--paper:#f4f1ea;--ink:#0a0a0a;--accent:#ff3b00;--ivory:#f7f4ee;--gold:#9a7b4f;--noir:#070b14;--cyan:#3df0ff;--amber:#ffb347;--green:#16c47f;--green-d:#0f9d66}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:#fff;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}::selection{background:#fff;color:#000}
+.hero{padding:clamp(54px,9vw,110px) 28px clamp(34px,6vw,68px);text-align:center;position:relative;
+background:radial-gradient(60% 60% at 20% 0%,rgba(255,59,0,.18),transparent 60%),radial-gradient(60% 60% at 90% 10%,rgba(61,240,255,.14),transparent 60%),radial-gradient(50% 50% at 50% 100%,rgba(154,123,79,.16),transparent 60%)}
+.hero .eye{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#bbb;margin-bottom:22px}
+.hero h1{font-family:'Archivo Black',sans-serif;font-size:clamp(36px,7.5vw,92px);line-height:.92;text-transform:uppercase;letter-spacing:-.02em}
+.hero h1 .o{color:transparent;-webkit-text-stroke:2px #fff}.hero h1 .a{color:var(--accent)}.hero h1 .c{color:var(--cyan)}
+.hero p{margin:24px auto 0;max-width:640px;color:#cfcfcf;font-size:clamp(15px,2vw,19px);line-height:1.6}
+.hero .who{margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--gold)}
+.tabs{display:flex;justify-content:center;gap:12px;margin-top:30px;flex-wrap:wrap}
+.tab{font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);padding:10px 18px;border-radius:999px;transition:background .2s,color .2s,border-color .2s}
+.tab.active{background:#fff;color:#000;border-color:#fff}.tab:hover{border-color:#fff}
+.picker{padding:clamp(38px,6vw,80px) 28px;max-width:1240px;margin:0 auto}
+.picker .lead{display:flex;align-items:center;gap:16px;margin-bottom:38px;flex-wrap:wrap}
+.picker .lead .n{font-family:'Archivo Black',sans-serif;font-size:14px;color:var(--accent)}
+.picker .lead .t{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#aaa}
+.picker .lead .ln{flex:1;height:1px;background:rgba(255,255,255,.18);min-width:40px}
+.picker .sub{color:#aaa;font-size:14px;max-width:62ch;margin:-20px 0 36px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ed{border:1px solid rgba(255,255,255,.16);border-radius:16px;overflow:hidden;background:#111;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.ed:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.45);box-shadow:0 22px 50px rgba(0,0,0,.6)}
+.ed .swatch{height:200px;position:relative;overflow:hidden}
+.ed .swatch .frame{position:absolute;inset:14px;border-radius:8px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.12);overflow:hidden;display:flex;flex-direction:column}
+.ed .swatch .frame .bar{height:18px;display:flex;gap:5px;align-items:center;padding:0 10px;background:rgba(0,0,0,.3)}
+.ed .swatch .frame .bar i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4)}
+.ed .swatch .frame .body{flex:1;padding:14px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.ed .swatch .frame .body .ln1{height:10px;border-radius:3px;width:70%}
+.ed .swatch .frame .body .ln2{height:10px;border-radius:3px;width:90%}
+.ed .swatch .frame .body .ln3{height:10px;border-radius:3px;width:50%}
+.ed .swatch .frame .body .btn{height:18px;border-radius:5px;width:40%;margin-top:6px}
+.s1{background:var(--paper)}.s1 .frame{background:#f4f1ea}.s1 .frame .ln1{background:#0a0a0a}.s1 .frame .ln2{background:#0a0a0a;opacity:.5}.s1 .frame .ln3{background:var(--accent)}.s1 .frame .btn{background:#0a0a0a}
+.s2{background:linear-gradient(135deg,#f7f4ee,#efe9df)}.s2 .frame{background:#f7f4ee}.s2 .frame .ln1{background:var(--gold);width:55%}.s2 .frame .ln2{background:#2b2722;opacity:.55;width:85%}.s2 .frame .ln3{background:#2b2722;opacity:.3;width:45%}.s2 .frame .btn{background:transparent;border:1px solid var(--gold)}
+.s3{background:radial-gradient(70% 70% at 80% 10%,rgba(61,240,255,.18),transparent 60%),var(--noir)}.s3 .frame{background:#0c1322;box-shadow:inset 0 0 30px rgba(61,240,255,.15)}.s3 .frame .ln1{background:var(--cyan);box-shadow:0 0 10px rgba(61,240,255,.5)}.s3 .frame .ln2{background:rgba(219,231,245,.5)}.s3 .frame .ln3{background:var(--amber)}.s3 .frame .btn{background:linear-gradient(120deg,var(--cyan),#1ec8da);box-shadow:0 0 14px rgba(61,240,255,.4)}
+.s4{background:linear-gradient(135deg,#e9f9f1,#d7f3e6)}.s4 .frame{background:#fff;box-shadow:inset 0 0 30px rgba(22,196,127,.12)}.s4 .frame .ln1{background:var(--green-d);width:60%}.s4 .frame .ln2{background:#0c1018;opacity:.5;width:88%}.s4 .frame .ln3{background:var(--green);width:42%}.s4 .frame .btn{background:var(--green);box-shadow:0 0 14px rgba(22,196,127,.4)}
+.s5{background:#f3f1ec}.s5 .frame{background:#fff;border:2px solid #111}.s5 .frame .ln1{background:#111;width:75%}.s5 .frame .ln2{background:#111;opacity:.4;width:60%}.s5 .frame .ln3{background:var(--accent);width:35%}.s5 .frame .btn{background:#111}
+.s6{background:linear-gradient(135deg,#ece3d4,#e3d8c4)}.s6 .frame{background:#e3d8c4}.s6 .frame .ln1{background:#1f6f78;width:65%}.s6 .frame .ln2{background:#e07a5f;opacity:.7;width:80%}.s6 .frame .ln3{background:#123b42;opacity:.4;width:48%}.s6 .frame .btn{background:#1f6f78}
+.s7{background:#f4ead5}.s7 .frame{background:#fff;border:2px solid #1a1410}.s7 .frame .ln1{background:#ef6f2e;width:70%}.s7 .frame .ln2{background:#1ba39c;width:55%}.s7 .frame .ln3{background:#e8537f;width:40%}.s7 .frame .btn{background:#1a1410}
+.s8{background:#0b0b12}.s8 .frame{background:#15151f;box-shadow:inset 0 0 30px rgba(123,91,255,.2)}.s8 .frame .ln1{background:#ff4d8d;box-shadow:0 0 10px rgba(255,77,141,.5)}.s8 .frame .ln2{background:#7b5bff}.s8 .frame .ln3{background:#19e3c2}.s8 .frame .btn{background:linear-gradient(100deg,#ff4d8d,#19e3c2)}
+.s9{background:#04140a}.s9 .frame{background:#04140a;border:1px solid #1f9c52}.s9 .frame .ln1{background:#3bff88;width:72%}.s9 .frame .ln2{background:#1f9c52;width:58%}.s9 .frame .ln3{background:#ffd86b;width:42%}.s9 .frame .btn{background:#3bff88}
+.s10{background:#fbf3e4}.s10 .frame{background:#fff;border:3px solid #16161d}.s10 .frame .ln1{background:#ff4d3d;width:65%}.s10 .frame .ln2{background:#2b6fff;width:80%}.s10 .frame .ln3{background:#ffd23f;width:45%}.s10 .frame .btn{background:#16161d}
+.ed .info{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.ed .info .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#888}
+.ed .info h3{font-family:'Archivo Black',sans-serif;font-size:21px;text-transform:uppercase;letter-spacing:-.01em;margin:8px 0 8px}
+.ed .info p{font-size:13px;color:#bbb;line-height:1.5;flex:1}
+.ed .info .go{margin-top:16px;display:inline-flex;align-items:center;justify-content:space-between;font-size:13px;letter-spacing:.05em;border:1px solid rgba(255,255,255,.25);padding:12px 18px;border-radius:10px;transition:background .2s,color .2s,border-color .2s}
+.ed:hover .info .go{background:#fff;color:#000;border-color:#fff}
+.ed .info .go .arr{transition:transform .2s}.ed:hover .info .go .arr{transform:translateX(4px)}
+.foot{text-align:center;padding:38px 28px;color:#888;font-size:12px;letter-spacing:.16em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.12)}
+.foot a:hover{color:#fff}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="eye">Rhetorical Designs · Duane Steffens</div>
+<h1><span class="o">BRAND</span> <span class="a">VOICES</span> <span class="c">×10</span></h1>
+<p>Ten ways to say the same thing. One content set, ten visual identities — proof of range, and a menu to pick the voice that fits the room.</p>
+<div class="tabs">
+<a class="tab" href="index.html">Practice sites</a>
+<a class="tab active" href="styles.html">Brand voices (10 styles)</a>
+</div>
+</header>
+
+<section class="picker">
+<div class="lead"><span class="n">STYLE LAB</span><span class="t">Ten brand voices</span><span class="ln"></span></div>
+<p class="sub">These are the visual identities behind the practice sites. Useful when a client needs a specific mood — or you want to see the range.</p>
+<div class="grid">
+
+<a class="ed" href="style1-editorial/index.html"><div class="swatch s1"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 01 · Bold</div><h3>Editorial Brutalist</h3><p>High-contrast black &amp; cream, oversized type, hard grid lines. Loud, confident.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style2-folio/index.html"><div class="swatch s2"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 02 · Elegant</div><h3>Folio &amp; Craft</h3><p>Warm ivory, serif typography, fine rules. A quiet, considered gallery.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style3-tech-noir/index.html"><div class="swatch s3"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 03 · Tech</div><h3>Tech-Noir Coastal</h3><p>Deep navy with cyan &amp; amber glow, scanlines and neon tiles.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style4-agency/index.html"><div class="swatch s4"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 04 · Pitch</div><h3>Agency Partner</h3><p>Clean studio-deck pitch — versatile, innovative, AI-fluent, white-label.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style5-swiss/index.html"><div class="swatch s5"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 05 · Precise</div><h3>Swiss Precision</h3><p>Strict modular grid, grotesk type, numbered &amp; asymmetric. Razor-sharp.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style6-coastal/index.html"><div class="swatch s6"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 06 · Warm</div><h3>Hermanus Coastal</h3><p>Sand &amp; ocean palette, soft organic shapes. The nature/coffee soul.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style7-riso/index.html"><div class="swatch s7"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 07 · Retro</div><h3>Risograph Retro</h3><p>Grainy 70s/80s print, clashing orange/teal/pink, imperfect by design.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style8-kinetic/index.html"><div class="swatch s8"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 08 · Motion</div><h3>Kinetic Playground</h3><p>Cursor glow, scroll reveals, marquee. Literally demonstrates the tech.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style9-cli/index.html"><div class="swatch s9"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 09 · Code</div><h3>CLI Resume</h3><p>Monochrome green terminal. whoami, ls ./skills. For technical buyers.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+<a class="ed" href="style10-memphis/index.html"><div class="swatch s10"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="ln1"></div><div class="ln2"></div><div class="ln3"></div><div class="btn"></div></div></div></div><div class="info"><div class="tag">Voice 10 · Loud</div><h3>Memphis Color-Block</h3><p>Bright clashing blocks, hard shadows, 80s energy. Bold, fun, unforgettable.</p><span class="go">Open <span class="arr">→</span></span></div></a>
+
+</div>
+</section>
+
+<footer class="foot">© Rhetorical Designs — Duane Steffens · Craft, Not Commodity · <a href="index.html">← Back to practice sites</a></footer>
+</body>
+</html>

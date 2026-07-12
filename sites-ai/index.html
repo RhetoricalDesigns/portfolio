@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhetorical · AI &amp; Virtual Employee — Automation &amp; AI Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b14;--panel:#0e1626;--line:rgba(120,200,255,.16);--ink:#dbe7f5;--soft:#7e90a8;--cy:#3df0ff;--pu:#9b7bff;--gr:#19e3a8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}::selection{background:var(--cy);color:#04121a}
+.mono{font-family:'Space Grotesk',sans-serif;letter-spacing:.04em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(7,11,20,.82);backdrop-filter:blur(10px)}
+nav .b{font-family:'Sora',sans-serif;font-weight:800;font-size:18px}nav .b b{color:var(--cy)}
+nav .l{display:flex;gap:22px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
+nav .l a:hover{color:var(--cy)}
+header{padding:clamp(60px,10vw,120px) 26px clamp(44px,7vw,84px);position:relative}
+header::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 50% at 80% 0%,rgba(61,240,255,.16),transparent 60%),radial-gradient(50% 50% at 15% 100%,rgba(155,123,255,.14),transparent 60%)}
+.kick{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cy);margin-bottom:22px}
+h1{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(42px,9vw,100px);line-height:.98;letter-spacing:-.02em}
+h1 .g{background:linear-gradient(110deg,var(--cy),var(--pu));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{max-width:640px;margin-top:24px;font-size:clamp(16px,2vw,20px);color:var(--soft)}
+.lede b{color:var(--ink);font-weight:600}
+.cta{display:inline-flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn{font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s}
+.btn.p{background:linear-gradient(110deg,var(--cy),#1ec8da);color:#04121a;font-weight:700;box-shadow:0 8px 22px rgba(61,240,255,.3)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(61,240,255,.45)}
+.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--cy);color:var(--cy)}
+section{padding:clamp(50px,8vw,96px) 0;border-top:1px solid var(--line);position:relative}
+.lab{display:flex;align-items:center;gap:14px;margin-bottom:38px}.lab .n{font-family:'Sora',sans-serif;font-weight:700;color:var(--cy);font-size:14px}.lab .t{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line);border-radius:14px;padding:26px 22px;background:var(--panel);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--cy);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.card .ix{font-size:12px;color:var(--gr)}
+.card h3{font-family:'Sora',sans-serif;font-weight:700;font-size:20px;margin:8px 0 8px}
+.card p{font-size:14px;color:var(--soft);line-height:1.55}
+.ve{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.ve>div{padding:32px 30px}.ve .a{border-right:1px solid var(--line)}
+.ve h3{font-family:'Sora',sans-serif;font-weight:700;font-size:24px;margin-bottom:14px}
+.ve p{font-size:15px;color:var(--soft);line-height:1.6;margin-bottom:12px}
+.ve ul{list-style:none}.ve li{padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--ink)}.ve li:last-child{border:none}.ve li b{color:var(--cy)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.steps .s{padding:26px 20px;border-right:1px solid var(--line)}.steps .s:last-child{border-right:none}
+.steps .s .no{font-family:'Sora',sans-serif;font-weight:800;font-size:22px;color:var(--cy)}
+.steps .s h4{font-weight:600;font-size:15px;margin:10px 0 6px}.steps .s p{font-size:13px;color:var(--soft);line-height:1.5}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line)}
+.split h3{font-family:'Sora',sans-serif;font-weight:700;font-size:21px;margin-bottom:12px}.split ul{list-style:none}.split li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
+.contact{border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,var(--panel),#070b14);padding:clamp(40px,7vw,76px);text-align:center}
+.contact .ey{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cy)}
+.contact h2{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(30px,6vw,64px);line-height:1;margin-top:14px;letter-spacing:-.01em}
+.contact h2 .g{background:linear-gradient(110deg,var(--cy),var(--pu));-webkit-background-clip:text;background-clip:text;color:transparent}
+.contact p{color:var(--soft);max-width:54ch;margin:14px auto 0;font-size:15px}
+.contact .mail{display:inline-block;margin-top:24px;font-size:clamp(15px,2.4vw,21px);border:1px solid var(--cy);padding:13px 22px;border-radius:12px;transition:background .2s,color .2s}
+.contact .mail:hover{background:var(--cy);color:#04121a}
+.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.contact .soc a:hover{color:var(--cy)}
+footer{text-align:center;padding:28px 26px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line)}
+footer a:hover{color:var(--cy)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.grid3,.ve,.steps,.split{grid-template-columns:1fr}.ve .a,.steps .s,.split .a{border-right:none;border-bottom:1px solid var(--line)}nav .l{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="b">Rhetorical <b>·</b> AI</div><div class="l"><a href="#offer">Offer</a><a href="#ve">Virtual Employee</a><a href="#process">Process</a><a href="#why">Why</a><a href="#contact">Contact</a></div></nav>
+<header><div class="wrap" style="padding:0">
+<div class="kick">Practice 04 · AI Solutions &amp; Virtual Employee</div>
+<h1>AI that <span class="g">does the work.</span></h1>
+<p class="lede">Automations, AI assistants and a virtual employee that runs your repetitive work — so your team does the high-value stuff. <b>AI-native, not AI-theatre.</b></p>
+<div class="cta"><a class="btn p" href="#contact">Automate my work →</a><a class="btn g" href="#ve">Meet the VE</a></div>
+</div></header>
+<section id="offer"><div class="wrap">
+<div class="lab"><span class="n">01</span><span class="t">What I build</span><span class="ln"></span></div>
+<div class="grid3">
+<div class="card"><div class="ix">AI_01</div><h3>Workflow Automation</h3><p>Glue your tools together; kill the copy-paste and the manual handoffs.</p></div>
+<div class="card"><div class="ix">AI_02</div><h3>AI Assistants</h3><p>Chat-style helpers for support, intake and FAQs — on your data, on-brand.</p></div>
+<div class="card"><div class="ix">AI_03</div><h3>Content at Scale</h3><p>On-brand copy, summaries and posts generated and scheduled for you.</p></div>
+<div class="card"><div class="ix">AI_04</div><h3>Data &amp; Reports</h3><p>Pull, clean and surface the numbers you actually need to decide.</p></div>
+<div class="card"><div class="ix">AI_05</div><h3>Integrations</h3><p>Wire A.I. into your site, CRM and stack — no rip-and-replace.</p></div>
+<div class="card"><div class="ix">AI_06</div><h3>The Virtual Employee</h3><p>A always-on role that runs a defined slice of your ops, daily.</p></div>
+</div>
+</div></section>
+<section id="ve"><div class="wrap">
+<div class="lab"><span class="n">02</span><span class="t">The Virtual Employee</span><span class="ln"></span></div>
+<div class="ve">
+<div class="a"><h3>What it is</h3><p>A virtual employee is a defined, always-on role I design and run for you — trained on your brand, your tools and your rules. Not a generic bot; your process, automated.</p><p>It handles the repeatable, time-eating work so your people don't have to.</p></div>
+<div><h3>What it can run</h3><ul><li><b>Inbox &amp; inquiry</b> triage and replies</li><li><b>Lead</b> capture → CRM → follow-up</li><li><b>Content</b> drafting &amp; scheduling</li><li><b>Reporting</b> assembly &amp; dispatch</li><li><b>QA</b> on site copy, links, SEO</li><li><b>Research</b> &amp; briefs on demand</li></ul></div>
+</div>
+</div></section>
+<section id="process"><div class="wrap">
+<div class="lab"><span class="n">03</span><span class="t">How it works</span><span class="ln"></span></div>
+<div class="steps">
+<div class="s"><div class="no">01</div><h4>Map</h4><p>We find the repetitive work worth automating.</p></div>
+<div class="s"><div class="no">02</div><h4>Build</h4><p>I design the automation / assistant to your rules.</p></div>
+<div class="s"><div class="no">03</div><h4>Train</h4><p>On your brand &amp; data; we tune until it's right.</p></div>
+<div class="s"><div class="no">04</div><h4>Run</h4><p>It operates; I monitor, improve and support.</p></div>
+</div>
+</div></section>
+<section id="why"><div class="wrap">
+<div class="lab"><span class="n">04</span><span class="t">Hire vs automate</span><span class="ln"></span></div>
+<div class="split">
+<div class="a"><h3>Hire a person</h3><ul><li>Salary, leave, management</li><li>Hours-limited, context-switching</li><li>Onboarding &amp; ramp time</li><li>One role, one skillset</li></ul></div>
+<div><h3>Virtual Employee</h3><ul><li><b>Fractional</b> cost, no overhead</li><li><b>24/7</b>, consistent output</li><li><b>Live in days</b>, not months</li><li><b>Scales</b> with your volume</li></ul></div>
+</div>
+</div></section>
+<section id="contact"><div class="wrap">
+<div class="contact">
+<div class="ey">// start automating</div>
+<h2>Put a <span class="g">virtual employee</span> on the payroll.</h2>
+<p>Tell me the work you'd hand off. I'll show you what comes back done.</p>
+<a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+<div class="soc"><a href="../index.html">← All practices</a><a href="../styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+</div>
+</div></section>
+<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Remote</footer>
+<script>const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('section,header').forEach(el=>{el.classList.add('reveal');io.observe(el)});</script>
+</body>
+</html>

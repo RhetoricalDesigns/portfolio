@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhetorical · Bespoke Web — Custom Website Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#19150f;--paper:#f6f1e7;--accent:#b4541f;--line:#d9cfbb;--soft:#6a6052}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(246,241,231,.86);backdrop-filter:blur(8px)}
+nav .b{font-family:'Fraunces',serif;font-weight:600;font-size:19px}.nav .b b{color:var(--accent)}
+nav .l{display:flex;gap:22px;font-size:13px;letter-spacing:.02em;text-transform:uppercase;color:var(--soft)}
+nav .l a:hover{color:var(--accent)}
+header{padding:clamp(60px,10vw,120px) 26px clamp(44px,7vw,84px)}
+.kick{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;display:inline-flex;gap:10px;align-items:center}
+.kick::before{content:'';width:32px;height:2px;background:var(--accent)}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(44px,9vw,104px);line-height:.98;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{max-width:620px;margin-top:26px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,2.4vw,26px);color:var(--soft);line-height:1.45}
+.cta{display:inline-flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn{font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s,background .2s}
+.btn.p{background:var(--accent);color:#fff;font-weight:600}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(180,84,31,.32)}
+.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--accent);color:var(--accent)}
+section{padding:clamp(50px,8vw,96px) 0;border-top:1px solid var(--line)}
+.lab{display:flex;align-items:center;gap:14px;margin-bottom:38px}.lab .n{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--accent)}.lab .t{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line);border-radius:14px;padding:26px 22px;background:#fff;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card .ix{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--accent)}
+.card h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin:8px 0 8px}
+.card p{font-size:14px;color:var(--soft);line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.steps .s{padding:28px 22px;border-right:1px solid var(--line)}.steps .s:last-child{border-right:none}
+.steps .s .no{font-family:'Fraunces',serif;font-weight:600;font-size:30px;color:var(--accent)}
+.steps .s h4{font-weight:600;font-size:16px;margin:10px 0 6px}.steps .s p{font-size:13px;color:var(--soft);line-height:1.5}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.w{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:transform .3s,box-shadow .3s}
+.w:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(25,21,15,.12)}
+.w .ph{height:130px;background:linear-gradient(135deg,#efe6d4,#e0d3bb)}
+.w .ph .t{position:absolute;margin:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:#fff;color:var(--ink);padding:4px 9px;border-radius:20px}
+.w .body{padding:18px 20px 22px}.w h4{font-family:'Fraunces',serif;font-weight:600;font-size:20px}.w .u{font-size:12px;color:var(--accent);margin-top:3px}
+.w .v{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--accent);padding-bottom:3px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line);background:#fff}
+.split h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:12px}
+.split ul{list-style:none}.split li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
+.contact{border:1px solid var(--line);border-radius:18px;background:var(--ink);color:var(--paper);padding:clamp(40px,7vw,76px);text-align:center}
+.contact .ey{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,6vw,64px);line-height:1;margin-top:14px}
+.contact h2 em{font-style:italic;color:var(--accent)}
+.contact .mail{display:inline-block;margin-top:24px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,3vw,28px);border-bottom:2px solid var(--accent);padding-bottom:5px}
+.contact .mail:hover{color:var(--accent)}
+.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a99e8c}
+.contact .soc a:hover{color:var(--accent)}
+footer{text-align:center;padding:28px 26px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line)}
+footer a:hover{color:var(--accent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.grid3,.work,.steps,.split{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}nav .l{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="b">Rhetorical <b>·</b> Web</div><div class="l"><a href="#offer">Offer</a><a href="#process">Process</a><a href="#work">Work</a><a href="#why">Why</a><a href="#contact">Contact</a></div></nav>
+<header><div class="wrap" style="padding:0">
+<div class="kick">Practice 01 · Bespoke Website Design</div>
+<h1>Bespoke sites,<br><em>engineered</em> — not templated.</h1>
+<p class="lede">For brands that refuse to look like everyone else. I design and build custom websites that combine real craft with conversion — no page-builders, no copy-paste.</p>
+<div class="cta"><a class="btn p" href="#contact">Start your site →</a><a class="btn g" href="#work">See the work</a></div>
+</div></header>
+<section id="offer"><div class="wrap">
+<div class="lab"><span class="n">i</span><span class="t">What you get</span><span class="ln"></span></div>
+<div class="grid3">
+<div class="card"><div class="ix">a.</div><h3>Custom Design</h3><p>A site built around your brand and goals — bold or elegant, never generic.</p></div>
+<div class="card"><div class="ix">b.</div><h3>Responsive Build</h3><p>Mobile-first and fast. Your visitors are on phones; the build respects that.</p></div>
+<div class="card"><div class="ix">c.</div><h3>CMS &amp; Editing</h3><p>You can update content without calling a developer. Simple, documented, yours.</p></div>
+<div class="card"><div class="ix">d.</div><h3>SEO, Built In</h3><p>Optimized structure and keywords from day one — not bolted on later.</p></div>
+<div class="card"><div class="ix">e.</div><h3>Content &amp; Copy</h3><p>On-brand words, images and video that carry the message, not just fill space.</p></div>
+<div class="card"><div class="ix">f.</div><h3>Hosting &amp; Care</h3><p>Domain, hosting, launch and ongoing updates — handled end to end.</p></div>
+</div>
+</div></section>
+<section id="process"><div class="wrap">
+<div class="lab"><span class="n">ii</span><span class="t">How it works</span><span class="ln"></span></div>
+<div class="steps">
+<div class="s"><div class="no">1</div><h4>Discover</h4><p>We pin the goal, audience and brand in a short kickoff.</p></div>
+<div class="s"><div class="no">2</div><h4>Design</h4><p>Custom mockups you approve before a line of code is written.</p></div>
+<div class="s"><div class="no">3</div><h4>Build</h4><p>Hand-coded, responsive, SEO-ready. No templates.</p></div>
+<div class="s"><div class="no">4</div><h4>Launch</h4><p>Test, ship, train you to edit, and stay on call.</p></div>
+</div>
+</div></section>
+<section id="work"><div class="wrap">
+<div class="lab"><span class="n">iii</span><span class="t">Selected builds</span><span class="ln"></span></div>
+<div class="work">
+<a class="w" href="https://hemingwaysbooks.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Retail</span></div><div class="body"><h4>Hemingways Bookshop</h4><div class="u">hemingwaysbooks.co.za</div><div class="v">View →</div></div></a>
+<a class="w" href="https://lili.africa" target="_blank" rel="noopener"><div class="ph"><span class="t">Artisan</span></div><div class="body"><h4>Lili &amp; Co Ceramics</h4><div class="u">lili.africa</div><div class="v">View →</div></div></a>
+<a class="w" href="https://naturewise.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Garden</span></div><div class="body"><h4>NatureWise Gardens</h4><div class="u">naturewise.co.za</div><div class="v">View →</div></div></a>
+<a class="w" href="https://curiositycove.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Education</span></div><div class="body"><h4>Curiosity Cove</h4><div class="u">curiositycove.co.za</div><div class="v">View →</div></div></a>
+<a class="w" href="https://fosh.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Non-Profit</span></div><div class="body"><h4>FOSH</h4><div class="u">fosh.co.za</div><div class="v">View →</div></div></a>
+<a class="w" href="https://conservationatwork.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Conservation</span></div><div class="body"><h4>Conservation at Work</h4><div class="u">conservationatwork.co.za</div><div class="v">View →</div></div></a>
+</div>
+</div></section>
+<section id="why"><div class="wrap">
+<div class="lab"><span class="n">iv</span><span class="t">Bespoke vs template</span><span class="ln"></span></div>
+<div class="split">
+<div class="a"><h3>Template / Page-builder</h3><ul><li>Everyone looks the same</li><li>Bloated, slow, hard to edit</li><li>You fight the tool, not the brief</li><li>Owned by the platform</li></ul></div>
+<div><h3>Bespoke, by me</h3><ul><li><b>Distinct</b> to your brand</li><li><b>Fast</b> and lean</li><li>Built around <b>your</b> goal</li><li><b>Yours</b> — code, content, keys</li></ul></div>
+</div>
+</div></section>
+<section id="contact"><div class="wrap">
+<div class="contact">
+<div class="ey">let's build</div>
+<h2>Your site, <em>properly</em> done.</h2>
+<a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+<div class="soc"><a href="../index.html">← All practices</a><a href="../styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+</div>
+</div></section>
+<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Remote</footer>
+<script>const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('section,header').forEach(el=>{el.classList.add('reveal');io.observe(el)});</script>
+</body>
+</html>

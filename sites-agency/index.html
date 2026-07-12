@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhetorical · Studio Partner — Ghost Developer for Agencies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0c1018;--paper:#ffffff;--soft:#5b6675;--line:#e6e9ef;--grn:#16c47f;--grn-d:#0f9d66;--grn-soft:#e9f9f1}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}::selection{background:var(--grn);color:#04231a}
+.mono{font-family:'Space Mono',monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.86);backdrop-filter:blur(10px)}
+nav .b{font-weight:800;font-size:18px}nav .b b{color:var(--grn-d)}
+nav .l{display:flex;gap:22px;font-family:'Space Mono',monospace;font-size:12px;color:var(--soft)}
+nav .l a:hover{color:var(--grn-d)}
+header{padding:clamp(60px,10vw,120px) 26px clamp(44px,7vw,84px)}
+.kick{display:inline-flex;gap:9px;align-items:center;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--grn-d);border:1px solid var(--grn);background:var(--grn-soft);padding:7px 13px;border-radius:999px;margin-bottom:22px}
+.kick .dot{width:8px;height:8px;border-radius:50%;background:var(--grn);box-shadow:0 0 0 4px var(--grn-soft)}
+h1{font-weight:800;font-size:clamp(42px,9vw,100px);line-height:1;letter-spacing:-.03em}
+h1 .hl{color:var(--grn-d)}
+.lede{max-width:640px;margin-top:24px;font-size:clamp(16px,2vw,20px);color:var(--soft)}
+.lede b{color:var(--ink);font-weight:600}
+.cta{display:inline-flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.03em;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s,background .2s}
+.btn.p{background:var(--grn);color:#04231a;font-weight:700;box-shadow:0 8px 22px rgba(22,196,127,.3)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(22,196,127,.45)}
+.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--grn);color:var(--grn-d)}
+section{padding:clamp(50px,8vw,96px) 0;border-top:1px solid var(--line)}
+.lab{display:flex;align-items:center;gap:14px;margin-bottom:38px}.lab .n{font-family:'Space Mono',monospace;color:var(--grn-d);font-size:13px}.lab .t{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
+.traits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.trait{border:1px solid var(--line);border-radius:14px;padding:28px 24px;background:#fff;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.trait::before{content:'';position:absolute;left:0;top:0;width:100%;height:4px;background:var(--grn);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.trait:hover{transform:translateY(-5px);border-color:var(--grn);box-shadow:0 16px 38px rgba(12,16,24,.1)}.trait:hover::before{transform:scaleX(1)}
+.trait .no{font-family:'Space Mono',monospace;font-size:12px;color:var(--grn-d);letter-spacing:.1em}
+.trait h3{font-weight:800;font-size:20px;letter-spacing:-.01em;margin:12px 0 10px}
+.trait p{font-size:14px;color:var(--soft);line-height:1.55}
+.trait .ev{margin-top:14px;font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);background:var(--grn-soft);border:1px solid var(--grn);border-radius:8px;padding:8px 11px;line-height:1.4}
+.model{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.model .m{padding:30px 26px;border-right:1px solid var(--line)}.model .m:last-child{border-right:none}
+.model .m .p{font-family:'Space Mono',monospace;font-size:12px;color:var(--grn-d);text-transform:uppercase;letter-spacing:.08em}
+.model .m h3{font-weight:800;font-size:22px;margin:8px 0 10px}
+.model .m p{font-size:14px;color:var(--soft);line-height:1.55}
+.model .m ul{list-style:none;margin-top:14px}.model .m li{padding:6px 0;font-size:13px;color:var(--ink);border-top:1px dashed var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line);background:var(--grn-soft)}
+.split h3{font-weight:800;font-size:21px;margin-bottom:12px}.split ul{list-style:none}.split li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
+.contact{border:1px solid var(--grn);border-radius:18px;background:linear-gradient(135deg,var(--grn-soft),#fff);padding:clamp(40px,7vw,76px);text-align:center}
+.contact .ey{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--grn-d)}
+.contact h2{font-weight:800;font-size:clamp(30px,6vw,64px);line-height:1;margin-top:14px;letter-spacing:-.02em}
+.contact h2 .hl{color:var(--grn-d)}
+.contact p{color:var(--soft);max-width:54ch;margin:14px auto 0;font-size:15px}
+.contact .mail{display:inline-block;margin-top:24px;font-family:'Space Mono',monospace;font-size:clamp(15px,2.4vw,21px);border:1px solid var(--grn);background:#fff;padding:13px 22px;border-radius:12px;transition:background .2s,color .2s}
+.contact .mail:hover{background:var(--grn);color:#04231a}
+.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-family:'Space Mono',monospace;font-size:12px;color:var(--soft)}
+.contact .soc a:hover{color:var(--grn-d)}
+footer{text-align:center;padding:28px 26px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line)}
+footer a:hover{color:var(--grn-d)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.traits,.model,.split{grid-template-columns:1fr}.model .m{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}nav .l{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="b">Rhetorical <b>·</b> Partner</div><div class="l"><a href="#traits">Traits</a><a href="#model">Engagement</a><a href="#why">Why</a><a href="#contact">Contact</a></div></nav>
+<header><div class="wrap" style="padding:0">
+<div class="kick"><span class="dot"></span> Available for white-label partnership</div>
+<h1>Your ghost dev.<br><span class="hl">On call.</span></h1>
+<p class="lede">I slot into agency workflows as your <b>versatile, fast-moving build partner</b> — white-label, remote, no overhead. Innovative, integrative, AI-fluent, and passionate about the craft.</p>
+<div class="cta"><a class="btn p" href="#contact">Book a call →</a><a class="btn g" href="#model">See engagement models</a></div>
+</div></header>
+<section id="traits"><div class="wrap">
+<div class="lab"><span class="n">//</span><span class="t">Why agencies keep me</span><span class="ln"></span></div>
+<div class="traits">
+<div class="trait"><div class="no">TRAIT 01</div><h3>Versatile</h3><p>Design, dev, SEO, content, image, video, e-commerce — one pair of hands covers the whole build, across most platforms.</p><div class="ev">12+ sites: health, retail, education, wine, conservation, artisan.</div></div>
+<div class="trait"><div class="no">TRAIT 02</div><h3>Innovative</h3><p>Cutting-edge tools and mechanics bring a unique vision to life — without reinventing your process.</p><div class="ev">Bold &amp; elegant per brief; tailored to each client.</div></div>
+<div class="trait"><div class="no">TRAIT 03</div><h3>Integration</h3><p>E-commerce, A.I. and on-brand systems that drop into your stack cleanly.</p><div class="ev">SEO in front &amp; back; payments "as easy as cottage pie".</div></div>
+<div class="trait"><div class="no">TRAIT 04</div><h3>Fast Learner</h3><p>New tools, platforms and brand guidelines — picked up fast, no hand-holding.</p><div class="ev">Proficient across most builders; fueled by coffee &amp; new tech.</div></div>
+<div class="trait"><div class="no">TRAIT 05</div><h3>Passionate</h3><p>Not a commodity operator. I care about the handshake between systems.</p><div class="ev">"Craft, Not Commodity" — quality is the point.</div></div>
+<div class="trait"><div class="no">TRAIT 06</div><h3>AI Experience</h3><p>A.I. woven into builds and workflows — smarter sites, faster production.</p><div class="ev">A.I. integration &amp; on-brand copywriting as core services.</div></div>
+</div>
+</div></section>
+<section id="model"><div class="wrap">
+<div class="lab"><span class="n">//</span><span class="t">Engagement models</span><span class="ln"></span></div>
+<div class="model">
+<div class="m"><div class="p">Per project</div><h3>White-label build</h3><p>Hand me the brief; I deliver under your brand. Your client, your relationship.</p><ul><li>Fixed scope &amp; quote</li><li>Branded deliverables</li><li>Source handed over</li></ul></div>
+<div class="m"><div class="p">Retainer</div><h3>Monthly capacity</h3><p>A reserved slice of build time each month for your pipeline.</p><ul><li>Priority queue</li><li>Predictable cost</li><li>Roll-over friendly</li></ul></div>
+<div class="m"><div class="p">Overflow</div><h3>Surge support</h3><p>When a deadline looms or a senior dev is out — I absorb the load.</p><ul><li>Fast onboarding</li><li>No long commitment</li><li>Async-friendly</li></ul></div>
+</div>
+</div></section>
+<section id="why"><div class="wrap">
+<div class="lab"><span class="n">//</span><span class="t">Hire me vs hire</span><span class="ln"></span></div>
+<div class="split">
+<div class="a"><h3>Hire full-time</h3><ul><li>Salary, benefits, desk</li><li>Utilisation gaps between projects</li><li>Months to ramp &amp; risk</li><li>One skillset, one person</li></ul></div>
+<div><h3>Partner with me</h3><ul><li><b>Pay for output</b> only</li><li><b>Scale</b> up/down with demand</li><li><b>Live in days</b>, not quarters</li><li><b>Full-stack</b> coverage, white-label</li></ul></div>
+</div>
+</div></section>
+<section id="contact"><div class="wrap">
+<div class="contact">
+<div class="ey">// let's partner</div>
+<h2>Plug me into <span class="hl">your</span> next build.</h2>
+<p>White-label, remote, and ready. Send the brief — I'll send back a build you're proud to put your name on.</p>
+<a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+<div class="soc"><a href="../index.html">← All practices</a><a href="../styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+</div>
+</div></section>
+<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Remote</footer>
+<script>const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('section,header').forEach(el=>{el.classList.add('reveal');io.observe(el)});</script>
+</body>
+</html>
