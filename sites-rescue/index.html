@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhetorical · Maintenance &amp; Rescue — Fix the Site That's Stuck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0b09;--panel:#171310;--line:rgba(210,170,110,.18);--ink:#f3ead9;--soft:#a99a82;--amber:#e8a33d;--amber2:#c47f1e;--red:#e0533d}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}::selection{background:var(--amber);color:#1a130a}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(13,11,9,.84);backdrop-filter:blur(10px)}
+nav .b{font-weight:700;font-size:18px}nav .b b{color:var(--amber)}
+nav .l{display:flex;gap:22px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--soft)}
+nav .l a:hover{color:var(--amber)}
+header{padding:clamp(58px,10vw,116px) 26px clamp(42px,7vw,82px);position:relative}
+header::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 55% at 85% 0%,rgba(232,163,61,.16),transparent 60%),radial-gradient(45% 45% at 5% 100%,rgba(224,83,61,.12),transparent 60%)}
+.kick{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:22px;display:inline-flex;gap:10px;align-items:center}
+.kick .dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:p 1.8s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-weight:700;font-size:clamp(42px,9vw,98px);line-height:.98;letter-spacing:-.02em}
+h1 .hl{color:var(--amber)}
+.lede{max-width:640px;margin-top:24px;font-size:clamp(16px,2vw,20px);color:var(--soft)}
+.lede b{color:var(--ink);font-weight:600}
+.cta{display:inline-flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.03em;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s,background .2s}
+.btn.p{background:var(--amber);color:#1a130a;font-weight:700;box-shadow:0 8px 22px rgba(232,163,61,.3)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(232,163,61,.45)}
+.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--amber);color:var(--amber)}
+section{padding:clamp(50px,8vw,96px) 0;border-top:1px solid var(--line);position:relative}
+.lab{display:flex;align-items:center;gap:14px;margin-bottom:38px}.lab .n{font-family:'JetBrains Mono',monospace;color:var(--amber);font-size:13px}.lab .t{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line);border-radius:14px;padding:26px 22px;background:var(--panel);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--amber);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.card .ix{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red)}
+.card h3{font-weight:600;font-size:20px;margin:8px 0 8px}
+.card p{font-size:14px;color:var(--soft);line-height:1.55}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line);background:rgba(232,163,61,.06)}
+.split h3{font-weight:600;font-size:21px;margin-bottom:12px}.split ul{list-style:none}.split li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.steps .s{padding:26px 20px;border-right:1px solid var(--line)}.steps .s:last-child{border-right:none}
+.steps .s .no{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:22px;color:var(--amber)}
+.steps .s h4{font-weight:600;font-size:15px;margin:10px 0 6px}.steps .s p{font-size:13px;color:var(--soft);line-height:1.5}
+.plan{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tier{border:1px solid var(--line);border-radius:14px;padding:28px 24px;background:var(--panel);transition:transform .25s,border-color .25s}
+.tier:hover{transform:translateY(-4px);border-color:var(--amber)}
+.tier .p{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--amber)}
+.tier h3{font-weight:700;font-size:23px;margin:8px 0 4px}
+.tier .pr{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--soft);margin-bottom:14px}
+.tier ul{list-style:none}.tier li{padding:7px 0;font-size:13.5px;color:var(--ink);border-top:1px dashed var(--line)}
+.tier.feat{border-color:var(--amber);background:rgba(232,163,61,.06)}
+.contact{border:1px solid var(--amber);border-radius:18px;background:linear-gradient(135deg,var(--panel),#0d0b09);padding:clamp(40px,7vw,76px);text-align:center}
+.contact .ey{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.contact h2{font-weight:700;font-size:clamp(30px,6vw,62px);line-height:1;margin-top:14px;letter-spacing:-.01em}
+.contact h2 .hl{color:var(--amber)}
+.contact p{color:var(--soft);max-width:54ch;margin:14px auto 0;font-size:15px}
+.contact .mail{display:inline-block;margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:clamp(15px,2.4vw,21px);border:1px solid var(--amber);padding:13px 22px;border-radius:12px;transition:background .2s,color .2s}
+.contact .mail:hover{background:var(--amber);color:#1a130a}
+.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--soft)}
+.contact .soc a:hover{color:var(--amber)}
+footer{text-align:center;padding:28px 26px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line)}
+footer a:hover{color:var(--amber)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.grid3,.steps,.split,.plan{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}nav .l{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="b">Rhetorical <b>·</b> Rescue</div><div class="l"><a href="#offer">Offer</a><a href="#plans">Plans</a><a href="#process">Process</a><a href="#why">Why</a><a href="#contact">Contact</a></div></nav>
+<header><div class="wrap" style="padding:0">
+<div class="kick"><span class="dot"></span> Practice 06 · Maintenance &amp; Rescue</div>
+<h1>The site that's<br><span class="hl">stuck?</span> Fixed.</h1>
+<p class="lede">Broken, slow, hacked, or abandoned by a "developer" who vanished. I step in where others left projects stuck — forensically, fast, and without the fluff. <b>Maintenance that prevents the next fire, too.</b></p>
+<div class="cta"><a class="btn p" href="#contact">Rescue my site →</a><a class="btn g" href="#offer">See the offer</a></div>
+</div></header>
+<section id="offer"><div class="wrap">
+<div class="lab"><span class="n">//</span><span class="t">What I do</span><span class="ln"></span></div>
+<div class="grid3">
+<div class="card"><div class="ix">FIX_01</div><h3>Emergency Rescue</h3><p>Site down, hacked or broken — stabilise and restore, fast.</p></div>
+<div class="card"><div class="ix">FIX_02</div><h3>Bug Fixes</h3><p>The small (and not-so-small) things previous "experts" left behind.</p></div>
+<div class="card"><div class="ix">FIX_03</div><h3>Speed &amp; SEO</h3><p>Slow pages costing you rankings and sales? Diagnosed and tuned.</p></div>
+<div class="card"><div class="ix">CARE_01</div><h3>Ongoing Maintenance</h3><p>Updates, backups and monitoring so it stays healthy, not just fixed once.</p></div>
+<div class="card"><div class="ix">CARE_02</div><h3>Updates &amp; Modernising</h3><p>Old builder, stale stack? Brought current without breaking what works.</p></div>
+<div class="card"><div class="ix">CARE_03</div><h3>Forensic Audit</h3><p>I trace what's wrong and why — no guessing, no hand-waving.</p></div>
+</div>
+</div></section>
+<section id="plans"><div class="wrap">
+<div class="lab"><span class="n">//</span><span class="t">Care plans</span><span class="ln"></span></div>
+<div class="plan">
+<div class="tier"><div class="p">One-off</div><h3>Rescue</h3><div class="pr">Per incident · quoted</div><ul><li>Diagnose the problem</li><li>Fix &amp; restore</li><li>Handover notes</li><li>No retainer needed</li></ul></div>
+<div class="tier feat"><div class="p">Monthly</div><h3>Care</h3><div class="pr">Retainer · from</div><ul><li>Updates &amp; backups</li><li>Monitoring &amp; uptime</li><li>X hrs/month fixes</li><li>Priority response</li></ul></div>
+<div class="tier"><div class="p">Partner</div><h3>Growth</h3><div class="pr">Retainer · higher</div><ul><li>Everything in Care</li><li>Continuous improvement</li><li>Content &amp; SEO upkeep</li><li>Quarterly strategy</li></ul></div>
+</div>
+</div></section>
+<section id="process"><div class="wrap">
+<div class="lab"><span class="n">//</span><span class="t">How rescue works</span><span class="ln"></span></div>
+<div class="steps">
+<div class="s"><div class="no">01</div><h4>Stabilise</h4><p>Stop the bleeding — get it safe and reachable.</p></div>
+<div class="s"><div class="no">02</div><h4>Diagnose</h4><p>Forensic trace of what broke and why.</p></div>
+<div class="s"><div class="no">03</div><h4>Fix</h4><p>Repair cleanly; modernise where it pays.</p></div>
+<div class="s"><div class="no">04</div><h4>Protect</h4><p>Monitoring &amp; a plan so it stays fixed.</p></div>
+</div>
+</div></section>
+<section id="why"><div class="wrap">
+<div class="lab"><span class="n">//</span><span class="t">Why me</span><span class="ln"></span></div>
+<div class="split">
+<div class="a"><h3>The "expert" who left</h3><ul><li>Ghosted mid-project</li><li>Template mess you can't edit</li><li>No docs, no handover</li><li>You're stuck &amp; paying anyway</li></ul></div>
+<div><h3>Working with me</h3><ul><li><b>Forensic</b> — I find the real cause</li><li><b>Plain</b> — you understand what happened</li><li><b>Durable</b> — fixed properly, not patched</li><li><b>Yours</b> — code, keys, docs handed over</li></ul></div>
+</div>
+</div></section>
+<section id="contact"><div class="wrap">
+<div class="contact">
+<div class="ey">// send the SOS</div>
+<h2>Don't stay <span class="hl">stuck.</span></h2>
+<p>Tell me what's broken (or just send the URL). I'll tell you what it'll take to fix — straight.</p>
+<a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+<div class="soc"><a href="../index.html">← All practices</a><a href="../styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+</div>
+</div></section>
+<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Remote</footer>
+<script>const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('section,header').forEach(el=>{el.classList.add('reveal');io.observe(el)});</script>
+</body>
+</html>
