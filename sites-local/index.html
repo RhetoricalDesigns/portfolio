@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#19150f;--paper:#f6f1e7;--accent:#b4541f;--line:#d9cfbb;--soft:#6a6052}
+--ink:#0f2e33;--paper:#eef6f6;--accent:#0e7c86;--line:#cfe6e6;--soft:#4f7d80
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
 a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:#fff}
@@ -119,6 +119,14 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
 .cur.h .ring{width:54px;height:54px;opacity:1}
 @media(max-width:860px){.grid3,.work,.steps,.split,.statband-g,.plans{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}nav .l{display:none}*{cursor:auto}.cur{display:none}.plan .nt{min-height:0}}
 @media(hover:none){*{cursor:auto}.cur{display:none}}
+body{background:#eef6f6}
+   header{background:linear-gradient(180deg,rgba(14,124,134,.12),transparent 70%);position:relative;overflow:hidden}
+   .wave{position:absolute;left:0;right:0;bottom:-2px;line-height:0;z-index:1;opacity:.9}
+   .wave svg{width:100%;height:60px;display:block}
+   .card,.steps .s,.split>div,.w{background:#fff;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 16px 34px -24px rgba(14,124,134,.4)}
+   .card:hover,.w:hover{box-shadow:0 22px 50px -26px rgba(14,124,134,.5),0 0 0 1px var(--accent)}
+   .btn.p{box-shadow:0 10px 24px -8px var(--accent),inset 0 1px 0 rgba(255,255,255,.3)}
+   .w .ph{background:linear-gradient(135deg,#dcefef,#cbe6e6)}
 </style>
 </head>
 <body>
@@ -134,7 +142,7 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
 <h1 class="tilt">Your neighbour<br><em>who builds websites.</em></h1>
 <p class="lede">Based in Hermanus, building for the Western Cape and beyond. Business sites, shops and local SEO from someone who gets the coast, the tourism seasons, and the difference between a Lekker site and a lekgotla of bugs. Face-to-face when you want it.</p>
 <div class="cta"><a class="btn p" href="#contact">Start your project &rarr;</a><a class="btn g" href="#work">See the work</a></div>
-</div></header>
+</div><div class="wave"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#0e7c86" fill-opacity="0.18" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z"></path><path fill="#0e7c86" fill-opacity="0.30" d="M0,42 C240,18 480,60 720,42 C960,24 1200,60 1440,42 L1440,60 L0,60 Z"></path></svg></div></header>
 <section class="statband"><div class="wrap"><div class="statband-g"><div class="sb"><div class="n count" data-to="12" data-suf="+">0</div><div class="k">sites shipped</div></div><div class="sb"><div class="n count" data-to="100" data-suf="%">0</div><div class="k">hand-coded</div></div><div class="sb"><div class="n count" data-to="24" data-suf="h">0</div><div class="k">avg response</div></div><div class="sb"><div class="n count" data-to="0" data-suf=" templates">0</div><div class="k">used. ever.</div></div></div></div></section>
 
 <section id="offer"><div class="wrap">

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#19150f;--paper:#f6f1e7;--accent:#b4541f;--line:#d9cfbb;--soft:#6a6052}
+--ink:#f3e9d8;--paper:#14110d;--accent:#f59e0b;--accent2:#ff7a1a;--line:#2c2417;--soft:#b9a47e
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
 a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:#fff}
@@ -119,6 +119,17 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
 .cur.h .ring{width:54px;height:54px;opacity:1}
 @media(max-width:860px){.grid3,.work,.steps,.split,.statband-g,.plans{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}nav .l{display:none}*{cursor:auto}.cur{display:none}.plan .nt{min-height:0}}
 @media(hover:none){*{cursor:auto}.cur{display:none}}
+body{background:#14110d;color:#f3e9d8}
+   .mesh{background:radial-gradient(44% 40% at 14% 10%,rgba(245,158,11,.22),transparent 60%),radial-gradient(46% 44% at 90% 22%,rgba(255,122,26,.16),transparent 58%);opacity:.9}
+   .card,.steps .s,.split>div,.split .a,.w{background:#1d1810;border-color:var(--line)}
+   .split>div{background:#1d1810}.split .a{background:#221b11}
+   .statband{background:#1a150e}.plan{background:#1d1810}
+   .w .ph{background:linear-gradient(135deg,#2c2312,#1f1810)}
+   .card p,.steps .s p,.split li,.lede{color:#cdbb93}
+   .statband-g .k,.plan .nt,.ticker .tr span:not(b),.marq .mr span{color:#9c8a66}
+   .card:hover,.w:hover{box-shadow:0 0 0 1px var(--accent),0 22px 52px -26px rgba(245,158,11,.5)}
+   .btn.p{box-shadow:0 0 26px -4px var(--accent)}
+   .lab .t::before{content:''}
 </style>
 </head>
 <body>
