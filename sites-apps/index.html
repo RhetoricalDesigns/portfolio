@@ -57,16 +57,66 @@ footer{text-align:center;padding:28px 26px;font-family:'JetBrains Mono',monospac
 footer a:hover{color:var(--acc)}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
 @media(max-width:860px){.grid3,.steps,.split{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}nav .l{display:none}}
+
+/* === Rhetorical premium layer === */
+*{cursor:none}
+.cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;mix-blend-mode:difference}
+.cur .dot{position:fixed;width:7px;height:7px;background:#fff;border-radius:50%;transform:translate(-50%,-50%)}
+.cur .ring{position:fixed;width:34px;height:34px;border:1.5px solid #fff;border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s;opacity:.55}
+.cur.h .ring{width:54px;height:54px;opacity:1}
+.pl{position:fixed;inset:0;z-index:9998;background:var(--paper);display:flex;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.7,0,.2,1)}
+.pl.done{transform:translateY(-100%)}
+.pl-in{text-align:center}
+.pl-mark{font-family:'Fraunces',serif;font-weight:600;font-size:64px;color:var(--ink)}
+.pl-mark span{color:var(--accent)}
+.pl-bar{width:210px;height:3px;background:var(--line);margin:22px auto 14px;border-radius:3px;overflow:hidden}
+.pl-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.pl-t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.ticker{position:relative;z-index:40;background:var(--ink);color:var(--paper);font-size:12px;letter-spacing:.03em;overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line)}
+.ticker .tr{display:inline-block;padding:8px 0;animation:tick 28s linear infinite}
+.ticker .tr span{margin:0 26px;opacity:.82}
+.ticker .tr b{color:var(--accent);font-weight:600}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.statband{border-top:1px solid var(--line);background:#fff}
+.statband-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.statband-g .sb{padding:30px 22px;text-align:center;border-right:1px solid var(--line)}
+.statband-g .sb:last-child{border-right:none}
+.statband-g .n{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,5vw,52px);color:var(--accent);line-height:1}
+.statband-g .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);margin-top:8px}
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:16px 0}
+.marq .mr{display:inline-block;animation:tick 32s linear infinite;font-family:'Fraunces',serif;font-style:italic;font-size:20px}
+.marq .mr span{margin:0 24px;opacity:.9}
+.marq .mr b{color:var(--accent)}
+.quirk{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-top:10px}
+.quirk b{color:var(--accent)}
+.btn{position:relative;will-change:transform}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.statband-g{grid-template-columns:1fr 1fr}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}*{cursor:auto}.cur{display:none}}
+@media(hover:none){*{cursor:auto}.cur{display:none}}
+
 </style>
 </head>
 <body>
+<div class="pl"><div class="pl-in"><div class="pl-mark">R<span>/</span></div><div class="pl-bar"><i></i></div><div class="pl-t">Loading the good stuff &mdash; no templates were harmed</div></div></div>
+<div class="cur"><div class="ring"></div><div class="dot"></div></div>
+
 <nav><div class="b">Rhetorical <b>·</b> Apps</div><div class="l"><a href="#offer">Offer</a><a href="#stack">Stack</a><a href="#process">Process</a><a href="#why">Why</a><a href="#contact">Contact</a></div></nav>
+<div class="ticker"><div class="tr"><span>&#128295; Currently: rescuing a 2014 WordPress site that time forgot</span><span>&#9749; Fueled by Hermanus mountain coffee</span><span><b>Fun fact:</b> 100% hand-coded, occasionally bossed around by an AI I trained</span><span>&#127754; Building from the coast, shipping worldwide</span></div><div class="tr" aria-hidden="true"><span>&#128295; Currently: rescuing a 2014 WordPress site that time forgot</span><span>&#9749; Fueled by Hermanus mountain coffee</span><span><b>Fun fact:</b> 100% hand-coded, occasionally bossed around by an AI I trained</span><span>&#127754; Building from the coast, shipping worldwide</span></div></div>
+
 <header><div class="wrap" style="padding:0">
 <div class="kick">Practice 02 · Custom Application Development</div>
 <h1>Custom apps,<br><span class="g">built to spec.</span></h1>
 <p class="lede">Internal tools, client portals, booking &amp; automation, MVP to launch. I build the software your business actually needs — <b>no off-the-shelf compromise</b>, no bloated SaaS subscription.</p>
 <div class="cta"><a class="btn p" href="#contact">Scope my app →</a><a class="btn g" href="#stack">See the stack</a></div>
 </div></header>
+<section class="statband"><div class="wrap"><div class="statband-g">
+<div class="sb"><div class="n count" data-to="12" data-suf="+">0</div><div class="k">sites shipped</div></div>
+<div class="sb"><div class="n count" data-to="100" data-suf="%">0</div><div class="k">hand-coded</div></div>
+<div class="sb"><div class="n count" data-to="24" data-suf="h">0</div><div class="k">avg response</div></div>
+<div class="sb"><div class="n count" data-to="0" data-suf=" templates">0</div><div class="k">used. ever.</div></div>
+</div></div></section>
+
 <section id="offer"><div class="wrap">
 <div class="lab"><span class="n">//</span><span class="t">What I build</span><span class="ln"></span></div>
 <div class="grid3">
@@ -106,10 +156,36 @@ footer a:hover{color:var(--acc)}
 <div class="ey">// start a build</div>
 <h2>Let's build the <span class="g">tool</span> you're missing.</h2>
 <a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
-<div class="soc"><a href="../index.html">← All practices</a><a href="../styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+<div class="soc"><a href="https://rhetoricaldesigns.website/">← All practices</a><a href="https://rhetoricaldesigns.website/styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
 </div>
 </div></section>
-<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Remote</footer>
-<script>const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('section,header').forEach(el=>{el.classList.add('reveal');io.observe(el)});</script>
+<div class="marq"><div class="mr"><span><b>HTML</b></span><span>CSS</span><span><b>JavaScript</b></span><span>GSAP</span><span>Figma</span><span><b>SEO</b></span><span>WordPress Rescue</span><span><b>AI Agents</b></span><span>UX</span><span><b>Performance</b></span><span>cPanel</span><span><b>Brand</b></span><span>Copy</span><span><b>Coffee</b></span></div><div class="mr" aria-hidden="true"><span><b>HTML</b></span><span>CSS</span><span><b>JavaScript</b></span><span>GSAP</span><span>Figma</span><span><b>SEO</b></span><span>WordPress Rescue</span><span><b>AI Agents</b></span><span>UX</span><span><b>Performance</b></span><span>cPanel</span><span><b>Brand</b></span><span>Copy</span><span><b>Coffee</b></span></div></div>
+
+<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Remote<div class="quirk">Built by a human. The AI just carries the coffee. <b>R/</b></div>
+</footer>
+<script>
+// === Rhetorical premium runtime ===
+(function(){
+  var pl=document.querySelector('.pl');var bar=pl&&pl.querySelector('.pl-bar i');var p=0;
+  var iv=setInterval(function(){p=Math.min(p+Math.random()*16,100);if(bar)bar.style.width=p+'%';if(p>=100){clearInterval(iv);setTimeout(function(){if(pl)pl.classList.add('done');},250);}},110);
+  window.addEventListener('load',function(){if(bar)bar.style.width='100%';setTimeout(function(){if(pl)pl.classList.add('done');},350);});
+  // staggered reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('section,header').forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=((i%4)*60)+'ms';io.observe(el);});
+  // count-up
+  var cu=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,to=+el.dataset.to,suf=el.dataset.suf||'';var n=0,step=Math.max(1,to/42);var t=setInterval(function(){n+=step;if(n>=to){n=to;clearInterval(t);}el.textContent=Math.floor(n)+suf;},24);cu.unobserve(el);}});},{threshold:.5});
+  document.querySelectorAll('.count').forEach(function(el){cu.observe(el);});
+  // custom cursor
+  var cur=document.querySelector('.cur');
+  if(cur&&window.matchMedia&&matchMedia('(hover:hover)').matches){
+    var dot=cur.querySelector('.dot'),ring=cur.querySelector('.ring'),rx=0,ry=0,dx=0,dy=0;
+    addEventListener('mousemove',function(e){dx=e.clientX;dy=e.clientY;dot.style.left=dx+'px';dot.style.top=dy+'px';});
+    (function loop(){rx+=(dx-rx)/9;ry+=(dy-ry)/9;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+    document.querySelectorAll('a,button,.btn,.card,.w').forEach(function(el){el.addEventListener('mouseenter',function(){cur.classList.add('h');});el.addEventListener('mouseleave',function(){cur.classList.remove('h');});});
+  }
+  // magnetic buttons
+  document.querySelectorAll('.btn').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+(x*.25)+'px,'+(y*.35)+'px)';});b.addEventListener('mouseleave',function(){b.style.transform='';});});
+})();
+</script>
 </body>
 </html>

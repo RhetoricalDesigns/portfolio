@@ -60,9 +60,50 @@ background:radial-gradient(60% 60% at 20% 0%,rgba(255,59,0,.18),transparent 60%)
 .foot a:hover{color:#fff}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.grid{grid-template-columns:1fr}}
+
+/* === Rhetorical premium layer === */
+*{cursor:none}
+.cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;mix-blend-mode:difference}
+.cur .dot{position:fixed;width:7px;height:7px;background:#fff;border-radius:50%;transform:translate(-50%,-50%)}
+.cur .ring{position:fixed;width:34px;height:34px;border:1.5px solid #fff;border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s;opacity:.55}
+.cur.h .ring{width:54px;height:54px;opacity:1}
+.pl{position:fixed;inset:0;z-index:9998;background:var(--paper);display:flex;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.7,0,.2,1)}
+.pl.done{transform:translateY(-100%)}
+.pl-in{text-align:center}
+.pl-mark{font-family:'Fraunces',serif;font-weight:600;font-size:64px;color:var(--ink)}
+.pl-mark span{color:var(--accent)}
+.pl-bar{width:210px;height:3px;background:var(--line);margin:22px auto 14px;border-radius:3px;overflow:hidden}
+.pl-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.pl-t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.ticker{position:relative;z-index:40;background:var(--ink);color:var(--paper);font-size:12px;letter-spacing:.03em;overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line)}
+.ticker .tr{display:inline-block;padding:8px 0;animation:tick 28s linear infinite}
+.ticker .tr span{margin:0 26px;opacity:.82}
+.ticker .tr b{color:var(--accent);font-weight:600}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.statband{border-top:1px solid var(--line);background:#fff}
+.statband-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.statband-g .sb{padding:30px 22px;text-align:center;border-right:1px solid var(--line)}
+.statband-g .sb:last-child{border-right:none}
+.statband-g .n{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,5vw,52px);color:var(--accent);line-height:1}
+.statband-g .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);margin-top:8px}
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:16px 0}
+.marq .mr{display:inline-block;animation:tick 32s linear infinite;font-family:'Fraunces',serif;font-style:italic;font-size:20px}
+.marq .mr span{margin:0 24px;opacity:.9}
+.marq .mr b{color:var(--accent)}
+.quirk{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-top:10px}
+.quirk b{color:var(--accent)}
+.btn{position:relative;will-change:transform}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.statband-g{grid-template-columns:1fr 1fr}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}*{cursor:auto}.cur{display:none}}
+@media(hover:none){*{cursor:auto}.cur{display:none}}
+
 </style>
 </head>
 <body>
+<div class="pl"><div class="pl-in"><div class="pl-mark">R<span>/</span></div><div class="pl-bar"><i></i></div><div class="pl-t">Loading the good stuff &mdash; no templates were harmed</div></div></div>
+<div class="cur"><div class="ring"></div><div class="dot"></div></div>
+
 <header class="hero">
 <div class="eye">Rhetorical Designs · Duane Steffens</div>
 <h1><span class="o">BRAND</span> <span class="a">VOICES</span> <span class="c">×10</span></h1>
@@ -72,6 +113,13 @@ background:radial-gradient(60% 60% at 20% 0%,rgba(255,59,0,.18),transparent 60%)
 <a class="tab active" href="styles.html">Brand voices (10 styles)</a>
 </div>
 </header>
+<section class="statband"><div class="wrap"><div class="statband-g">
+<div class="sb"><div class="n count" data-to="12" data-suf="+">0</div><div class="k">sites shipped</div></div>
+<div class="sb"><div class="n count" data-to="100" data-suf="%">0</div><div class="k">hand-coded</div></div>
+<div class="sb"><div class="n count" data-to="24" data-suf="h">0</div><div class="k">avg response</div></div>
+<div class="sb"><div class="n count" data-to="0" data-suf=" templates">0</div><div class="k">used. ever.</div></div>
+</div></div></section>
+
 
 <section class="picker">
 <div class="lead"><span class="n">STYLE LAB</span><span class="t">Ten brand voices</span><span class="ln"></span></div>
@@ -92,6 +140,7 @@ background:radial-gradient(60% 60% at 20% 0%,rgba(255,59,0,.18),transparent 60%)
 </div>
 </section>
 
-<footer class="foot">© Rhetorical Designs — Duane Steffens · Craft, Not Commodity · <a href="index.html">← Back to practice sites</a></footer>
+<footer class="foot">© Rhetorical Designs — Duane Steffens · Craft, Not Commodity · <a href="index.html">← Back to practice sites</a><div class="quirk">Built by a human. The AI just carries the coffee. <b>R/</b></div>
+</footer>
 </body>
 </html>
