@@ -5,65 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rhetorical · Apps — Custom Application Development</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0f17;--panel:#121826;--line:rgba(120,160,220,.16);--ink:#dfe7f5;--soft:#8694ad;--acc:#5b8cff;--acc2:#28e0b0}
+:root{--ink:#19150f;--paper:#f6f1e7;--accent:#b4541f;--line:#d9cfbb;--soft:#6a6052}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}::selection{background:var(--acc);color:#06101f}
-.mono{font-family:'JetBrains Mono',monospace}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:#fff}
 .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
-nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(11,15,23,.82);backdrop-filter:blur(10px)}
-nav .b{font-weight:700;font-size:18px}nav .b b{color:var(--acc)}
-nav .l{display:flex;gap:22px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--soft)}
-nav .l a:hover{color:var(--acc)}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(246,241,231,.86);backdrop-filter:blur(8px)}
+nav .b{font-family:'Fraunces',serif;font-weight:600;font-size:19px}.nav .b b{color:var(--accent)}
+nav .l{display:flex;gap:22px;font-size:13px;letter-spacing:.02em;text-transform:uppercase;color:var(--soft)}
+nav .l a:hover{color:var(--accent)}
 header{padding:clamp(60px,10vw,120px) 26px clamp(44px,7vw,84px);position:relative}
-header::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 50% at 85% 0%,rgba(91,140,255,.16),transparent 60%),radial-gradient(50% 50% at 10% 100%,rgba(40,224,176,.12),transparent 60%)}
-.kick{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:22px}
-h1{font-weight:700;font-size:clamp(42px,9vw,100px);line-height:.98;letter-spacing:-.02em}
-h1 .g{background:linear-gradient(110deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lede{max-width:620px;margin-top:24px;font-size:clamp(16px,2vw,20px);color:var(--soft)}
-.lede b{color:var(--ink);font-weight:500}
+.kick{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;display:inline-flex;gap:10px;align-items:center}
+.kick::before{content:'';width:32px;height:2px;background:var(--accent)}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(44px,9vw,104px);line-height:.98;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{max-width:640px;margin-top:26px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,2.4vw,26px);color:var(--soft);line-height:1.45}
 .cta{display:inline-flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-.btn{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.03em;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s}
-.btn.p{background:linear-gradient(110deg,var(--acc),#3f6fe0);color:#06101f;font-weight:700;box-shadow:0 8px 22px rgba(91,140,255,.3)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(91,140,255,.45)}
-.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--acc);color:var(--acc)}
-section{padding:clamp(50px,8vw,96px) 0;border-top:1px solid var(--line);position:relative}
-.lab{display:flex;align-items:center;gap:14px;margin-bottom:38px}.lab .n{font-family:'JetBrains Mono',monospace;color:var(--acc);font-size:13px}.lab .t{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
+.btn{font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s,background .2s;position:relative;will-change:transform}
+.btn.p{background:var(--accent);color:#fff;font-weight:600;box-shadow:0 10px 24px -8px var(--accent),inset 0 1px 0 rgba(255,255,255,.25)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(180,84,31,.4)}
+.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--accent);color:var(--accent)}
+section{padding:clamp(50px,8vw,96px) 0;border-top:1px solid var(--line);position:relative;z-index:2}
+.lab{display:flex;align-items:center;gap:14px;margin-bottom:38px}.lab .n{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--accent)}.lab .t{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{border:1px solid var(--line);border-radius:14px;padding:26px 22px;background:var(--panel);transition:transform .25s,border-color .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:0 14px 36px rgba(0,0,0,.4)}
-.card .ix{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--acc2)}
-.card h3{font-weight:600;font-size:20px;margin:8px 0 8px}
-.card p{font-size:14px;color:var(--soft);line-height:1.55}
-.stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-.stack span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 12px;background:var(--panel)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
-.steps .s{padding:26px 20px;border-right:1px solid var(--line)}.steps .s:last-child{border-right:none}
-.steps .s .no{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:22px;color:var(--acc)}
-.steps .s h4{font-weight:600;font-size:15px;margin:10px 0 6px}.steps .s p{font-size:13px;color:var(--soft);line-height:1.5}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
-.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line)}
-.split h3{font-weight:600;font-size:21px;margin-bottom:12px}.split ul{list-style:none}.split li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
-.contact{border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,var(--panel),#0b0f17);padding:clamp(40px,7vw,76px);text-align:center}
-.contact .ey{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
-.contact h2{font-weight:700;font-size:clamp(30px,6vw,64px);line-height:1;margin-top:14px;letter-spacing:-.01em}
-.contact h2 .g{background:linear-gradient(110deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.contact .mail{display:inline-block;margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:clamp(15px,2.4vw,21px);border:1px solid var(--acc);padding:13px 22px;border-radius:12px;transition:background .2s,color .2s}
-.contact .mail:hover{background:var(--acc);color:#06101f}
-.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--soft)}
-.contact .soc a:hover{color:var(--acc)}
-footer{text-align:center;padding:28px 26px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line)}
-footer a:hover{color:var(--acc)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
-@media(max-width:860px){.grid3,.steps,.split{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}nav .l{display:none}}
-
-/* === Rhetorical premium layer === */
+.card{border:1px solid var(--line);border-radius:14px;padding:26px 22px;background:#fff;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 14px 30px -22px rgba(0,0,0,.5)}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 48px -26px rgba(0,0,0,.6),0 0 0 1px var(--accent)}
+.card .ix{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--accent)}
+.card h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin:8px 0 10px}
+.card p{font-size:14px;color:var(--soft);line-height:1.6}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.steps .s{padding:28px 22px;border-right:1px solid var(--line);box-shadow:0 14px 30px -22px rgba(0,0,0,.5)}.steps .s:last-child{border-right:none}
+.steps .s .no{font-family:'Fraunces',serif;font-weight:600;font-size:30px;color:var(--accent)}
+.steps .s h4{font-weight:600;font-size:16px;margin:10px 0 8px}.steps .s p{font-size:13px;color:var(--soft);line-height:1.55}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.w{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:transform .3s,box-shadow .3s;position:relative}
+.w:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(25,21,15,.16),0 0 0 1px var(--accent)}
+.w .ph{height:130px;background:linear-gradient(135deg,#efe6d4,#e0d3bb)}
+.w .ph .t{position:relative;display:inline-block;margin:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:#fff;color:var(--ink);padding:4px 9px;border-radius:20px}
+.w .body{padding:18px 20px 22px}.w h4{font-family:'Fraunces',serif;font-weight:600;font-size:20px}.w .u{font-size:12px;color:var(--accent);margin-top:3px}
+.w .v{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--accent);padding-bottom:3px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line);background:#fff}
+.split h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:14px}
+.split ul{list-style:none}.split li{padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
+.contact{border:1px solid var(--line);border-radius:18px;background:var(--ink);color:var(--paper);padding:clamp(40px,7vw,76px);text-align:center;position:relative;z-index:2}
+.contact .ey{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,6vw,64px);line-height:1;margin-top:14px}
+.contact h2 em{font-style:italic;color:var(--accent)}
+.contact p{color:#c9bfae;max-width:54ch;margin:16px auto 0;font-size:15px}
+.contact .mail{display:inline-block;margin-top:24px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,3vw,28px);border-bottom:2px solid var(--accent);padding-bottom:5px}
+.contact .mail:hover{color:var(--accent)}
+.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a99e8c}
+.contact .soc a:hover{color:var(--accent)}
+footer{text-align:center;padding:28px 26px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line);position:relative;z-index:2}
+footer a:hover{color:var(--accent)}
+/* premium + depth layer */
 *{cursor:none}
-.cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;mix-blend-mode:difference}
-.cur .dot{position:fixed;width:7px;height:7px;background:#fff;border-radius:50%;transform:translate(-50%,-50%)}
-.cur .ring{position:fixed;width:34px;height:34px;border:1.5px solid #fff;border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s;opacity:.55}
-.cur.h .ring{width:54px;height:54px;opacity:1}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(40% 38% at 12% 8%,rgba(255,255,255,.6),transparent 60%),radial-gradient(46% 44% at 92% 18%,var(--accent),transparent 55%),radial-gradient(50% 50% at 75% 95%,rgba(255,255,255,.35),transparent 60%);opacity:.16}
+header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
+.btn.p{box-shadow:0 10px 24px -8px var(--accent), inset 0 1px 0 rgba(255,255,255,.25)}
+.card,.w,.steps .s,.split>div{border-color:var(--line);box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 14px 30px -22px rgba(0,0,0,.5)}
+.card:hover,.w:hover{box-shadow:0 22px 48px -26px rgba(0,0,0,.6), 0 0 0 1px var(--accent)}
+.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.tilt{transform-style:preserve-3d;transition:transform .25s ease;will-change:transform}
 .pl{position:fixed;inset:0;z-index:9998;background:var(--paper);display:flex;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.7,0,.2,1)}
 .pl.done{transform:translateY(-100%)}
 .pl-in{text-align:center}
@@ -89,23 +95,8 @@ footer a:hover{color:var(--acc)}
 .marq .mr b{color:var(--accent)}
 .quirk{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-top:10px}
 .quirk b{color:var(--accent)}
-.btn{position:relative;will-change:transform}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
-@media(max-width:860px){.statband-g{grid-template-columns:1fr 1fr}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}*{cursor:auto}.cur{display:none}}
-@media(hover:none){*{cursor:auto}.cur{display:none}}
-
-
-/* === depth layer === */
-body{position:relative}
-.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(40% 38% at 12% 8%,rgba(255,255,255,.6),transparent 60%),radial-gradient(46% 44% at 92% 18%,var(--accent),transparent 55%),radial-gradient(50% 50% at 75% 95%,rgba(255,255,255,.35),transparent 60%);opacity:.16}
-header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
-.btn.p{box-shadow:0 10px 24px -8px var(--accent), inset 0 1px 0 rgba(255,255,255,.25)}
-.card,.w,.steps .s,.split>div,.sb{border-color:var(--line);box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 14px 30px -22px rgba(0,0,0,.5)}
-.card:hover,.w:hover{box-shadow:0 22px 48px -26px rgba(0,0,0,.6), 0 0 0 1px var(--accent)}
-.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
-.tilt{transform-style:preserve-3d;transition:transform .25s ease;will-change:transform}
 .price{border-top:1px solid var(--line);background:linear-gradient(180deg,#fff,var(--paper));padding:clamp(50px,8vw,96px) 0}
 .price .lab .n{color:var(--accent)}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
@@ -122,9 +113,12 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
 .plan .go a:hover{background:var(--accent);transform:translateY(-2px)}
 .plan .spark{position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.12}
 .price .note{text-align:center;font-size:12px;letter-spacing:.06em;color:var(--soft);margin-top:26px;text-transform:uppercase}
-.par{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
-@media(max-width:860px){.plans{grid-template-columns:1fr}.plan .nt{min-height:0}}
-
+.cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;mix-blend-mode:difference}
+.cur .dot{position:fixed;width:7px;height:7px;background:#fff;border-radius:50%;transform:translate(-50%,-50%)}
+.cur .ring{position:fixed;width:34px;height:34px;border:1.5px solid #fff;border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s;opacity:.55}
+.cur.h .ring{width:54px;height:54px;opacity:1}
+@media(max-width:860px){.grid3,.work,.steps,.split,.statband-g,.plans{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}nav .l{display:none}*{cursor:auto}.cur{display:none}.plan .nt{min-height:0}}
+@media(hover:none){*{cursor:auto}.cur{display:none}}
 </style>
 </head>
 <body>
@@ -132,86 +126,68 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
 <div class="pl"><div class="pl-in"><div class="pl-mark">R<span>/</span></div><div class="pl-bar"><i></i></div><div class="pl-t">Loading the good stuff &mdash; no templates were harmed</div></div></div>
 <div class="cur"><div class="ring"></div><div class="dot"></div></div>
 
-<nav><div class="b">Rhetorical <b>·</b> Apps</div><div class="l"><a href="#offer">Offer</a><a href="#stack">Stack</a><a href="#process">Process</a><a href="#why">Why</a><a href="#contact">Contact</a></div></nav>
+<nav><div class="b">Rhetorical <b>&middot;</b> Apps</div><div class="l"><a href="#offer">Offer</a><a href="#process">Process</a><a href="#work">Work</a><a href="#why">Why</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div></nav>
 <div class="ticker"><div class="tr"><span>&#128295; Currently: rescuing a 2014 WordPress site that time forgot</span><span>&#9749; Fueled by Hermanus mountain coffee</span><span><b>Fun fact:</b> 100% hand-coded, occasionally bossed around by an AI I trained</span><span>&#127754; Building from the coast, shipping worldwide</span></div><div class="tr" aria-hidden="true"><span>&#128295; Currently: rescuing a 2014 WordPress site that time forgot</span><span>&#9749; Fueled by Hermanus mountain coffee</span><span><b>Fun fact:</b> 100% hand-coded, occasionally bossed around by an AI I trained</span><span>&#127754; Building from the coast, shipping worldwide</span></div></div>
 
 <header><div class="wrap" style="padding:0">
 <div class="kick">Practice 02 · Custom Application Development</div>
-<h1 class="tilt">Custom apps,<br><span class="g">built to spec.</span></h1>
-<p class="lede">Internal tools, client portals, booking &amp; automation, MVP to launch. I build the software your business actually needs — <b>no off-the-shelf compromise</b>, no bloated SaaS subscription.</p>
-<div class="cta"><a class="btn p" href="#contact">Scope my app →</a><a class="btn g" href="#stack">See the stack</a></div>
+<h1 class="tilt">Custom software,<br><em>built to spec.</em></h1>
+<p class="lede">When off-the-shelf won't fit, we build it. Internal tools, client portals, booking and automation — web apps that do the exact job, no compromise, no seat tax. Built right, documented, and handed over without drama.</p>
+<div class="cta"><a class="btn p" href="#contact">Start your project &rarr;</a><a class="btn g" href="#work">See the work</a></div>
 </div></header>
-<section class="statband"><div class="wrap"><div class="statband-g">
-<div class="sb"><div class="n count" data-to="12" data-suf="+">0</div><div class="k">sites shipped</div></div>
-<div class="sb"><div class="n count" data-to="100" data-suf="%">0</div><div class="k">hand-coded</div></div>
-<div class="sb"><div class="n count" data-to="24" data-suf="h">0</div><div class="k">avg response</div></div>
-<div class="sb"><div class="n count" data-to="0" data-suf=" templates">0</div><div class="k">used. ever.</div></div>
-</div></div></section>
+<section class="statband"><div class="wrap"><div class="statband-g"><div class="sb"><div class="n count" data-to="12" data-suf="+">0</div><div class="k">sites shipped</div></div><div class="sb"><div class="n count" data-to="100" data-suf="%">0</div><div class="k">hand-coded</div></div><div class="sb"><div class="n count" data-to="24" data-suf="h">0</div><div class="k">avg response</div></div><div class="sb"><div class="n count" data-to="0" data-suf=" templates">0</div><div class="k">used. ever.</div></div></div></div></section>
 
 <section id="offer"><div class="wrap">
-<div class="lab"><span class="n">//</span><span class="t">What I build</span><span class="ln"></span></div>
-<div class="grid3 tilt">
-<div class="card"><div class="ix">APP_01</div><h3>Web Apps</h3><p>Browser-based tools and portals your team or customers log into daily.</p></div>
-<div class="card"><div class="ix">APP_02</div><h3>Internal Tools</h3><p>Replace spreadsheets and manual work with automations that just run.</p></div>
-<div class="card"><div class="ix">APP_03</div><h3>Client Portals</h3><p>Secure logins, dashboards and documents — your branded experience.</p></div>
-<div class="card"><div class="ix">APP_04</div><h3>Booking &amp; Commerce</h3><p>Scheduling, payments and checkout wired to your workflow.</p></div>
-<div class="card"><div class="ix">APP_05</div><h3>Automation</h3><p>Glue between the tools you already use; less clicking, fewer errors.</p></div>
-<div class="card"><div class="ix">APP_06</div><h3>MVPs</h3><p>Idea to working prototype fast, so you can validate before you overspend.</p></div>
-</div>
-</div></section>
-<section id="stack"><div class="wrap">
-<div class="lab"><span class="n">//</span><span class="t">The stack</span><span class="ln"></span></div>
-<p style="color:var(--soft);max-width:60ch;margin-bottom:18px">Modern, maintainable, and chosen for your case — not the flavour of the month.</p>
-<div class="stack">
-<span>HTML / CSS / JS</span><span>Python</span><span>Node.js</span><span>REST &amp; APIs</span><span>SQL &amp; NoSQL</span><span>Cloud hosting</span><span>CI / deploy</span><span>Auth &amp; security</span><span>AI integration</span>
-</div>
+<div class="lab"><span class="n">i</span><span class="t">What you get</span><span class="ln"></span></div>
+<div class="grid3 tilt"><div class="card"><div class="ix">a.</div><h3>Web Apps</h3><p>Browser-based tools your team actually enjoys using. Dashboards, CRMs-lite, portals — shaped to your workflow, not the other way round.</p></div><div class="card"><div class="ix">b.</div><h3>Internal Tools</h3><p>Kill the spreadsheet chaos. Custom apps that automate the repetitive work and keep the data in one sane place.</p></div><div class="card"><div class="ix">c.</div><h3>Client Portals</h3><p>A branded space where clients log in, see status, pay, download. Professional, secure, and yours to set the rules.</p></div><div class="card"><div class="ix">d.</div><h3>Automation</h3><p>Wire your apps together so data flows without a human copy-pasting at midnight. Fewer errors, fewer 2am fire drills.</p></div><div class="card"><div class="ix">e.</div><h3>MVPs</h3><p>Test the idea fast with a working prototype, not a deck. Real software in front of real users within weeks, not quarters.</p></div><div class="card"><div class="ix">f.</div><h3>API & Integrations</h3><p>Connect Stripe, Xero, WhatsApp, your weird legacy system — I make the pipes talk so you don't have to.</p></div></div>
 </div></section>
 <section id="process"><div class="wrap">
-<div class="lab"><span class="n">//</span><span class="t">How it works</span><span class="ln"></span></div>
-<div class="steps">
-<div class="s"><div class="no">01</div><h4>Scope</h4><p>We define the problem, users and must-haves — in plain language.</p></div>
-<div class="s"><div class="no">02</div><h4>Plan</h4><p>Architecture, data model and a build plan you can read.</p></div>
-<div class="s"><div class="no">03</div><h4>Build</h4><p>Iterative, demoing working slices — not silence till launch.</p></div>
-<div class="s"><div class="no">04</div><h4>Ship</h4><p>Deploy, document, train, and support after go-live.</p></div>
+<div class="lab"><span class="n">ii</span><span class="t">How it works</span><span class="ln"></span></div>
+<div class="steps"><div class="s"><div class="no">1</div><h4>Scope</h4><p>We map the actual problem and the smallest useful version. No gold-plating, no mystery scope creep.</p></div><div class="s"><div class="no">2</div><h4>Prototype</h4><p>A clickable build early, so you steer with your hands on the wheel, not after it's welded shut.</p></div><div class="s"><div class="no">3</div><h4>Build</h4><p>Clean, tested, documented code. Auth, data, UI — the boring bits done properly so the fun bits shine.</p></div><div class="s"><div class="no">4</div><h4>Ship & Support</h4><p>Launch, train your team, and stay available. The app grows as you do.</p></div></div>
+</div></section>
+<section id="work"><div class="wrap">
+<div class="lab"><span class="n">iii</span><span class="t">Selected builds</span><span class="ln"></span></div>
+<div class="work">
+<a class="w" href="https://hemingwaysbooks.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Retail</span></div><div class="body"><h4>Hemingways Bookshop</h4><div class="u">hemingwaysbooks.co.za</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://lili.africa" target="_blank" rel="noopener"><div class="ph"><span class="t">Artisan</span></div><div class="body"><h4>Lili &amp; Co Ceramics</h4><div class="u">lili.africa</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://naturewise.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Garden</span></div><div class="body"><h4>NatureWise Gardens</h4><div class="u">naturewise.co.za</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://curiositycove.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Education</span></div><div class="body"><h4>Curiosity Cove</h4><div class="u">curiositycove.co.za</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://fosh.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Non-Profit</span></div><div class="body"><h4>FOSH</h4><div class="u">fosh.co.za</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://conservationatwork.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Conservation</span></div><div class="body"><h4>Conservation at Work</h4><div class="u">conservationatwork.co.za</div><div class="v">View &rarr;</div></div></a>
 </div>
 </div></section>
 <section id="why"><div class="wrap">
-<div class="lab"><span class="n">//</span><span class="t">Build vs buy</span><span class="ln"></span></div>
+<div class="lab"><span class="n">iv</span><span class="t">Why this way</span><span class="ln"></span></div>
 <div class="split">
-<div class="a"><h3>Buy SaaS / Off-the-shelf</h3><ul><li>Pay monthly forever</li><li>Forced to their workflow</li><li>Data trapped, limited control</li><li>Feature gaps you can't fix</li></ul></div>
-<div><h3>Custom, by me</h3><ul><li><b>Own</b> it — code &amp; data</li><li>Built around <b>your</b> process</li><li><b>Integrate</b> with what you use</li><li>Scale &amp; adapt on demand</li></ul></div>
+<div class="a"><h3>Off-the-shelf SaaS</h3><ul><li>Pays for features you'll never use</li><li>You bend to its limits</li><li>Per-seat tax as you grow</li><li>Data lives in their silo</li></ul></div>
+<div><h3>Custom, by me</h3><ul><li><b>Built</b> for your exact job</li><li><b>Flexes</b> when you change</li><li><b>One</b> price, no seat tax</li><li><b>Your</b> data, your rules</li></ul></div>
 </div>
 </div></section>
-<section class="price" id="pricing"><div class="wrap">
-<div class="lab"><span class="n">$</span><span class="t">Investment</span><span class="ln"></span></div>
-<div class="plans"><div class="plan tilt"><div class="spark"></div><div class="tag">Starter</div><div class="nm">MVP</div><div class="pr">R12,000</div><div class="nt">Working prototype, core flows</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=MVP plan - R12,000">Choose MVP →</a></div></div><div class="plan feat tilt"><div class="spark"></div><div class="tag">Popular</div><div class="nm">Build</div><div class="pr">R28,000</div><div class="nt">Production app, auth, dashboard</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Build plan - R28,000">Choose Build →</a></div></div><div class="plan tilt"><div class="spark"></div><div class="tag">Pro</div><div class="nm">Retainer</div><div class="pr">R650/hr</div><div class="nt">Ongoing feature work, on call</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Retainer plan - R650/hr">Choose Retainer →</a></div></div></div>
-<div class="note">Indicative ZAR · every project scoped to fit · pay for output, not overhead</div>
-</div></section>
+<section class="price" id="pricing"><div class="wrap"><div class="lab"><span class="n">$</span><span class="t">Investment</span><span class="ln"></span></div><div class="plans"><div class="plan tilt"><div class="spark"></div><div class="tag">Starter</div><div class="nm">MVP</div><div class="pr">R12,000</div><div class="nt">Working prototype, core flows</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=MVP plan - R12,000">Choose MVP &rarr;</a></div></div><div class="plan feat tilt"><div class="spark"></div><div class="tag">Popular</div><div class="nm">Build</div><div class="pr">R28,000</div><div class="nt">Production app, auth, dashboard</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Build plan - R28,000">Choose Build &rarr;</a></div></div><div class="plan tilt"><div class="spark"></div><div class="tag">Pro</div><div class="nm">Retainer</div><div class="pr">R650/hr</div><div class="nt">Ongoing feature work, on call</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Retainer plan - R650/hr">Choose Retainer &rarr;</a></div></div></div><div class="note">Indicative ZAR &middot; every project scoped to fit &middot; pay for output, not overhead</div></div></section>
+
 <section id="contact"><div class="wrap">
 <div class="contact">
-<div class="ey">// start a build</div>
-<h2>Let's build the <span class="g">tool</span> you're missing.</h2>
+<div class="ey">let's build</div>
+<h2>Software that fits.</h2>
+<p>Describe the workflow that wastes your week — I'll show you the app that removes it.</p>
 <a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
-<div class="soc"><a href="https://rhetoricaldesigns.website/">← All practices</a><a href="https://rhetoricaldesigns.website/styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+<div class="soc"><a href="https://rhetoricaldesigns.website/">&#8592; All practices</a><a href="https://rhetoricaldesigns.website/styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
 </div>
 </div></section>
+<footer>© Rhetorical Designs &mdash; Duane Steffens &middot; A Rhetorical Designs practice &middot; Hermanus &middot; Remote</footer>
 <div class="marq"><div class="mr"><span><b>HTML</b></span><span>CSS</span><span><b>JavaScript</b></span><span>GSAP</span><span>Figma</span><span><b>SEO</b></span><span>WordPress Rescue</span><span><b>AI Agents</b></span><span>UX</span><span><b>Performance</b></span><span>cPanel</span><span><b>Brand</b></span><span>Copy</span><span><b>Coffee</b></span></div><div class="mr" aria-hidden="true"><span><b>HTML</b></span><span>CSS</span><span><b>JavaScript</b></span><span>GSAP</span><span>Figma</span><span><b>SEO</b></span><span>WordPress Rescue</span><span><b>AI Agents</b></span><span>UX</span><span><b>Performance</b></span><span>cPanel</span><span><b>Brand</b></span><span>Copy</span><span><b>Coffee</b></span></div></div>
 
-<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Remote<div class="quirk">Built by a human. The AI just carries the coffee. <b>R/</b></div>
-</footer>
+<div class="quirk">Built by a human. The AI just carries the coffee. <b>R/</b></div>
+
 <script>
-// === Rhetorical premium runtime ===
 (function(){
   var pl=document.querySelector('.pl');var bar=pl&&pl.querySelector('.pl-bar i');var p=0;
   var iv=setInterval(function(){p=Math.min(p+Math.random()*16,100);if(bar)bar.style.width=p+'%';if(p>=100){clearInterval(iv);setTimeout(function(){if(pl)pl.classList.add('done');},250);}},110);
   window.addEventListener('load',function(){if(bar)bar.style.width='100%';setTimeout(function(){if(pl)pl.classList.add('done');},350);});
-  // staggered reveal
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('section,header').forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=((i%4)*60)+'ms';io.observe(el);});
-  // count-up
   var cu=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,to=+el.dataset.to,suf=el.dataset.suf||'';var n=0,step=Math.max(1,to/42);var t=setInterval(function(){n+=step;if(n>=to){n=to;clearInterval(t);}el.textContent=Math.floor(n)+suf;},24);cu.unobserve(el);}});},{threshold:.5});
   document.querySelectorAll('.count').forEach(function(el){cu.observe(el);});
-  // custom cursor
   var cur=document.querySelector('.cur');
   if(cur&&window.matchMedia&&matchMedia('(hover:hover)').matches){
     var dot=cur.querySelector('.dot'),ring=cur.querySelector('.ring'),rx=0,ry=0,dx=0,dy=0;
@@ -219,7 +195,6 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
     (function loop(){rx+=(dx-rx)/9;ry+=(dy-ry)/9;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
     document.querySelectorAll('a,button,.btn,.card,.w').forEach(function(el){el.addEventListener('mouseenter',function(){cur.classList.add('h');});el.addEventListener('mouseleave',function(){cur.classList.remove('h');});});
   }
-  // magnetic buttons
   document.querySelectorAll('.btn').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+(x*.25)+'px,'+(y*.35)+'px)';});b.addEventListener('mouseleave',function(){b.style.transform='';});});
 })();
 </script>

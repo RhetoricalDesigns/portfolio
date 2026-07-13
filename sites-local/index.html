@@ -3,65 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rhetorical · Local Hermanus &amp; WC — Your Neighbour Who Builds Websites</title>
+<title>Rhetorical · Local Hermanus & WC — Your Neighbour Who Builds Websites</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#15231f;--paper:#eef3ee;--acc:#1f7a5a;--acc2:#0f5e43;--sand:#e0c9a6;--line:#cdd9d0;--soft:#5d6f67}
+:root{--ink:#19150f;--paper:#f6f1e7;--accent:#b4541f;--line:#d9cfbb;--soft:#6a6052}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}::selection{background:var(--acc);color:#fff}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:#fff}
 .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
-nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(238,243,238,.86);backdrop-filter:blur(8px)}
-nav .b{font-family:'Fraunces',serif;font-weight:600;font-size:19px}nav .b b{color:var(--acc2)}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(246,241,231,.86);backdrop-filter:blur(8px)}
+nav .b{font-family:'Fraunces',serif;font-weight:600;font-size:19px}.nav .b b{color:var(--accent)}
 nav .l{display:flex;gap:22px;font-size:13px;letter-spacing:.02em;text-transform:uppercase;color:var(--soft)}
-nav .l a:hover{color:var(--acc2)}
-header{padding:clamp(58px,10vw,116px) 26px clamp(42px,7vw,82px);position:relative}
-header::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 55% at 85% 0%,rgba(31,122,90,.14),transparent 60%),radial-gradient(45% 45% at 5% 100%,rgba(224,201,166,.18),transparent 60%)}
-.kick{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc2);margin-bottom:22px;display:inline-flex;gap:10px;align-items:center}
-.kick::before{content:'';width:30px;height:2px;background:var(--acc)}
-h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(40px,8.5vw,94px);line-height:.98;letter-spacing:-.01em}
-h1 em{font-style:italic;color:var(--acc2)}
-.lede{max-width:640px;margin-top:24px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,2.4vw,26px);color:var(--soft);line-height:1.45}
+nav .l a:hover{color:var(--accent)}
+header{padding:clamp(60px,10vw,120px) 26px clamp(44px,7vw,84px);position:relative}
+.kick{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;display:inline-flex;gap:10px;align-items:center}
+.kick::before{content:'';width:32px;height:2px;background:var(--accent)}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(44px,9vw,104px);line-height:.98;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{max-width:640px;margin-top:26px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,2.4vw,26px);color:var(--soft);line-height:1.45}
 .cta{display:inline-flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-.btn{font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s,background .2s}
-.btn.p{background:var(--acc);color:#fff;font-weight:600;box-shadow:0 8px 22px rgba(31,122,90,.3)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(31,122,90,.45)}
-.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--acc);color:var(--acc2)}
-section{padding:clamp(50px,8vw,96px) 0;border-top:1px solid var(--line);position:relative}
-.lab{display:flex;align-items:center;gap:14px;margin-bottom:38px}.lab .n{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--acc2)}.lab .t{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
+.btn{font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s,background .2s;position:relative;will-change:transform}
+.btn.p{background:var(--accent);color:#fff;font-weight:600;box-shadow:0 10px 24px -8px var(--accent),inset 0 1px 0 rgba(255,255,255,.25)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(180,84,31,.4)}
+.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--accent);color:var(--accent)}
+section{padding:clamp(50px,8vw,96px) 0;border-top:1px solid var(--line);position:relative;z-index:2}
+.lab{display:flex;align-items:center;gap:14px;margin-bottom:38px}.lab .n{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--accent)}.lab .t{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{border:1px solid var(--line);border-radius:14px;padding:26px 22px;background:#fff;transition:transform .25s,border-color .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:0 14px 34px rgba(21,35,31,.1)}
-.card .ix{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--acc2)}
-.card h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin:8px 0 8px}
-.card p{font-size:14px;color:var(--soft);line-height:1.55}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
-.steps .s{padding:26px 20px;border-right:1px solid var(--line)}.steps .s:last-child{border-right:none}
-.steps .s .no{font-family:'Fraunces',serif;font-weight:600;font-size:30px;color:var(--acc2)}
-.steps .s h4{font-weight:600;font-size:15px;margin:10px 0 6px}.steps .s p{font-size:13px;color:var(--soft);line-height:1.5}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
-.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line);background:#e7f0ea}
-.split h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin-bottom:12px}.split ul{list-style:none}.split li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
-.contact{border:1px solid var(--acc);border-radius:18px;background:linear-gradient(135deg,#e7f0ea,#fff);padding:clamp(40px,7vw,76px);text-align:center}
-.contact .ey{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc2)}
-.contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,6vw,62px);line-height:1;margin-top:14px}
-.contact h2 em{font-style:italic;color:var(--acc2)}
-.contact p{color:var(--soft);max-width:54ch;margin:14px auto 0;font-size:15px}
-.contact .mail{display:inline-block;margin-top:24px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,3vw,28px);border-bottom:2px solid var(--acc);padding-bottom:5px}
-.contact .mail:hover{color:var(--acc2)}
-.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
-.contact .soc a:hover{color:var(--acc2)}
-footer{text-align:center;padding:28px 26px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line)}
-footer a:hover{color:var(--acc2)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
-@media(max-width:860px){.grid3,.steps,.split{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}nav .l{display:none}}
-
-/* === Rhetorical premium layer === */
+.card{border:1px solid var(--line);border-radius:14px;padding:26px 22px;background:#fff;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 14px 30px -22px rgba(0,0,0,.5)}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 48px -26px rgba(0,0,0,.6),0 0 0 1px var(--accent)}
+.card .ix{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--accent)}
+.card h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin:8px 0 10px}
+.card p{font-size:14px;color:var(--soft);line-height:1.6}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.steps .s{padding:28px 22px;border-right:1px solid var(--line);box-shadow:0 14px 30px -22px rgba(0,0,0,.5)}.steps .s:last-child{border-right:none}
+.steps .s .no{font-family:'Fraunces',serif;font-weight:600;font-size:30px;color:var(--accent)}
+.steps .s h4{font-weight:600;font-size:16px;margin:10px 0 8px}.steps .s p{font-size:13px;color:var(--soft);line-height:1.55}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.w{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:transform .3s,box-shadow .3s;position:relative}
+.w:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(25,21,15,.16),0 0 0 1px var(--accent)}
+.w .ph{height:130px;background:linear-gradient(135deg,#efe6d4,#e0d3bb)}
+.w .ph .t{position:relative;display:inline-block;margin:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:#fff;color:var(--ink);padding:4px 9px;border-radius:20px}
+.w .body{padding:18px 20px 22px}.w h4{font-family:'Fraunces',serif;font-weight:600;font-size:20px}.w .u{font-size:12px;color:var(--accent);margin-top:3px}
+.w .v{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--accent);padding-bottom:3px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line);background:#fff}
+.split h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:14px}
+.split ul{list-style:none}.split li{padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
+.contact{border:1px solid var(--line);border-radius:18px;background:var(--ink);color:var(--paper);padding:clamp(40px,7vw,76px);text-align:center;position:relative;z-index:2}
+.contact .ey{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,6vw,64px);line-height:1;margin-top:14px}
+.contact h2 em{font-style:italic;color:var(--accent)}
+.contact p{color:#c9bfae;max-width:54ch;margin:16px auto 0;font-size:15px}
+.contact .mail{display:inline-block;margin-top:24px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,3vw,28px);border-bottom:2px solid var(--accent);padding-bottom:5px}
+.contact .mail:hover{color:var(--accent)}
+.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a99e8c}
+.contact .soc a:hover{color:var(--accent)}
+footer{text-align:center;padding:28px 26px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line);position:relative;z-index:2}
+footer a:hover{color:var(--accent)}
+/* premium + depth layer */
 *{cursor:none}
-.cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;mix-blend-mode:difference}
-.cur .dot{position:fixed;width:7px;height:7px;background:#fff;border-radius:50%;transform:translate(-50%,-50%)}
-.cur .ring{position:fixed;width:34px;height:34px;border:1.5px solid #fff;border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s;opacity:.55}
-.cur.h .ring{width:54px;height:54px;opacity:1}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(40% 38% at 12% 8%,rgba(255,255,255,.6),transparent 60%),radial-gradient(46% 44% at 92% 18%,var(--accent),transparent 55%),radial-gradient(50% 50% at 75% 95%,rgba(255,255,255,.35),transparent 60%);opacity:.16}
+header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
+.btn.p{box-shadow:0 10px 24px -8px var(--accent), inset 0 1px 0 rgba(255,255,255,.25)}
+.card,.w,.steps .s,.split>div{border-color:var(--line);box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 14px 30px -22px rgba(0,0,0,.5)}
+.card:hover,.w:hover{box-shadow:0 22px 48px -26px rgba(0,0,0,.6), 0 0 0 1px var(--accent)}
+.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.tilt{transform-style:preserve-3d;transition:transform .25s ease;will-change:transform}
 .pl{position:fixed;inset:0;z-index:9998;background:var(--paper);display:flex;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.7,0,.2,1)}
 .pl.done{transform:translateY(-100%)}
 .pl-in{text-align:center}
@@ -87,23 +95,8 @@ footer a:hover{color:var(--acc2)}
 .marq .mr b{color:var(--accent)}
 .quirk{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-top:10px}
 .quirk b{color:var(--accent)}
-.btn{position:relative;will-change:transform}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
-@media(max-width:860px){.statband-g{grid-template-columns:1fr 1fr}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}*{cursor:auto}.cur{display:none}}
-@media(hover:none){*{cursor:auto}.cur{display:none}}
-
-
-/* === depth layer === */
-body{position:relative}
-.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(40% 38% at 12% 8%,rgba(255,255,255,.6),transparent 60%),radial-gradient(46% 44% at 92% 18%,var(--accent),transparent 55%),radial-gradient(50% 50% at 75% 95%,rgba(255,255,255,.35),transparent 60%);opacity:.16}
-header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
-.btn.p{box-shadow:0 10px 24px -8px var(--accent), inset 0 1px 0 rgba(255,255,255,.25)}
-.card,.w,.steps .s,.split>div,.sb{border-color:var(--line);box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 14px 30px -22px rgba(0,0,0,.5)}
-.card:hover,.w:hover{box-shadow:0 22px 48px -26px rgba(0,0,0,.6), 0 0 0 1px var(--accent)}
-.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
-.tilt{transform-style:preserve-3d;transition:transform .25s ease;will-change:transform}
 .price{border-top:1px solid var(--line);background:linear-gradient(180deg,#fff,var(--paper));padding:clamp(50px,8vw,96px) 0}
 .price .lab .n{color:var(--accent)}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
@@ -120,9 +113,12 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
 .plan .go a:hover{background:var(--accent);transform:translateY(-2px)}
 .plan .spark{position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.12}
 .price .note{text-align:center;font-size:12px;letter-spacing:.06em;color:var(--soft);margin-top:26px;text-transform:uppercase}
-.par{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
-@media(max-width:860px){.plans{grid-template-columns:1fr}.plan .nt{min-height:0}}
-
+.cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;mix-blend-mode:difference}
+.cur .dot{position:fixed;width:7px;height:7px;background:#fff;border-radius:50%;transform:translate(-50%,-50%)}
+.cur .ring{position:fixed;width:34px;height:34px;border:1.5px solid #fff;border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s;opacity:.55}
+.cur.h .ring{width:54px;height:54px;opacity:1}
+@media(max-width:860px){.grid3,.work,.steps,.split,.statband-g,.plans{grid-template-columns:1fr}.steps .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}nav .l{display:none}*{cursor:auto}.cur{display:none}.plan .nt{min-height:0}}
+@media(hover:none){*{cursor:auto}.cur{display:none}}
 </style>
 </head>
 <body>
@@ -130,80 +126,68 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
 <div class="pl"><div class="pl-in"><div class="pl-mark">R<span>/</span></div><div class="pl-bar"><i></i></div><div class="pl-t">Loading the good stuff &mdash; no templates were harmed</div></div></div>
 <div class="cur"><div class="ring"></div><div class="dot"></div></div>
 
-<nav><div class="b">Rhetorical <b>·</b> Local</div><div class="l"><a href="#offer">Offer</a><a href="#area">Service area</a><a href="#why">Why local</a><a href="#contact">Contact</a></div></nav>
+<nav><div class="b">Rhetorical <b>&middot;</b> Local</div><div class="l"><a href="#offer">Offer</a><a href="#process">Process</a><a href="#work">Work</a><a href="#why">Why</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div></nav>
 <div class="ticker"><div class="tr"><span>&#128295; Currently: rescuing a 2014 WordPress site that time forgot</span><span>&#9749; Fueled by Hermanus mountain coffee</span><span><b>Fun fact:</b> 100% hand-coded, occasionally bossed around by an AI I trained</span><span>&#127754; Building from the coast, shipping worldwide</span></div><div class="tr" aria-hidden="true"><span>&#128295; Currently: rescuing a 2014 WordPress site that time forgot</span><span>&#9749; Fueled by Hermanus mountain coffee</span><span><b>Fun fact:</b> 100% hand-coded, occasionally bossed around by an AI I trained</span><span>&#127754; Building from the coast, shipping worldwide</span></div></div>
 
 <header><div class="wrap" style="padding:0">
-<div class="kick">Practice 08 · Local · Hermanus &amp; Western Cape</div>
+<div class="kick">Practice 08 · Local · Hermanus & Western Cape</div>
 <h1 class="tilt">Your neighbour<br><em>who builds websites.</em></h1>
-<p class="lede">Based in Hermanus, working with businesses across the Western Cape. Coffee-friendly, face-to-face when you want it, and just a call away when you don't. Local, capable, and actually ships.</p>
-<div class="cta"><a class="btn p" href="#contact">Chat local →</a><a class="btn g" href="#offer">What I do</a></div>
+<p class="lede">Based in Hermanus, building for the Western Cape and beyond. Business sites, shops and local SEO from someone who gets the coast, the tourism seasons, and the difference between a Lekker site and a lekgotla of bugs. Face-to-face when you want it.</p>
+<div class="cta"><a class="btn p" href="#contact">Start your project &rarr;</a><a class="btn g" href="#work">See the work</a></div>
 </div></header>
-<section class="statband"><div class="wrap"><div class="statband-g">
-<div class="sb"><div class="n count" data-to="12" data-suf="+">0</div><div class="k">sites shipped</div></div>
-<div class="sb"><div class="n count" data-to="100" data-suf="%">0</div><div class="k">hand-coded</div></div>
-<div class="sb"><div class="n count" data-to="24" data-suf="h">0</div><div class="k">avg response</div></div>
-<div class="sb"><div class="n count" data-to="0" data-suf=" templates">0</div><div class="k">used. ever.</div></div>
-</div></div></section>
+<section class="statband"><div class="wrap"><div class="statband-g"><div class="sb"><div class="n count" data-to="12" data-suf="+">0</div><div class="k">sites shipped</div></div><div class="sb"><div class="n count" data-to="100" data-suf="%">0</div><div class="k">hand-coded</div></div><div class="sb"><div class="n count" data-to="24" data-suf="h">0</div><div class="k">avg response</div></div><div class="sb"><div class="n count" data-to="0" data-suf=" templates">0</div><div class="k">used. ever.</div></div></div></div></section>
 
 <section id="offer"><div class="wrap">
-<div class="lab"><span class="n">i</span><span class="t">For local business</span><span class="ln"></span></div>
-<div class="grid3 tilt">
-<div class="card"><div class="ix">a.</div><h3>Business Websites</h3><p>A proper site that brings locals and visitors to your door (or inbox).</p></div>
-<div class="card"><div class="ix">b.</div><h3>Shops &amp; Booking</h3><p>Sell online or take bookings — payments as easy as cottage pie.</p></div>
-<div class="card"><div class="ix">c.</div><h3>SEO for Locals</h3><p>Show up when someone nearby searches "near me" — maps and search.</p></div>
-<div class="card"><div class="ix">d.</div><h3>Tourism &amp; Hospitality</h3><p>Guest houses, tours, restaurants, wine farms — pages that convert visitors.</p></div>
-<div class="card"><div class="ix">e.</div><h3>Fix &amp; Maintain</h3><p>Inherited a messy site? Rescued, updated and kept healthy.</p></div>
-<div class="card"><div class="ix">f.</div><h3>Photos &amp; Video</h3><p>Local imagery and clips that show the real place, not stock.</p></div>
-</div>
+<div class="lab"><span class="n">i</span><span class="t">What you get</span><span class="ln"></span></div>
+<div class="grid3 tilt"><div class="card"><div class="ix">a.</div><h3>Business Sites</h3><p>Hermanus, Gansbaai, Stanford, Caledon — a proper site for the local tradie, guest house, restaurant or practice. Smart, mobile, found on maps.</p></div><div class="card"><div class="ix">b.</div><h3>Shops & Booking</h3><p>Take bookings and orders online. Less phone tag, more confirmed stays and tables.</p></div><div class="card"><div class="ix">c.</div><h3>Local SEO</h3><p>"Near me" and Google Maps done right. Tourists with signal find you before they find the chain.</p></div><div class="card"><div class="ix">d.</div><h3>Tourism & Hospitality</h3><p>Seasonal sites that shine in peak and still work in off. Menus, rooms, trails, all current.</p></div><div class="card"><div class="ix">e.</div><h3>Fix & Maintain</h3><p>Inherited a wonky site from the last guy? Same rescue service, with the added bonus of a local who'll come look.</p></div><div class="card"><div class="ix">f.</div><h3>Photos & Video</h3><p>Coastal light is free marketing. I'll shoot and edit so your real place looks like the real place — better.</p></div></div>
 </div></section>
-<section id="area"><div class="wrap">
-<div class="lab"><span class="n">ii</span><span class="t">Where I work</span><span class="ln"></span></div>
-<div class="steps">
-<div class="s"><div class="no">01</div><h4>Hermanus</h4><p>Home base — meet in person any time.</p></div>
-<div class="s"><div class="no">02</div><h4>Overberg</h4><p>Stanford, Gansbaai, Kleinmond, Cape Agulhas.</p></div>
-<div class="s"><div class="no">03</div><h4>Garden Route</h4><p>Through to Mossel Bay and Knysna.</p></div>
-<div class="s"><div class="no">04</div><h4>Cape Town &amp; beyond</h4><p>Remote-friendly across the WC and nationwide.</p></div>
+<section id="process"><div class="wrap">
+<div class="lab"><span class="n">ii</span><span class="t">How it works</span><span class="ln"></span></div>
+<div class="steps"><div class="s"><div class="no">1</div><h4>Chat</h4><p>Over coffee or a call. I learn the business, not just the brief.</p></div><div class="s"><div class="no">2</div><h4>Build</h4><p>Local-flavoured, maps-ready, mobile-first. Built like I live here — because I do.</p></div><div class="s"><div class="no">3</div><h4>List</h4><p>Google Business, directories, local SEO switched on so neighbours find you.</p></div><div class="s"><div class="no">4</div><h4>Care</h4><p>Updates through the seasons. You run the business; the site keeps up.</p></div></div>
+</div></section>
+<section id="work"><div class="wrap">
+<div class="lab"><span class="n">iii</span><span class="t">Selected builds</span><span class="ln"></span></div>
+<div class="work">
+<a class="w" href="https://hemingwaysbooks.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Retail</span></div><div class="body"><h4>Hemingways Bookshop</h4><div class="u">hemingwaysbooks.co.za</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://lili.africa" target="_blank" rel="noopener"><div class="ph"><span class="t">Artisan</span></div><div class="body"><h4>Lili &amp; Co Ceramics</h4><div class="u">lili.africa</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://naturewise.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Garden</span></div><div class="body"><h4>NatureWise Gardens</h4><div class="u">naturewise.co.za</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://curiositycove.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Education</span></div><div class="body"><h4>Curiosity Cove</h4><div class="u">curiositycove.co.za</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://fosh.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Non-Profit</span></div><div class="body"><h4>FOSH</h4><div class="u">fosh.co.za</div><div class="v">View &rarr;</div></div></a>
+<a class="w" href="https://conservationatwork.co.za" target="_blank" rel="noopener"><div class="ph"><span class="t">Conservation</span></div><div class="body"><h4>Conservation at Work</h4><div class="u">conservationatwork.co.za</div><div class="v">View &rarr;</div></div></a>
 </div>
 </div></section>
 <section id="why"><div class="wrap">
-<div class="lab"><span class="n">iii</span><span class="t">Local vs far-away</span><span class="ln"></span></div>
+<div class="lab"><span class="n">iv</span><span class="t">Why this way</span><span class="ln"></span></div>
 <div class="split">
-<div class="a"><h3>The far-away freelancer</h3><ul><li>Time-zone gaps</li><li>No shared context, no meeting</li><li>Ghosts after launch</li><li>"Local SEO" they can't feel</li></ul></div>
-<div><h3>Working with me</h3><ul><li><b>Same</b> time zone, same coast</li><li><b>Meet</b> face-to-face when wanted</li><li><b>Here</b> after launch, for care</li><li><b>Know</b> the Hermanus market</li></ul></div>
+<div class="a"><h3>Far-away freelancer</h3><ul><li>Timezone lag on every reply</li><li>Doesn't know the coast</li><li>No face-to-face, ever</li><li>Generic, placeless work</li></ul></div>
+<div><h3>Local, by me</h3><ul><li><b>Same</b> day replies, same tz</li><li><b>Knows</b> the WC market</li><li><b>Coffee</b> meetings welcome</li><li><b>Place</b> in every pixel</li></ul></div>
 </div>
 </div></section>
-<section class="price" id="pricing"><div class="wrap">
-<div class="lab"><span class="n">$</span><span class="t">Investment</span><span class="ln"></span></div>
-<div class="plans"><div class="plan tilt"><div class="spark"></div><div class="tag">Starter</div><div class="nm">Site</div><div class="pr">R3,800</div><div class="nt">5-page business site, local SEO</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Site plan - R3,800">Choose Site →</a></div></div><div class="plan feat tilt"><div class="spark"></div><div class="tag">Popular</div><div class="nm">Site+Shop</div><div class="pr">R6,500</div><div class="nt">Site + simple store + booking</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Site+Shop plan - R6,500">Choose Site+Shop →</a></div></div><div class="plan tilt"><div class="spark"></div><div class="tag">Pro</div><div class="nm">Care</div><div class="pr">R1,200<small> /mo</small></div><div class="nt">Updates, local SEO, photos</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Care plan - R1,200/mo">Choose Care →</a></div></div></div>
-<div class="note">Indicative ZAR · every project scoped to fit · pay for output, not overhead</div>
-</div></section>
+<section class="price" id="pricing"><div class="wrap"><div class="lab"><span class="n">$</span><span class="t">Investment</span><span class="ln"></span></div><div class="plans"><div class="plan tilt"><div class="spark"></div><div class="tag">Starter</div><div class="nm">Site</div><div class="pr">R3,800</div><div class="nt">5-page business site, local SEO</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Site plan - R3,800">Choose Site &rarr;</a></div></div><div class="plan feat tilt"><div class="spark"></div><div class="tag">Popular</div><div class="nm">Site+Shop</div><div class="pr">R6,500</div><div class="nt">Site + simple store + booking</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Site+Shop plan - R6,500">Choose Site+Shop &rarr;</a></div></div><div class="plan tilt"><div class="spark"></div><div class="tag">Pro</div><div class="nm">Care</div><div class="pr">R1,200<small> /mo</small></div><div class="nt">Updates, local SEO, photos</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Care plan - R1,200/mo">Choose Care &rarr;</a></div></div></div><div class="note">Indicative ZAR &middot; every project scoped to fit &middot; pay for output, not overhead</div></div></section>
+
 <section id="contact"><div class="wrap">
 <div class="contact">
-<div class="ey">// say hi, neighbour</div>
-<h2>Let's build something <em>local.</em></h2>
-<p>Pop me a message or a call — I'll tell you straight what your business needs online.</p>
+<div class="ey">let's chat local</div>
+<h2>Built nearby. Built right.</h2>
+<p>Pop me a message — I'm probably a short drive away and I'd rather meet than email.</p>
 <a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
-<div class="soc"><a href="https://rhetoricaldesigns.website/">← All practices</a><a href="https://rhetoricaldesigns.website/styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+<div class="soc"><a href="https://rhetoricaldesigns.website/">&#8592; All practices</a><a href="https://rhetoricaldesigns.website/styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
 </div>
 </div></section>
+<footer>© Rhetorical Designs &mdash; Duane Steffens &middot; A Rhetorical Designs practice &middot; Hermanus &middot; Remote</footer>
 <div class="marq"><div class="mr"><span><b>HTML</b></span><span>CSS</span><span><b>JavaScript</b></span><span>GSAP</span><span>Figma</span><span><b>SEO</b></span><span>WordPress Rescue</span><span><b>AI Agents</b></span><span>UX</span><span><b>Performance</b></span><span>cPanel</span><span><b>Brand</b></span><span>Copy</span><span><b>Coffee</b></span></div><div class="mr" aria-hidden="true"><span><b>HTML</b></span><span>CSS</span><span><b>JavaScript</b></span><span>GSAP</span><span>Figma</span><span><b>SEO</b></span><span>WordPress Rescue</span><span><b>AI Agents</b></span><span>UX</span><span><b>Performance</b></span><span>cPanel</span><span><b>Brand</b></span><span>Copy</span><span><b>Coffee</b></span></div></div>
 
-<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Western Cape<div class="quirk">Built by a human. The AI just carries the coffee. <b>R/</b></div>
-</footer>
+<div class="quirk">Built by a human. The AI just carries the coffee. <b>R/</b></div>
+
 <script>
-// === Rhetorical premium runtime ===
 (function(){
   var pl=document.querySelector('.pl');var bar=pl&&pl.querySelector('.pl-bar i');var p=0;
   var iv=setInterval(function(){p=Math.min(p+Math.random()*16,100);if(bar)bar.style.width=p+'%';if(p>=100){clearInterval(iv);setTimeout(function(){if(pl)pl.classList.add('done');},250);}},110);
   window.addEventListener('load',function(){if(bar)bar.style.width='100%';setTimeout(function(){if(pl)pl.classList.add('done');},350);});
-  // staggered reveal
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('section,header').forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=((i%4)*60)+'ms';io.observe(el);});
-  // count-up
   var cu=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,to=+el.dataset.to,suf=el.dataset.suf||'';var n=0,step=Math.max(1,to/42);var t=setInterval(function(){n+=step;if(n>=to){n=to;clearInterval(t);}el.textContent=Math.floor(n)+suf;},24);cu.unobserve(el);}});},{threshold:.5});
   document.querySelectorAll('.count').forEach(function(el){cu.observe(el);});
-  // custom cursor
   var cur=document.querySelector('.cur');
   if(cur&&window.matchMedia&&matchMedia('(hover:hover)').matches){
     var dot=cur.querySelector('.dot'),ring=cur.querySelector('.ring'),rx=0,ry=0,dx=0,dy=0;
@@ -211,7 +195,6 @@ header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
     (function loop(){rx+=(dx-rx)/9;ry+=(dy-ry)/9;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
     document.querySelectorAll('a,button,.btn,.card,.w').forEach(function(el){el.addEventListener('mouseenter',function(){cur.classList.add('h');});el.addEventListener('mouseleave',function(){cur.classList.remove('h');});});
   }
-  // magnetic buttons
   document.querySelectorAll('.btn').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+(x*.25)+'px,'+(y*.35)+'px)';});b.addEventListener('mouseleave',function(){b.style.transform='';});});
 })();
 </script>
