@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhetorical · Content Creation — Blogs, Newsletters &amp; On-Brand Copy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1320;--paper:#f6f3f7;--acc:#e11d48;--acc2:#be123c;--line:#ecd9e2;--soft:#6f6478}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}::selection{background:var(--acc);color:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;border-bottom:1px solid var(--line);background:rgba(246,243,247,.86);backdrop-filter:blur(8px)}
+nav .b{font-family:'Fraunces',serif;font-weight:600;font-size:19px}nav .b b{color:var(--acc2)}
+nav .l{display:flex;gap:20px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+nav .l a:hover{color:var(--acc2)}
+header{padding:clamp(56px,9vw,110px) 26px clamp(40px,7vw,78px);position:relative}
+header::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 55% at 85% 0%,rgba(225,29,72,.14),transparent 60%),radial-gradient(45% 45% at 5% 100%,rgba(255,255,255,.4),transparent 60%)}
+.kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc2);margin-bottom:20px;display:inline-flex;gap:10px;align-items:center}
+.kick::before{content:'';width:30px;height:2px;background:var(--acc)}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(40px,8.5vw,92px);line-height:.98;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--acc2)}
+.lede{max-width:640px;margin-top:22px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,2.4vw,26px);color:var(--soft);line-height:1.45}
+.cta{display:inline-flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:13px 22px;border-radius:10px;transition:transform .15s,box-shadow .2s,background .2s}
+.btn.p{background:var(--acc);color:#fff;font-weight:600;box-shadow:0 8px 22px rgba(225,29,72,.3)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(225,29,72,.45)}
+.btn.g{border:1px solid var(--line)}.btn.g:hover{border-color:var(--acc);color:var(--acc2)}
+section{padding:clamp(48px,8vw,92px) 0;border-top:1px solid var(--line);position:relative}
+.lab{display:flex;align-items:center;gap:14px;margin-bottom:36px}.lab .n{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--acc2)}.lab .t{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}.lab .ln{flex:1;height:1px;background:var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.stats .s{padding:26px 22px;border-right:1px solid var(--line)}.stats .s:last-child{border-right:none}
+.stats .s .v{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,40px);color:var(--acc2);line-height:1}
+.stats .s .k{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--soft);margin-top:8px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line);border-radius:14px;padding:26px 22px;background:#fff;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:0 14px 34px rgba(26,19,32,.1)}
+.card .ix{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--acc2)}
+.card h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin:8px 0 8px}
+.card p{font-size:14px;color:var(--soft);line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.steps .s{padding:26px 20px;border-right:1px solid var(--line)}.steps .s:last-child{border-right:none}
+.steps .s .no{font-family:'Fraunces',serif;font-weight:600;font-size:30px;color:var(--acc2)}
+.steps .s h4{font-weight:600;font-size:15px;margin:10px 0 6px}.steps .s p{font-size:13px;color:var(--soft);line-height:1.5}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.split>div{padding:30px 28px}.split .a{border-right:1px solid var(--line);background:#fbe9ee}
+.split h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin-bottom:12px}.split ul{list-style:none}.split li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--soft)}.split li:last-child{border:none}.split li b{color:var(--ink)}
+.contact{border:1px solid var(--acc);border-radius:18px;background:linear-gradient(135deg,#fbe9ee,#fff);padding:clamp(38px,6vw,72px);text-align:center}
+.contact .ey{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc2)}
+.contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,6vw,58px);line-height:1;margin-top:14px}
+.contact h2 em{font-style:italic;color:var(--acc2)}
+.contact p{color:var(--soft);max-width:54ch;margin:14px auto 0;font-size:15px}
+.contact .mail{display:inline-block;margin-top:24px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,3vw,28px);border-bottom:2px solid var(--acc);padding-bottom:5px}
+.contact .mail:hover{color:var(--acc2)}
+.contact .soc{display:flex;gap:14px;justify-content:center;margin-top:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.contact .soc a:hover{color:var(--acc2)}
+footer{text-align:center;padding:26px 26px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-top:1px solid var(--line)}
+footer a:hover{color:var(--acc2)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.grid3,.steps,.split,.stats{grid-template-columns:1fr}.steps .s,.stats .s{border-right:none;border-bottom:1px solid var(--line)}.split .a{border-right:none;border-bottom:1px solid var(--line)}nav .l{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="b">Rhetorical <b>·</b> Content</div><div class="l"><a href="#offer">Offer</a><a href="#process">Process</a><a href="#why">Why</a><a href="#contact">Contact</a></div></nav>
+<header><div class="wrap" style="padding:0">
+<div class="kick">Practice 10 · Content Creation</div>
+<h1>Content that<br><em>earns attention.</em></h1>
+<p class="lede">Blogs, newsletters and on-brand copy that actually pull — written to rank, read and convert, not just fill a space. SEO-aware, on-voice, shipped on a schedule you don't have to think about.</p>
+<div class="cta"><a class="btn p" href="#contact">Plan my content →</a><a class="btn g" href="#offer">See the offer</a></div>
+</div></header>
+<section><div class="wrap">
+<div class="stats">
+<div class="s"><div class="v">Blog</div><div class="k">Articles &amp; posts</div></div>
+<div class="s"><div class="v">News</div><div class="k">Email &amp; newsletters</div></div>
+<div class="s"><div class="v">SEO</div><div class="k">Built to rank</div></div>
+<div class="s"><div class="v">On-voice</div><div class="k">Your brand, not generic</div></div>
+</div>
+</div></section>
+<section id="offer"><div class="wrap">
+<div class="lab"><span class="n">i</span><span class="t">What you get</span><span class="ln"></span></div>
+<div class="grid3">
+<div class="card"><div class="ix">a.</div><h3>Blog &amp; Articles</h3><p>SEO-aware posts that answer what your buyers search — and build authority.</p></div>
+<div class="card"><div class="ix">b.</div><h3>Newsletters</h3><p>Regular email that keeps you top-of-mind without you writing at midnight.</p></div>
+<div class="card"><div class="ix">c.</div><h3>On-Brand Copy</h3><p>Website, product and ad words that sound like you — consistently.</p></div>
+<div class="card"><div class="ix">d.</div><h3>SEO Content</h3><p>Keyword-mapped pages and posts that earn organic traffic over time.</p></div>
+<div class="card"><div class="ix">e.</div><h3>Social &amp; Posts</h3><p>Caption and post packs for the channels you're actually on.</p></div>
+<div class="card"><div class="ix">f.</div><h3>Email Sequences</h3><p>Welcome, nurture and launch flows that do the selling for you.</p></div>
+</div>
+</div></section>
+<section id="process"><div class="wrap">
+<div class="lab"><span class="n">ii</span><span class="t">How it works</span><span class="ln"></span></div>
+<div class="steps">
+<div class="s"><div class="no">01</div><h4>Brief</h4><p>Goals, audience and voice — pinned in one short call.</p></div>
+<div class="s"><div class="no">02</div><h4>Draft</h4><p>A calendar and first pieces, on your tone.</p></div>
+<div class="s"><div class="no">03</div><h4>Refine</h4><p>Edits until it's unmistakably you.</p></div>
+<div class="s"><div class="no">04</div><h4>Ship</h4><p>Published &amp; scheduled — then we measure.</p></div>
+</div>
+</div></section>
+<section id="why"><div class="wrap">
+<div class="lab"><span class="n">iii</span><span class="t">Done-for-you vs DIY</span><span class="ln"></span></div>
+<div class="split">
+<div class="a"><h3>You write it (DIY)</h3><ul><li>Always "next week"</li><li>Inconsistent, off-voice</li><li>No SEO, no plan</li><li>Drains your real job</li></ul></div>
+<div><h3>Working with me</h3><ul><li><b>Steady</b> cadence, done</li><li><b>On-brand</b> every time</li><li><b>SEO</b>-mapped &amp; ranked</li><li><b>You</b> stay on strategy</li></ul></div>
+</div>
+</div></section>
+<section id="contact"><div class="wrap">
+<div class="contact">
+<div class="ey">// start the conversation</div>
+<h2>Let's make you <em>worth reading.</em></h2>
+<p>Send your topics or goals — I'll return a content plan and sample pieces.</p>
+<a class="mail" href="mailto:duanesteffens@gmail.com">duanesteffens@gmail.com</a>
+<div class="soc"><a href="../index.html">← All practices</a><a href="../styles.html">Brand voices</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+</div>
+</div></section>
+<footer>© Rhetorical Designs — Duane Steffens · A Rhetorical Designs practice · Hermanus · Remote</footer>
+<script>const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('section,header').forEach(el=>{el.classList.add('reveal');io.observe(el)});</script>
+</body>
+</html>
