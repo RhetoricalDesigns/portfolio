@@ -99,9 +99,40 @@ footer a:hover{color:var(--acc2)}
 @media(max-width:860px){.statband-g{grid-template-columns:1fr 1fr}.statband-g .sb:nth-child(2){border-right:none}.statband-g .sb:nth-child(1),.statband-g .sb:nth-child(2){border-bottom:1px solid var(--line)}*{cursor:auto}.cur{display:none}}
 @media(hover:none){*{cursor:auto}.cur{display:none}}
 
+
+/* === depth layer === */
+body{position:relative}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(40% 38% at 12% 8%,rgba(255,255,255,.6),transparent 60%),radial-gradient(46% 44% at 92% 18%,var(--accent),transparent 55%),radial-gradient(50% 50% at 75% 95%,rgba(255,255,255,.35),transparent 60%);opacity:.16}
+header,.contact,nav,.ticker,.statband,.marq,section{position:relative;z-index:2}
+.btn.p{box-shadow:0 10px 24px -8px var(--accent), inset 0 1px 0 rgba(255,255,255,.25)}
+.card,.w,.steps .s,.split>div,.sb{border-color:var(--line);box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 14px 30px -22px rgba(0,0,0,.5)}
+.card:hover,.w:hover{box-shadow:0 22px 48px -26px rgba(0,0,0,.6), 0 0 0 1px var(--accent)}
+.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.tilt{transform-style:preserve-3d;transition:transform .25s ease;will-change:transform}
+.price{border-top:1px solid var(--line);background:linear-gradient(180deg,#fff,var(--paper));padding:clamp(50px,8vw,96px) 0}
+.price .lab .n{color:var(--accent)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+.plan{border:1px solid var(--line);border-radius:18px;padding:30px 26px;background:#fff;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.plan:hover{transform:translateY(-6px);box-shadow:0 26px 56px -28px rgba(0,0,0,.55)}
+.plan.feat{box-shadow:0 0 0 2px var(--accent), 0 26px 56px -28px rgba(0,0,0,.5)}
+.plan .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.plan .nm{font-family:'Fraunces',serif;font-weight:600;font-size:26px;margin:6px 0 2px}
+.plan .pr{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,5vw,44px);color:var(--accent);line-height:1;margin:14px 0 4px}
+.plan .pr small{font-size:13px;color:var(--soft);font-weight:400;letter-spacing:.04em}
+.plan .nt{font-size:13px;color:var(--soft);line-height:1.5;min-height:54px}
+.plan .go{margin-top:auto;padding-top:18px}
+.plan .go a{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:9px;transition:background .2s,transform .15s}
+.plan .go a:hover{background:var(--accent);transform:translateY(-2px)}
+.plan .spark{position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.12}
+.price .note{text-align:center;font-size:12px;letter-spacing:.06em;color:var(--soft);margin-top:26px;text-transform:uppercase}
+.par{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+@media(max-width:860px){.plans{grid-template-columns:1fr}.plan .nt{min-height:0}}
+
 </style>
 </head>
 <body>
+<div class="mesh"></div><div class="grain"></div>
 <div class="pl"><div class="pl-in"><div class="pl-mark">R<span>/</span></div><div class="pl-bar"><i></i></div><div class="pl-t">Loading the good stuff &mdash; no templates were harmed</div></div></div>
 <div class="cur"><div class="ring"></div><div class="dot"></div></div>
 
@@ -110,7 +141,7 @@ footer a:hover{color:var(--acc2)}
 
 <header><div class="wrap" style="padding:0">
 <div class="kick">Practice 07 · eCommerce &amp; WooCommerce</div>
-<h1>Sell online,<br><span class="hl">smooth as pie.</span></h1>
+<h1 class="tilt">Sell online,<br><span class="hl">smooth as pie.</span></h1>
 <p class="lede">A store that loads fast, looks the part, and takes payment as easy as cottage pie. WooCommerce, Shopify or custom — I build the shop, you run the business. <b>Bells and whistles included.</b></p>
 <div class="cta"><a class="btn p" href="#contact">Build my store →</a><a class="btn g" href="#offer">See the offer</a></div>
 </div></header>
@@ -131,7 +162,7 @@ footer a:hover{color:var(--acc2)}
 </div></section>
 <section id="offer"><div class="wrap">
 <div class="lab"><span class="n">//</span><span class="t">What you get</span><span class="ln"></span></div>
-<div class="grid3">
+<div class="grid3 tilt">
 <div class="card"><div class="ix">EC_01</div><h3>WooCommerce</h3><p>WordPress stores with the catalogue, cart and checkout you control.</p></div>
 <div class="card"><div class="ix">EC_02</div><h3>Shopify &amp; Custom</h3><p>Or a bespoke build — whichever fits your scale and stack.</p></div>
 <div class="card"><div class="ix">EC_03</div><h3>Payments</h3><p>Major cards and gateways wired in; checkout that just works.</p></div>
@@ -155,6 +186,11 @@ footer a:hover{color:var(--acc2)}
 <div class="a"><h3>Marketplace (e.g. a listing site)</h3><ul><li>Fees on every sale</li><li>Rules &amp; look you don't own</li><li>Customer data stays theirs</li><li>You compete beside rivals</li></ul></div>
 <div><h3>Your own store</h3><ul><li><b>Keep</b> more margin</li><li><b>Your</b> brand, your rules</li><li><b>Your</b> customer list</li><li><b>Yours</b> — built to grow</li></ul></div>
 </div>
+</div></section>
+<section class="price" id="pricing"><div class="wrap">
+<div class="lab"><span class="n">$</span><span class="t">Investment</span><span class="ln"></span></div>
+<div class="plans"><div class="plan tilt"><div class="spark"></div><div class="tag">Starter</div><div class="nm">Store</div><div class="pr">R7,500</div><div class="nt">WooCommerce/Shopify, ~20 products</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Store plan - R7,500">Choose Store →</a></div></div><div class="plan feat tilt"><div class="spark"></div><div class="tag">Popular</div><div class="nm">Scaling</div><div class="pr">R15,000</div><div class="nt">Catalogue + payments + SEO</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Scaling plan - R15,000">Choose Scaling →</a></div></div><div class="plan tilt"><div class="spark"></div><div class="tag">Pro</div><div class="nm">Custom</div><div class="pr">Quote</div><div class="nt">Headless / bespoke commerce</div><div class="go"><a href="mailto:duanesteffens@gmail.com?subject=Custom plan - Quote">Choose Custom →</a></div></div></div>
+<div class="note">Indicative ZAR · every project scoped to fit · pay for output, not overhead</div>
 </div></section>
 <section id="contact"><div class="wrap">
 <div class="contact">
